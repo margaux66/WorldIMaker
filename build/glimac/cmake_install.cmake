@@ -1,4 +1,4 @@
-# Install script for directory: /Users/victorinemaurel/IMAC/SYNTIMG/imac-s3-opengl-master-GLImac-Template-SDL2/Projet/WorldIMaker/glimac
+# Install script for directory: /Users/margaux/Desktop/IMAC/S3/Voldemort/WorldIMaker/glimac
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

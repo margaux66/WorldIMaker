@@ -840,7 +840,7 @@ detail/type_vec4.hpp
 detail/func_vector_relational.hpp
 ../third-party/include/glm/detail/func_vector_relational.hpp
 
-/Users/victorinemaurel/IMAC/SYNTIMG/imac-s3-opengl-master-GLImac-Template-SDL2/Projet/WorldIMaker/glimac/src/Cone.cpp
+/Users/margaux/Desktop/IMAC/S3/Voldemort/WorldIMaker/glimac/src/Cone.cpp
 cmath
 -
 vector
@@ -848,45 +848,45 @@ vector
 iostream
 -
 glimac/common.hpp
-/Users/victorinemaurel/IMAC/SYNTIMG/imac-s3-opengl-master-GLImac-Template-SDL2/Projet/WorldIMaker/glimac/src/glimac/common.hpp
+/Users/margaux/Desktop/IMAC/S3/Voldemort/WorldIMaker/glimac/src/glimac/common.hpp
 glimac/Cone.hpp
-/Users/victorinemaurel/IMAC/SYNTIMG/imac-s3-opengl-master-GLImac-Template-SDL2/Projet/WorldIMaker/glimac/src/glimac/Cone.hpp
+/Users/margaux/Desktop/IMAC/S3/Voldemort/WorldIMaker/glimac/src/glimac/Cone.hpp
 
-/Users/victorinemaurel/IMAC/SYNTIMG/imac-s3-opengl-master-GLImac-Template-SDL2/Projet/WorldIMaker/glimac/src/Geometry.cpp
+/Users/margaux/Desktop/IMAC/S3/Voldemort/WorldIMaker/glimac/src/Geometry.cpp
 glimac/Geometry.hpp
-/Users/victorinemaurel/IMAC/SYNTIMG/imac-s3-opengl-master-GLImac-Template-SDL2/Projet/WorldIMaker/glimac/src/glimac/Geometry.hpp
+/Users/margaux/Desktop/IMAC/S3/Voldemort/WorldIMaker/glimac/src/glimac/Geometry.hpp
 tiny_obj_loader.h
-/Users/victorinemaurel/IMAC/SYNTIMG/imac-s3-opengl-master-GLImac-Template-SDL2/Projet/WorldIMaker/glimac/src/tiny_obj_loader.h
+/Users/margaux/Desktop/IMAC/S3/Voldemort/WorldIMaker/glimac/src/tiny_obj_loader.h
 iostream
 -
 algorithm
 -
 
-/Users/victorinemaurel/IMAC/SYNTIMG/imac-s3-opengl-master-GLImac-Template-SDL2/Projet/WorldIMaker/glimac/src/Image.cpp
+/Users/margaux/Desktop/IMAC/S3/Voldemort/WorldIMaker/glimac/src/Image.cpp
 glimac/Image.hpp
-/Users/victorinemaurel/IMAC/SYNTIMG/imac-s3-opengl-master-GLImac-Template-SDL2/Projet/WorldIMaker/glimac/src/glimac/Image.hpp
+/Users/margaux/Desktop/IMAC/S3/Voldemort/WorldIMaker/glimac/src/glimac/Image.hpp
 stb_image.h
-/Users/victorinemaurel/IMAC/SYNTIMG/imac-s3-opengl-master-GLImac-Template-SDL2/Projet/WorldIMaker/glimac/src/stb_image.h
+/Users/margaux/Desktop/IMAC/S3/Voldemort/WorldIMaker/glimac/src/stb_image.h
 iostream
 -
 
-/Users/victorinemaurel/IMAC/SYNTIMG/imac-s3-opengl-master-GLImac-Template-SDL2/Projet/WorldIMaker/glimac/src/Imagev2.cpp
+/Users/margaux/Desktop/IMAC/S3/Voldemort/WorldIMaker/glimac/src/Imagev2.cpp
 glimac/Image.hpp
-/Users/victorinemaurel/IMAC/SYNTIMG/imac-s3-opengl-master-GLImac-Template-SDL2/Projet/WorldIMaker/glimac/src/glimac/Image.hpp
+/Users/margaux/Desktop/IMAC/S3/Voldemort/WorldIMaker/glimac/src/glimac/Image.hpp
 stb_image.h
-/Users/victorinemaurel/IMAC/SYNTIMG/imac-s3-opengl-master-GLImac-Template-SDL2/Projet/WorldIMaker/glimac/src/stb_image.h
+/Users/margaux/Desktop/IMAC/S3/Voldemort/WorldIMaker/glimac/src/stb_image.h
 iostream
 -
 
-/Users/victorinemaurel/IMAC/SYNTIMG/imac-s3-opengl-master-GLImac-Template-SDL2/Projet/WorldIMaker/glimac/src/Program.cpp
+/Users/margaux/Desktop/IMAC/S3/Voldemort/WorldIMaker/glimac/src/Program.cpp
 glimac/Program.hpp
-/Users/victorinemaurel/IMAC/SYNTIMG/imac-s3-opengl-master-GLImac-Template-SDL2/Projet/WorldIMaker/glimac/src/glimac/Program.hpp
+/Users/margaux/Desktop/IMAC/S3/Voldemort/WorldIMaker/glimac/src/glimac/Program.hpp
 stdexcept
 -
 
-/Users/victorinemaurel/IMAC/SYNTIMG/imac-s3-opengl-master-GLImac-Template-SDL2/Projet/WorldIMaker/glimac/src/SDLWindowManager.cpp
+/Users/margaux/Desktop/IMAC/S3/Voldemort/WorldIMaker/glimac/src/SDLWindowManager.cpp
 glimac/SDLWindowManager.hpp
-/Users/victorinemaurel/IMAC/SYNTIMG/imac-s3-opengl-master-GLImac-Template-SDL2/Projet/WorldIMaker/glimac/src/glimac/SDLWindowManager.hpp
+/Users/margaux/Desktop/IMAC/S3/Voldemort/WorldIMaker/glimac/src/glimac/SDLWindowManager.hpp
 iostream
 -
 OpenGL/gl.h
@@ -894,9 +894,9 @@ OpenGL/gl.h
 GL/gl.h
 -
 
-/Users/victorinemaurel/IMAC/SYNTIMG/imac-s3-opengl-master-GLImac-Template-SDL2/Projet/WorldIMaker/glimac/src/Shader.cpp
+/Users/margaux/Desktop/IMAC/S3/Voldemort/WorldIMaker/glimac/src/Shader.cpp
 glimac/Shader.hpp
-/Users/victorinemaurel/IMAC/SYNTIMG/imac-s3-opengl-master-GLImac-Template-SDL2/Projet/WorldIMaker/glimac/src/glimac/Shader.hpp
+/Users/margaux/Desktop/IMAC/S3/Voldemort/WorldIMaker/glimac/src/glimac/Shader.hpp
 fstream
 -
 stdexcept
@@ -906,7 +906,7 @@ string
 sstream
 -
 
-/Users/victorinemaurel/IMAC/SYNTIMG/imac-s3-opengl-master-GLImac-Template-SDL2/Projet/WorldIMaker/glimac/src/Sphere.cpp
+/Users/margaux/Desktop/IMAC/S3/Voldemort/WorldIMaker/glimac/src/Sphere.cpp
 cmath
 -
 vector
@@ -914,17 +914,17 @@ vector
 iostream
 -
 glimac/common.hpp
-/Users/victorinemaurel/IMAC/SYNTIMG/imac-s3-opengl-master-GLImac-Template-SDL2/Projet/WorldIMaker/glimac/src/glimac/common.hpp
+/Users/margaux/Desktop/IMAC/S3/Voldemort/WorldIMaker/glimac/src/glimac/common.hpp
 glimac/Sphere.hpp
-/Users/victorinemaurel/IMAC/SYNTIMG/imac-s3-opengl-master-GLImac-Template-SDL2/Projet/WorldIMaker/glimac/src/glimac/Sphere.hpp
+/Users/margaux/Desktop/IMAC/S3/Voldemort/WorldIMaker/glimac/src/glimac/Sphere.hpp
 
-/Users/victorinemaurel/IMAC/SYNTIMG/imac-s3-opengl-master-GLImac-Template-SDL2/Projet/WorldIMaker/glimac/src/TrackballCamera.cpp
+/Users/margaux/Desktop/IMAC/S3/Voldemort/WorldIMaker/glimac/src/TrackballCamera.cpp
 glimac/TrackballCamera.hpp
-/Users/victorinemaurel/IMAC/SYNTIMG/imac-s3-opengl-master-GLImac-Template-SDL2/Projet/WorldIMaker/glimac/src/glimac/TrackballCamera.hpp
+/Users/margaux/Desktop/IMAC/S3/Voldemort/WorldIMaker/glimac/src/glimac/TrackballCamera.hpp
 iostream
 -
 
-/Users/victorinemaurel/IMAC/SYNTIMG/imac-s3-opengl-master-GLImac-Template-SDL2/Projet/WorldIMaker/glimac/src/stb_image.h
+/Users/margaux/Desktop/IMAC/S3/Voldemort/WorldIMaker/glimac/src/stb_image.h
 stdio.h
 -
 math.h
@@ -946,7 +946,7 @@ stddef.h
 stdint.h
 -
 
-/Users/victorinemaurel/IMAC/SYNTIMG/imac-s3-opengl-master-GLImac-Template-SDL2/Projet/WorldIMaker/glimac/src/tiny_obj_loader.cpp
+/Users/margaux/Desktop/IMAC/S3/Voldemort/WorldIMaker/glimac/src/tiny_obj_loader.cpp
 cstdlib
 -
 cstring
@@ -964,9 +964,9 @@ fstream
 sstream
 -
 tiny_obj_loader.h
-/Users/victorinemaurel/IMAC/SYNTIMG/imac-s3-opengl-master-GLImac-Template-SDL2/Projet/WorldIMaker/glimac/src/tiny_obj_loader.h
+/Users/margaux/Desktop/IMAC/S3/Voldemort/WorldIMaker/glimac/src/tiny_obj_loader.h
 
-/Users/victorinemaurel/IMAC/SYNTIMG/imac-s3-opengl-master-GLImac-Template-SDL2/Projet/WorldIMaker/glimac/src/tiny_obj_loader.h
+/Users/margaux/Desktop/IMAC/S3/Voldemort/WorldIMaker/glimac/src/tiny_obj_loader.h
 string
 -
 vector

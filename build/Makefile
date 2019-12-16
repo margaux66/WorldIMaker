@@ -48,10 +48,10 @@ RM = /usr/local/Cellar/cmake/3.15.5/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/victorinemaurel/IMAC/SYNTIMG/imac-s3-opengl-master-GLImac-Template-SDL2/Projet/WorldIMaker
+CMAKE_SOURCE_DIR = /Users/margaux/Desktop/IMAC/S3/Voldemort/WorldIMaker
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/victorinemaurel/IMAC/SYNTIMG/imac-s3-opengl-master-GLImac-Template-SDL2/Projet/WorldIMaker/build
+CMAKE_BINARY_DIR = /Users/margaux/Desktop/IMAC/S3/Voldemort/WorldIMaker/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -80,9 +80,9 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/victorinemaurel/IMAC/SYNTIMG/imac-s3-opengl-master-GLImac-Template-SDL2/Projet/WorldIMaker/build/CMakeFiles /Users/victorinemaurel/IMAC/SYNTIMG/imac-s3-opengl-master-GLImac-Template-SDL2/Projet/WorldIMaker/build/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/margaux/Desktop/IMAC/S3/Voldemort/WorldIMaker/build/CMakeFiles /Users/margaux/Desktop/IMAC/S3/Voldemort/WorldIMaker/build/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/victorinemaurel/IMAC/SYNTIMG/imac-s3-opengl-master-GLImac-Template-SDL2/Projet/WorldIMaker/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/margaux/Desktop/IMAC/S3/Voldemort/WorldIMaker/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -123,6 +123,19 @@ glimac/fast:
 	$(MAKE) -f glimac/CMakeFiles/glimac.dir/build.make glimac/CMakeFiles/glimac.dir/build
 .PHONY : glimac/fast
 
+#=============================================================================
+# Target rules for targets named src_main
+
+# Build rule for target.
+src_main: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 src_main
+.PHONY : src_main
+
+# fast build rule for target.
+src_main/fast:
+	$(MAKE) -f src/CMakeFiles/src_main.dir/build.make src/CMakeFiles/src_main.dir/build
+.PHONY : src_main/fast
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -132,6 +145,7 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... glimac"
+	@echo "... src_main"
 .PHONY : help
 
 
