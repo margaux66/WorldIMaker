@@ -16,27 +16,26 @@ namespace glimac {
 	        glm::vec3(-0.5f,-0.5f,-0.5f)
 		};
 
-
-		
 		for (uint i = 0; i < temporary_vertices.size(); ++i)
 		{
-			ShapeVertex vertex;
+			glimac::ShapeVertex vertex;
 
 			vertex.texCoords.x = 0;
 			vertex.texCoords.y = 1;
 
-			vertex.normal = temporary_vertices[i];
+			vertex.normal.x = temporary_vertices[i].x;
+			vertex.normal.y = temporary_vertices[i].y;
+			vertex.normal.z = temporary_vertices[i].z;
 
 			vertex.position = vertex.normal;
-
 			vertices.push_back(vertex);
 		}
 
 		if(vertices.empty()){
-			std::cout<< "OULALA"<<std::endl;
+			std::cout<< "Vertices is empty"<<std::endl;
 		}
 		else{
-			std::cout << "cooooool" <<std::endl;
+			std::cout << "Vertices is full" <<std::endl;
 		}
 
 		//création du vbo
@@ -46,7 +45,7 @@ namespace glimac {
 		glBindBuffer(GL_ARRAY_BUFFER,vbo);
 
 		//on passe le tableau vertices dans le vbo
-		glBufferData(GL_ARRAY_BUFFER, vertices.size()*sizeof(ShapeVertex),vertices.data(),GL_STATIC_DRAW);
+		glBufferData(GL_ARRAY_BUFFER, vertices.size()*sizeof(glimac::ShapeVertex),vertices.data(),GL_STATIC_DRAW);
 
 		//débindage
 		glBindBuffer(GL_ARRAY_BUFFER,0);
@@ -69,9 +68,14 @@ namespace glimac {
 
 		//on passe le tableau d'indices dans l'ibo
 		glBufferData(GL_ELEMENT_ARRAY_BUFFER, indices.size()*sizeof(uint32_t),indices.data(),GL_STATIC_DRAW);
-
 		//on débinde ibo
 		glBindBuffer(GL_ELEMENT_ARRAY_BUFFER,0);
+
+		glGenVertexArrays(1,&vao);
+		glBindVertexArray(vao);
+
+		//binde ibo 
+		glBindBuffer(GL_ELEMENT_ARRAY_BUFFER,ibo);
 
 		//on active les différents attributs
         const GLuint VERTEX_ATTR_POSITION = 0;
@@ -86,12 +90,9 @@ namespace glimac {
         //on binde le vbo
         glBindBuffer(GL_ARRAY_BUFFER,vbo);
 
-
-        glBindBuffer(GL_ARRAY_BUFFER,this->vbo);
-
-        glVertexAttribPointer(VERTEX_ATTR_POSITION, 3, GL_FLOAT, GL_FALSE, sizeof(ShapeVertex), (const GLvoid*) offsetof(ShapeVertex, position));
-        glVertexAttribPointer(VERTEX_ATTR_NORMAL, 3, GL_FLOAT, GL_FALSE, sizeof(ShapeVertex), (const GLvoid*) offsetof(ShapeVertex, normal));
-        glVertexAttribPointer(VERTEX_ATTR_TEXTURE, 2, GL_FLOAT, GL_FALSE, sizeof(ShapeVertex), (const GLvoid*) offsetof(ShapeVertex, texCoords));
+        glVertexAttribPointer(VERTEX_ATTR_POSITION, 3, GL_FLOAT, GL_FALSE, sizeof(glimac::ShapeVertex), (const GLvoid*) offsetof(glimac::ShapeVertex, position));
+        glVertexAttribPointer(VERTEX_ATTR_NORMAL, 3, GL_FLOAT, GL_FALSE, sizeof(glimac::ShapeVertex), (const GLvoid*) offsetof(glimac::ShapeVertex, normal));
+        glVertexAttribPointer(VERTEX_ATTR_TEXTURE, 2, GL_FLOAT, GL_FALSE, sizeof(glimac::ShapeVertex), (const GLvoid*) offsetof(glimac::ShapeVertex, texCoords));
 
         //debind vbo
         glBindBuffer(GL_ARRAY_BUFFER,0);

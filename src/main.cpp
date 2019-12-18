@@ -17,6 +17,9 @@ int main(int argc, char const *argv[]){
         return EXIT_FAILURE;
     }
 
+    //Creation TrackballCamera
+    TrackballCamera camera = TrackballCamera();
+
     std::cout << "OpenGL Version : " << glGetString(GL_VERSION) << std::endl;
     std::cout << "GLEW Version : " << glewGetString(GLEW_VERSION) << std::endl;
 
@@ -27,9 +30,6 @@ int main(int argc, char const *argv[]){
     program.use();
 
     glimac::Cube cube;
-
-    //Creation TrackballCamera
-    TrackballCamera camera = TrackballCamera();
 
     GLint uMVPMatrix = glGetUniformLocation(program.getGLId(), "uMVPMatrix");
     GLint uMVMatrix = glGetUniformLocation(program.getGLId(), "uMVMatrix");
@@ -49,9 +49,9 @@ int main(int argc, char const *argv[]){
 
     glm::vec3 Kd = glm::vec3(glm::linearRand (0.0,1.0),glm::linearRand (0.0,1.0),glm::linearRand (0.0,1.0));
     glm::vec3 Ks = glm::vec3(glm::linearRand (0.0,1.0),glm::linearRand (0.0,1.0),glm::linearRand (0.0,1.0));
-    float Shininess = glm::linearRand (0.0,3.0);
+    float Shininess = 0.5;
     glm::vec3 LightDir= glm::vec3(1.0,1.0,1.0);
-    glm::vec3 LightIntensity = glm::vec3(0.5,0.5,0.5);
+    glm::vec3 LightIntensity = glm::vec3(0.,1.,0.);
 
     bool done = false;
     while(!done) {
@@ -64,13 +64,14 @@ int main(int argc, char const *argv[]){
             if(e.type == SDL_MOUSEMOTION && (e.motion.state & SDL_BUTTON_LEFT)){
                 camera.rotateUp(e.motion.yrel);
                 camera.rotateLeft(e.motion.xrel);
-                std::cout<< e.motion.yrel <<std::endl;                  
+                //std::cout<< e.motion.yrel <<std::endl;                  
             }
 
             
             if ( e.type == SDL_MOUSEWHEEL ) {
                 if (e.wheel.y > 0) {
                     camera.moveFront(0.1f);
+
                 }
                 else if (e.wheel.y < 0)  {
                     camera.moveFront(-0.1f);
@@ -83,7 +84,9 @@ int main(int argc, char const *argv[]){
          *********************************/
 
         //Clear the window
+        glClearColor(1,0,0,1);
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+
         MVMatrix = camera.getViewMatrix();
 
         glUniform3fv(uKd, 1, glm::value_ptr(Kd));
@@ -94,7 +97,24 @@ int main(int argc, char const *argv[]){
 
         glUniformMatrix4fv(uMVMatrix, 1, GL_FALSE, glm::value_ptr(MVMatrix));
         glUniformMatrix4fv(uNormalMatrix, 1, GL_FALSE, glm::value_ptr(glm::transpose(glm::inverse(MVMatrix))));
+        //glm::mat4 mvp = ProjMatrix * MVMatrix;
         glUniformMatrix4fv(uMVPMatrix, 1, GL_FALSE, glm::value_ptr(ProjMatrix * MVMatrix));
+
+        cube.display();
+
+        MVMatrix = camera.getViewMatrix();
+        
+        glUniform3fv(uKd, 1, glm::value_ptr(Kd));
+        glUniform3fv(uKs, 1, glm::value_ptr(Ks));
+        glUniform1f(uShininess, Shininess);
+        glUniform3fv(uLightDir_vs, 1, glm::value_ptr(glm::mat3(camera.getViewMatrix())*LightDir));
+        glUniform3fv(uLightIntensity, 1, glm::value_ptr(LightIntensity));
+
+        glm::mat4 cube2MVMatrix = glm::translate(MVMatrix, glm::vec3(1,0,0));
+
+        glUniformMatrix4fv(uMVMatrix, 1, GL_FALSE, glm::value_ptr(cube2MVMatrix));
+        glUniformMatrix4fv(uNormalMatrix, 1, GL_FALSE, glm::value_ptr(glm::transpose(glm::inverse(cube2MVMatrix))));
+        glUniformMatrix4fv(uMVPMatrix, 1, GL_FALSE, glm::value_ptr( ProjMatrix * cube2MVMatrix));
 
         cube.display();
 

@@ -4,9 +4,9 @@
 using namespace glimac;
 
 TrackballCamera::TrackballCamera(){
-    m_fDistance=5;
-    m_fAngleX=0;
-    m_fAngleY=0;
+    m_fDistance=-10;
+    m_fAngleX= -3;
+    m_fAngleY=-3;
 };
 
 void TrackballCamera::moveFront(float delta){
