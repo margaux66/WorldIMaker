@@ -15,7 +15,7 @@ namespace glimac {
 			GLuint m_vao;
 			GLuint m_vbo;
 			GLuint m_ibo;
-			glm::vec3 m_color;
+			glm::vec4 m_color;
 			bool m_isVisible;
 			bool m_isSelected;
 
@@ -24,7 +24,9 @@ namespace glimac {
 			void display();
 			//Cube select();
 			//void remove();
-			void setColor(glm::vec3 color);
+			inline void setIsVisible(bool visibility){m_isVisible = visibility;};
+			inline void setIsSelected(bool selected){m_isSelected = selected;};
+			void setColor(glm::vec4 color);
 			void bonsoir();
 
 	};

@@ -6,7 +6,7 @@ namespace glimac {
 		m_isVisible = false;
 		m_isSelected = false;
 
-		m_color = glm::vec3(0.,1.,0.);
+		m_color = glm::vec4(0.,1.,0.,1);
 
 		//coordonnées des sommets
 		std::vector<glm::vec3> temporary_vertices = {
@@ -106,7 +106,7 @@ namespace glimac {
         glVertexAttribPointer(VERTEX_ATTR_POSITION, 3, GL_FLOAT, GL_FALSE, sizeof(glimac::ShapeVertex), (const GLvoid*) offsetof(glimac::ShapeVertex, position));
         glVertexAttribPointer(VERTEX_ATTR_NORMAL, 3, GL_FLOAT, GL_FALSE, sizeof(glimac::ShapeVertex), (const GLvoid*) offsetof(glimac::ShapeVertex, normal));
         glVertexAttribPointer(VERTEX_ATTR_TEXTURE, 2, GL_FLOAT, GL_FALSE, sizeof(glimac::ShapeVertex), (const GLvoid*) offsetof(glimac::ShapeVertex, texCoords));
-        glVertexAttribPointer(VERTEX_ATTR_COLOR, 3, GL_FLOAT, GL_FALSE, sizeof(glimac::ShapeVertex), (const GLvoid*)offsetof(glimac::ShapeVertex, color));
+        glVertexAttribPointer(VERTEX_ATTR_COLOR, 4, GL_FLOAT, GL_FALSE, sizeof(glimac::ShapeVertex), (const GLvoid*)offsetof(glimac::ShapeVertex, color));
         //debind vbo
         glBindBuffer(GL_ARRAY_BUFFER,0);
 
@@ -115,19 +115,45 @@ namespace glimac {
 
 	}
 
+/*	void Cube::display(){
+		if(m_isVisible == true){
+			if(m_isSelected == true){
+				setColor(glm::vec4(1,1,0,1));
+				glBindVertexArray(m_vao);
+				glDrawElements(GL_TRIANGLES,36,GL_UNSIGNED_INT,0);
+	        	glBindVertexArray(0);
+			}
+			else{
+				setColor(glm::vec4(0,1,0,1));
+				glBindVertexArray(m_vao);
+				glDrawElements(GL_TRIANGLES,36,GL_UNSIGNED_INT,0);
+	        	glBindVertexArray(0);
+			}
+			
+		}
+		else{
+			setColor(glm::vec4(0,0,0,0));
+			glBindVertexArray(m_vao);
+			glDrawElements(GL_TRIANGLES,36,GL_UNSIGNED_INT,0);
+	        glBindVertexArray(0);
+		}
+
+		
+	}*/
+
 	void Cube::display(){
-		m_isVisible = true;
+		//setColor(glm::vec4(0,1,0,1));
 		glBindVertexArray(m_vao);
 		glDrawElements(GL_TRIANGLES,36,GL_UNSIGNED_INT,0);
-        glBindVertexArray(0);
+	    glBindVertexArray(0);
 	}
 
 
-	void Cube::setColor(glm::vec3 color){
+	void Cube::setColor(glm::vec4 color){
 		for (uint i = 0; i < m_vertices.size(); ++i)
 		{
 			m_vertices[i].color = color;
-			std::cout << m_vertices[i].color << std::endl;
+			//std::cout << m_vertices[i].color << std::endl;
 		}
 
 		glGenBuffers(1,&m_vbo);
@@ -166,13 +192,12 @@ namespace glimac {
         glVertexAttribPointer(VERTEX_ATTR_POSITION, 3, GL_FLOAT, GL_FALSE, sizeof(glimac::ShapeVertex), (const GLvoid*) offsetof(glimac::ShapeVertex, position));
         glVertexAttribPointer(VERTEX_ATTR_NORMAL, 3, GL_FLOAT, GL_FALSE, sizeof(glimac::ShapeVertex), (const GLvoid*) offsetof(glimac::ShapeVertex, normal));
         glVertexAttribPointer(VERTEX_ATTR_TEXTURE, 2, GL_FLOAT, GL_FALSE, sizeof(glimac::ShapeVertex), (const GLvoid*) offsetof(glimac::ShapeVertex, texCoords));
-        glVertexAttribPointer(VERTEX_ATTR_COLOR, 3, GL_FLOAT, GL_FALSE, sizeof(glimac::ShapeVertex), (const GLvoid*)offsetof(glimac::ShapeVertex, color));
+        glVertexAttribPointer(VERTEX_ATTR_COLOR, 4, GL_FLOAT, GL_FALSE, sizeof(glimac::ShapeVertex), (const GLvoid*)offsetof(glimac::ShapeVertex, color));
         //debind vbo
         glBindBuffer(GL_ARRAY_BUFFER,0);
 
         //debinder this->vao
         glBindVertexArray(0);
-		//m_color = color;
 	}
 
 	void Cube::bonsoir(){

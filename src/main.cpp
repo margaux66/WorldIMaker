@@ -30,6 +30,18 @@ int main(int argc, char const *argv[]){
     program.use();
 
     glimac::Cube cube;
+    glimac::Cube cube2;
+    glimac::Cube cube3;
+    glimac::Cube cube4;
+
+
+
+
+    std::vector<glimac::Cube> allCube;
+    allCube.push_back(cube);
+    allCube.push_back(cube2);
+    allCube.push_back(cube3);
+    allCube.push_back(cube4);
 
     GLint uMVPMatrix = glGetUniformLocation(program.getGLId(), "uMVPMatrix");
     GLint uMVMatrix = glGetUniformLocation(program.getGLId(), "uMVMatrix");
@@ -42,6 +54,8 @@ int main(int argc, char const *argv[]){
 
     // GPU checks depth
     glEnable(GL_DEPTH_TEST);
+    glEnable(GL_BLEND);
+    glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
 
     glm::mat4 ProjMatrix = glm::perspective(glm::radians(70.f),800.f/600.f,0.1f, 100.f);
 
@@ -67,6 +81,19 @@ int main(int argc, char const *argv[]){
                 //std::cout<< e.motion.yrel <<std::endl;                  
             }
 
+            if(e.type == SDL_KEYDOWN){
+                switch(e.key.keysym.sym){
+                    case SDLK_q :
+                        camera.rotateLeft(-10);
+                    case SDLK_d :
+                        camera.rotateLeft(+10);
+                    case SDLK_s :
+                        camera.rotateUp(-10);
+                    case SDLK_z :
+                        camera.rotateUp(10);
+
+                }
+            }
             
             if ( e.type == SDL_MOUSEWHEEL ) {
                 if (e.wheel.y > 0) {
@@ -87,7 +114,7 @@ int main(int argc, char const *argv[]){
         glClearColor(1,0,0,1);
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
-        MVMatrix = camera.getViewMatrix();
+/*        MVMatrix = camera.getViewMatrix();
 
         glUniform3fv(uKd, 1, glm::value_ptr(Kd));
         glUniform3fv(uKs, 1, glm::value_ptr(Ks));
@@ -100,36 +127,81 @@ int main(int argc, char const *argv[]){
         //glm::mat4 mvp = ProjMatrix * MVMatrix;
         glUniformMatrix4fv(uMVPMatrix, 1, GL_FALSE, glm::value_ptr(ProjMatrix * MVMatrix));
 
-        cube.display();
-        cube.setColor(glm::vec3(0,1,1));
+        
+        cube.display();*/
 
-        for (int i = 0; i < 3; ++i)
-        {
-            for (int j = 0; j < 3; ++j)
-            {
-                for (int k = 0; k < 3; ++k)
-                {
-                    MVMatrix = camera.getViewMatrix();
+
+        MVMatrix = camera.getViewMatrix();
+        glm::mat4 cube2MVMatrix = glm::translate(MVMatrix, glm::vec3(1,1,1));
+        glUniformMatrix4fv(uMVMatrix, 1, GL_FALSE, glm::value_ptr(cube2MVMatrix));
+        glUniformMatrix4fv(uNormalMatrix, 1, GL_FALSE, glm::value_ptr(glm::transpose(glm::inverse(cube2MVMatrix))));
+        glUniformMatrix4fv(uMVPMatrix, 1, GL_FALSE, glm::value_ptr( ProjMatrix * cube2MVMatrix));
+        allCube[0].setColor(glm::vec4(1,1,0,1));
+        allCube[0].display();
+
+        MVMatrix = camera.getViewMatrix();
+        cube2MVMatrix = glm::translate(MVMatrix, glm::vec3(2,1,1));
+        glUniformMatrix4fv(uMVMatrix, 1, GL_FALSE, glm::value_ptr(cube2MVMatrix));
+        glUniformMatrix4fv(uNormalMatrix, 1, GL_FALSE, glm::value_ptr(glm::transpose(glm::inverse(cube2MVMatrix))));
+        glUniformMatrix4fv(uMVPMatrix, 1, GL_FALSE, glm::value_ptr( ProjMatrix * cube2MVMatrix));
+        allCube[1].setColor(glm::vec4(0,1,0,1));
+        allCube[1].display();
+
+        MVMatrix = camera.getViewMatrix();
+        cube2MVMatrix = glm::translate(MVMatrix, glm::vec3(2,2,1));
+        glUniformMatrix4fv(uMVMatrix, 1, GL_FALSE, glm::value_ptr(cube2MVMatrix));
+        glUniformMatrix4fv(uNormalMatrix, 1, GL_FALSE, glm::value_ptr(glm::transpose(glm::inverse(cube2MVMatrix))));
+        glUniformMatrix4fv(uMVPMatrix, 1, GL_FALSE, glm::value_ptr( ProjMatrix * cube2MVMatrix));
+        allCube[2].setColor(glm::vec4(0,0,1,1));
+        allCube[2].display();
+
+        MVMatrix = camera.getViewMatrix();
+        cube2MVMatrix = glm::translate(MVMatrix, glm::vec3(1,2,1));
+        glUniformMatrix4fv(uMVMatrix, 1, GL_FALSE, glm::value_ptr(cube2MVMatrix));
+        glUniformMatrix4fv(uNormalMatrix, 1, GL_FALSE, glm::value_ptr(glm::transpose(glm::inverse(cube2MVMatrix))));
+        glUniformMatrix4fv(uMVPMatrix, 1, GL_FALSE, glm::value_ptr( ProjMatrix * cube2MVMatrix));
+        allCube[3].setColor(glm::vec4(0,1,1,1));
+        allCube[3].display();
+
+
+        //allCube[1*+1*1].setColor(glm::vec4(0,1,0,1));
+
+        
+        //cube.setColor(glm::vec4(0,0,1,0.3));
+
+        // for (int i = 0; i < 3; ++i)
+        // {
+        //     for (int j = 0; j < 3; ++j)
+        //     {
+        //         for (int k = 0; k < 3; ++k)
+        //         {
+        //             /*if (k%2 == 0){
+        //                 cube.setIsVisible(false);
+        //             }
+        //             else{
+        //                 cube.setIsVisible(true);
+        //             }*/
+        //             MVMatrix = camera.getViewMatrix();
             
-                    glUniform3fv(uKd, 1, glm::value_ptr(Kd));
-                    glUniform3fv(uKs, 1, glm::value_ptr(Ks));
-                    glUniform1f(uShininess, Shininess);
-                    glUniform3fv(uLightDir_vs, 1, glm::value_ptr(glm::mat3(camera.getViewMatrix())*LightDir));
-                    glUniform3fv(uLightIntensity, 1, glm::value_ptr(LightIntensity));
+        //             glUniform3fv(uKd, 1, glm::value_ptr(Kd));
+        //             glUniform3fv(uKs, 1, glm::value_ptr(Ks));
+        //             glUniform1f(uShininess, Shininess);
+        //             glUniform3fv(uLightDir_vs, 1, glm::value_ptr(glm::mat3(camera.getViewMatrix())*LightDir));
+        //             glUniform3fv(uLightIntensity, 1, glm::value_ptr(LightIntensity));
 
-                    glm::mat4 cube2MVMatrix = glm::translate(MVMatrix, glm::vec3(i,j,k));
+        //             glm::mat4 cube2MVMatrix = glm::translate(MVMatrix, glm::vec3(i,j,k));
 
-                    glUniformMatrix4fv(uMVMatrix, 1, GL_FALSE, glm::value_ptr(cube2MVMatrix));
-                    glUniformMatrix4fv(uNormalMatrix, 1, GL_FALSE, glm::value_ptr(glm::transpose(glm::inverse(cube2MVMatrix))));
-                    glUniformMatrix4fv(uMVPMatrix, 1, GL_FALSE, glm::value_ptr( ProjMatrix * cube2MVMatrix));
+        //             glUniformMatrix4fv(uMVMatrix, 1, GL_FALSE, glm::value_ptr(cube2MVMatrix));
+        //             glUniformMatrix4fv(uNormalMatrix, 1, GL_FALSE, glm::value_ptr(glm::transpose(glm::inverse(cube2MVMatrix))));
+        //             glUniformMatrix4fv(uMVPMatrix, 1, GL_FALSE, glm::value_ptr( ProjMatrix * cube2MVMatrix));
 
-                    cube.display();
-                }
-                /* code */
-            }
-            /* code */
+        //             cube.display();
+        //         }
+        //         /* code */
+        //     }
+        //     /* code */
 
-        }
+        // }
 
         windowManager.swapBuffers();
 

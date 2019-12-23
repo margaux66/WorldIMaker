@@ -3,9 +3,9 @@
 in vec3 vPosition_vs; 
 in vec3 vNormal_vs; 
 in vec2 vTexCoords;
-in vec3 vColor;
+in vec4 vColor;
 
-out vec3 fFragColor;
+out vec4 fFragColor;
 
 //uniform sampler2D uTexture;
 
