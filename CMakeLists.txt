@@ -53,6 +53,7 @@ add_subdirectory(lib/glimac)
 # Add the third-party library
 #add_subdirectory(lib/third-party)
 
+add_subdirectory(doc)
 
 # file(GLOB_RECURSE HEADER_FILES src/include/*) # get all headers
 file(GLOB_RECURSE SRC_FILES src/*.cpp) # get all sources files

@@ -51,7 +51,7 @@ int main(int argc, char const *argv[]){
     glm::vec3 Ks = glm::vec3(glm::linearRand (0.0,1.0),glm::linearRand (0.0,1.0),glm::linearRand (0.0,1.0));
     float Shininess = 0.5;
     glm::vec3 LightDir= glm::vec3(1.0,1.0,1.0);
-    glm::vec3 LightIntensity = glm::vec3(0.,1.,0.);
+    glm::vec3 LightIntensity = glm::vec3(1.,1.,1.);
 
     bool done = false;
     while(!done) {
@@ -101,22 +101,35 @@ int main(int argc, char const *argv[]){
         glUniformMatrix4fv(uMVPMatrix, 1, GL_FALSE, glm::value_ptr(ProjMatrix * MVMatrix));
 
         cube.display();
+        cube.setColor(glm::vec3(0,1,1));
 
-        MVMatrix = camera.getViewMatrix();
-        
-        glUniform3fv(uKd, 1, glm::value_ptr(Kd));
-        glUniform3fv(uKs, 1, glm::value_ptr(Ks));
-        glUniform1f(uShininess, Shininess);
-        glUniform3fv(uLightDir_vs, 1, glm::value_ptr(glm::mat3(camera.getViewMatrix())*LightDir));
-        glUniform3fv(uLightIntensity, 1, glm::value_ptr(LightIntensity));
+        for (int i = 0; i < 3; ++i)
+        {
+            for (int j = 0; j < 3; ++j)
+            {
+                for (int k = 0; k < 3; ++k)
+                {
+                    MVMatrix = camera.getViewMatrix();
+            
+                    glUniform3fv(uKd, 1, glm::value_ptr(Kd));
+                    glUniform3fv(uKs, 1, glm::value_ptr(Ks));
+                    glUniform1f(uShininess, Shininess);
+                    glUniform3fv(uLightDir_vs, 1, glm::value_ptr(glm::mat3(camera.getViewMatrix())*LightDir));
+                    glUniform3fv(uLightIntensity, 1, glm::value_ptr(LightIntensity));
 
-        glm::mat4 cube2MVMatrix = glm::translate(MVMatrix, glm::vec3(1,0,0));
+                    glm::mat4 cube2MVMatrix = glm::translate(MVMatrix, glm::vec3(i,j,k));
 
-        glUniformMatrix4fv(uMVMatrix, 1, GL_FALSE, glm::value_ptr(cube2MVMatrix));
-        glUniformMatrix4fv(uNormalMatrix, 1, GL_FALSE, glm::value_ptr(glm::transpose(glm::inverse(cube2MVMatrix))));
-        glUniformMatrix4fv(uMVPMatrix, 1, GL_FALSE, glm::value_ptr( ProjMatrix * cube2MVMatrix));
+                    glUniformMatrix4fv(uMVMatrix, 1, GL_FALSE, glm::value_ptr(cube2MVMatrix));
+                    glUniformMatrix4fv(uNormalMatrix, 1, GL_FALSE, glm::value_ptr(glm::transpose(glm::inverse(cube2MVMatrix))));
+                    glUniformMatrix4fv(uMVPMatrix, 1, GL_FALSE, glm::value_ptr( ProjMatrix * cube2MVMatrix));
 
-        cube.display();
+                    cube.display();
+                }
+                /* code */
+            }
+            /* code */
+
+        }
 
         windowManager.swapBuffers();
 

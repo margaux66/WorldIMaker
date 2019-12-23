@@ -3,6 +3,11 @@
 namespace glimac {
 	Cube::Cube(){
 
+		m_isVisible = false;
+		m_isSelected = false;
+
+		m_color = glm::vec3(0.,1.,0.);
+
 		//coordonnées des sommets
 		std::vector<glm::vec3> temporary_vertices = {
 			glm::vec3(0.5f,0.5f,0.5f),
@@ -28,10 +33,15 @@ namespace glimac {
 			vertex.normal.z = temporary_vertices[i].z;
 
 			vertex.position = vertex.normal;
-			vertices.push_back(vertex);
+
+			vertex.color = m_color;
+
+			m_vertices.push_back(vertex);
 		}
 
-		if(vertices.empty()){
+		std::cout << m_vertices[1].color << std::endl;
+
+		if(m_vertices.empty()){
 			std::cout<< "Vertices is empty"<<std::endl;
 		}
 		else{
@@ -39,22 +49,22 @@ namespace glimac {
 		}
 
 		//création du vbo
-		glGenBuffers(1,&vbo);
+		glGenBuffers(1,&m_vbo);
 
 		//Binding du vbo 
-		glBindBuffer(GL_ARRAY_BUFFER,vbo);
+		glBindBuffer(GL_ARRAY_BUFFER,m_vbo);
 
 		//on passe le tableau vertices dans le vbo
-		glBufferData(GL_ARRAY_BUFFER, vertices.size()*sizeof(glimac::ShapeVertex),vertices.data(),GL_STATIC_DRAW);
+		glBufferData(GL_ARRAY_BUFFER, m_vertices.size()*sizeof(glimac::ShapeVertex),m_vertices.data(),GL_STATIC_DRAW);
 
 		//débindage
 		glBindBuffer(GL_ARRAY_BUFFER,0);
 
 		//création de l'ibo
-		glGenBuffers(1,&ibo);
+		glGenBuffers(1,&m_ibo);
 
 		//bindage de ibo
-		glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, ibo);
+		glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, m_ibo);
 
 		//tableau d'indices 
 		std::vector<uint32_t> indices ={
@@ -71,11 +81,11 @@ namespace glimac {
 		//on débinde ibo
 		glBindBuffer(GL_ELEMENT_ARRAY_BUFFER,0);
 
-		glGenVertexArrays(1,&vao);
-		glBindVertexArray(vao);
+		glGenVertexArrays(1,&m_vao);
+		glBindVertexArray(m_vao);
 
 		//binde ibo 
-		glBindBuffer(GL_ELEMENT_ARRAY_BUFFER,ibo);
+		glBindBuffer(GL_ELEMENT_ARRAY_BUFFER,m_ibo);
 
 		//on active les différents attributs
         const GLuint VERTEX_ATTR_POSITION = 0;
@@ -87,13 +97,16 @@ namespace glimac {
         const GLuint VERTEX_ATTR_TEXTURE = 2;
         glEnableVertexAttribArray(VERTEX_ATTR_TEXTURE);
 
+        const GLuint VERTEX_ATTR_COLOR = 3;
+        glEnableVertexAttribArray(VERTEX_ATTR_COLOR);
+
         //on binde le vbo
-        glBindBuffer(GL_ARRAY_BUFFER,vbo);
+        glBindBuffer(GL_ARRAY_BUFFER,m_vbo);
 
         glVertexAttribPointer(VERTEX_ATTR_POSITION, 3, GL_FLOAT, GL_FALSE, sizeof(glimac::ShapeVertex), (const GLvoid*) offsetof(glimac::ShapeVertex, position));
         glVertexAttribPointer(VERTEX_ATTR_NORMAL, 3, GL_FLOAT, GL_FALSE, sizeof(glimac::ShapeVertex), (const GLvoid*) offsetof(glimac::ShapeVertex, normal));
         glVertexAttribPointer(VERTEX_ATTR_TEXTURE, 2, GL_FLOAT, GL_FALSE, sizeof(glimac::ShapeVertex), (const GLvoid*) offsetof(glimac::ShapeVertex, texCoords));
-
+        glVertexAttribPointer(VERTEX_ATTR_COLOR, 3, GL_FLOAT, GL_FALSE, sizeof(glimac::ShapeVertex), (const GLvoid*)offsetof(glimac::ShapeVertex, color));
         //debind vbo
         glBindBuffer(GL_ARRAY_BUFFER,0);
 
@@ -103,14 +116,63 @@ namespace glimac {
 	}
 
 	void Cube::display(){
-		glBindVertexArray(vao);
+		m_isVisible = true;
+		glBindVertexArray(m_vao);
 		glDrawElements(GL_TRIANGLES,36,GL_UNSIGNED_INT,0);
         glBindVertexArray(0);
 	}
 
 
-	void Cube::setColor(glm::mat3 color){
-		m_color = color;
+	void Cube::setColor(glm::vec3 color){
+		for (uint i = 0; i < m_vertices.size(); ++i)
+		{
+			m_vertices[i].color = color;
+			std::cout << m_vertices[i].color << std::endl;
+		}
+
+		glGenBuffers(1,&m_vbo);
+
+		//Binding du vbo 
+		glBindBuffer(GL_ARRAY_BUFFER,m_vbo);
+
+		//on passe le tableau vertices dans le vbo
+		glBufferData(GL_ARRAY_BUFFER, m_vertices.size()*sizeof(glimac::ShapeVertex),m_vertices.data(),GL_STATIC_DRAW);
+
+		//débindage
+		glBindBuffer(GL_ARRAY_BUFFER,0);
+
+		glGenVertexArrays(1,&m_vao);
+		glBindVertexArray(m_vao);
+
+		//binde ibo 
+		glBindBuffer(GL_ELEMENT_ARRAY_BUFFER,m_ibo);
+
+		//on active les différents attributs
+        const GLuint VERTEX_ATTR_POSITION = 0;
+        glEnableVertexAttribArray(VERTEX_ATTR_POSITION);
+
+        const GLuint VERTEX_ATTR_NORMAL = 1;
+        glEnableVertexAttribArray(VERTEX_ATTR_NORMAL);
+
+        const GLuint VERTEX_ATTR_TEXTURE = 2;
+        glEnableVertexAttribArray(VERTEX_ATTR_TEXTURE);
+
+        const GLuint VERTEX_ATTR_COLOR = 3;
+        glEnableVertexAttribArray(VERTEX_ATTR_COLOR);
+
+        //on binde le vbo
+        glBindBuffer(GL_ARRAY_BUFFER,m_vbo);
+
+        glVertexAttribPointer(VERTEX_ATTR_POSITION, 3, GL_FLOAT, GL_FALSE, sizeof(glimac::ShapeVertex), (const GLvoid*) offsetof(glimac::ShapeVertex, position));
+        glVertexAttribPointer(VERTEX_ATTR_NORMAL, 3, GL_FLOAT, GL_FALSE, sizeof(glimac::ShapeVertex), (const GLvoid*) offsetof(glimac::ShapeVertex, normal));
+        glVertexAttribPointer(VERTEX_ATTR_TEXTURE, 2, GL_FLOAT, GL_FALSE, sizeof(glimac::ShapeVertex), (const GLvoid*) offsetof(glimac::ShapeVertex, texCoords));
+        glVertexAttribPointer(VERTEX_ATTR_COLOR, 3, GL_FLOAT, GL_FALSE, sizeof(glimac::ShapeVertex), (const GLvoid*)offsetof(glimac::ShapeVertex, color));
+        //debind vbo
+        glBindBuffer(GL_ARRAY_BUFFER,0);
+
+        //debinder this->vao
+        glBindVertexArray(0);
+		//m_color = color;
 	}
 
 	void Cube::bonsoir(){

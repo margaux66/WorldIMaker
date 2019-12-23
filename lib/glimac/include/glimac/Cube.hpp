@@ -11,18 +11,20 @@
 namespace glimac {
 	class Cube {
 		private :
-			std::vector<glimac::ShapeVertex> vertices;
-			GLuint vao;
-			GLuint vbo;
-			GLuint ibo;
-			glm::mat3 m_color;
+			std::vector<glimac::ShapeVertex> m_vertices;
+			GLuint m_vao;
+			GLuint m_vbo;
+			GLuint m_ibo;
+			glm::vec3 m_color;
+			bool m_isVisible;
+			bool m_isSelected;
 
 		public :
 			Cube();
 			void display();
 			//Cube select();
 			//void remove();
-			void setColor(glm::mat3 color);
+			void setColor(glm::vec3 color);
 			void bonsoir();
 
 	};
