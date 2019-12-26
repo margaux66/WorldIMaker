@@ -22,4 +22,5 @@ mkdir build
 cd build
 cmake ../WorldIMaker
 make
-./bin/worldIMaker```
+./bin/worldIMaker
+```
