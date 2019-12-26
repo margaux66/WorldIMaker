@@ -18,16 +18,27 @@ namespace glimac {
 			glm::vec4 m_color;
 			bool m_isVisible;
 			bool m_isSelected;
+			glm::vec3 m_postion;
 
 		public :
 			Cube();
 			void display();
 			//Cube select();
 			//void remove();
-			inline void setIsVisible(bool visibility){m_isVisible = visibility;};
-			inline void setIsSelected(bool selected){m_isSelected = selected;};
+
 			void setColor(glm::vec4 color);
 			void bonsoir();
+
+			//setter
+			inline void setIsVisible(bool visibility){m_isVisible = visibility;};
+			inline void setIsSelected(bool selected){m_isSelected = selected;};
+			inline void setPosition(glm::vec3 position){m_postion = position;};
+
+			//getter
+			inline glm::vec3 getPosition(){return m_postion;};
+			inline bool getIsSelected(){return m_isSelected;};
+			inline glm::vec3 getIsVisible(){return m_isVisible;};
+
 
 	};
 }
