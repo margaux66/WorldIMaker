@@ -1,6 +1,6 @@
 # WorldIMaker
 
-WordlIMaker est un éditeur de cube en 3D, réalisé en C++, en utilisant OpenGL 3 et la SDL 2. 
+WorldIMaker est un éditeur de cube en 3D, réalisé en C++, en utilisant OpenGL 3 et la SDL 2. 
 
 ## Pour lancer le programme
 

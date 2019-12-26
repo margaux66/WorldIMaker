@@ -10,7 +10,7 @@
 
 namespace glimac {
 	class Cube {
-		private :
+		protected:
 			std::vector<glimac::ShapeVertex> m_vertices;
 			GLuint m_vao;
 			GLuint m_vbo;
@@ -18,26 +18,27 @@ namespace glimac {
 			glm::vec4 m_color;
 			bool m_isVisible;
 			bool m_isSelected;
-			glm::vec3 m_postion;
+			glm::vec3 m_position;
 
 		public :
-			Cube();
+			Cube(glm::vec3 position,glm::vec4 color);
+			~Cube()= default;
+			void create();
 			void display();
 			//Cube select();
 			//void remove();
 
 			void setColor(glm::vec4 color);
-			void bonsoir();
 
 			//setter
 			inline void setIsVisible(bool visibility){m_isVisible = visibility;};
 			inline void setIsSelected(bool selected){m_isSelected = selected;};
-			inline void setPosition(glm::vec3 position){m_postion = position;};
+			inline void setPosition(glm::vec3 position){m_position = position;};
 
 			//getter
-			inline glm::vec3 getPosition(){return m_postion;};
+			inline glm::vec3 getPosition(){return m_position;};
 			inline bool getIsSelected(){return m_isSelected;};
-			inline glm::vec3 getIsVisible(){return m_isVisible;};
+			inline bool getIsVisible(){return m_isVisible;};
 
 
 	};

@@ -1,12 +1,18 @@
 #include <glimac/Cube.hpp>
 
 namespace glimac {
-	Cube::Cube(){
 
-		m_isVisible = false;
-		m_isSelected = false;
+	//tableau d'indices 
+	std::vector<uint32_t> indices ={
+			0,1,2,    0,2,3, //front
+	        0,5,4,    0,4,3, //right
+	        5,6,1,    5,1,0, //top
+	        1,2,7,    1,7,6, //left
+	        4,7,2,    4,2,3, //bottom
+	        5,6,7,    5,7,4 //back
+	};
 
-		m_color = glm::vec4(0.,1.,0.,1);
+	Cube::Cube(glm::vec3 position,glm::vec4 color): m_isVisible(false), m_isSelected(false), m_color(color), m_position(position){
 
 		//coordonnées des sommets
 		std::vector<glm::vec3> temporary_vertices = {
@@ -66,15 +72,7 @@ namespace glimac {
 		//bindage de ibo
 		glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, m_ibo);
 
-		//tableau d'indices 
-		std::vector<uint32_t> indices ={
-			0,1,2,    0,2,3, //front
-	        0,5,4,    0,4,3, //right
-	        5,6,1,    5,1,0, //top
-	        1,2,7,    1,7,6, //left
-	        4,7,2,    4,2,3, //bottom
-	        5,6,7,    5,7,4 //back
-		};
+
 
 		//on passe le tableau d'indices dans l'ibo
 		glBufferData(GL_ELEMENT_ARRAY_BUFFER, indices.size()*sizeof(uint32_t),indices.data(),GL_STATIC_DRAW);
@@ -115,20 +113,12 @@ namespace glimac {
 
 	}
 
-/*	void Cube::display(){
+	void Cube::display(){
 		if(m_isVisible == true){
-			if(m_isSelected == true){
-				setColor(glm::vec4(1,1,0,1));
-				glBindVertexArray(m_vao);
-				glDrawElements(GL_TRIANGLES,36,GL_UNSIGNED_INT,0);
-	        	glBindVertexArray(0);
-			}
-			else{
-				setColor(glm::vec4(0,1,0,1));
-				glBindVertexArray(m_vao);
-				glDrawElements(GL_TRIANGLES,36,GL_UNSIGNED_INT,0);
-	        	glBindVertexArray(0);
-			}
+			setColor(glm::vec4(0,1,0,1));
+			glBindVertexArray(m_vao);
+			glDrawElements(GL_TRIANGLES,36,GL_UNSIGNED_INT,0);
+        	glBindVertexArray(0);
 			
 		}
 		else{
@@ -139,14 +129,14 @@ namespace glimac {
 		}
 
 		
-	}*/
+	}
 
-	void Cube::display(){
+/*	void Cube::display(){
 		//setColor(glm::vec4(0,1,0,1));
 		glBindVertexArray(m_vao);
 		glDrawElements(GL_TRIANGLES,36,GL_UNSIGNED_INT,0);
 	    glBindVertexArray(0);
-	}
+	}*/
 
 
 	void Cube::setColor(glm::vec4 color){
@@ -200,9 +190,6 @@ namespace glimac {
         glBindVertexArray(0);
 	}
 
-	void Cube::bonsoir(){
-		std::cout << "BONSOIR" << std::endl;
-	}
 
 
 }

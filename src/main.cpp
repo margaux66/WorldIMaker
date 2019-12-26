@@ -5,6 +5,7 @@
 #include <glimac/FilePath.hpp>
 #include <glimac/TrackballCamera.hpp>
 #include <glimac/Cube.hpp>
+#include <glimac/Cursor.hpp>
 
 int main(int argc, char const *argv[]){
      // Initialize SDL and open a window
@@ -29,19 +30,21 @@ int main(int argc, char const *argv[]){
                                         applicationPath.dirPath() + "../assets/shaders/directionallight.fs.glsl");
     program.use();
 
-    glimac::Cube cube;
-    glimac::Cube cube2;
-    glimac::Cube cube3;
-    glimac::Cube cube4;
-
-
-
-
+    
+    glimac::Cursor cursor(glm::vec3(1,1,1),glm::vec4(0,0,1,1));
+    glm::vec4 color = glm::vec4(0,1,0,1);
     std::vector<glimac::Cube> allCube;
-    allCube.push_back(cube);
-    allCube.push_back(cube2);
-    allCube.push_back(cube3);
-    allCube.push_back(cube4);
+
+    for(uint i = 0; i<10; i++){
+        for (int j = 0; j < 10; ++j){
+            for (int k = 0; k < 10; ++k){
+
+                allCube.push_back(glimac::Cube(glm::vec3(i,j,k),color));
+
+            }
+        }
+    }
+    
 
     GLint uMVPMatrix = glGetUniformLocation(program.getGLId(), "uMVPMatrix");
     GLint uMVMatrix = glGetUniformLocation(program.getGLId(), "uMVMatrix");
@@ -85,12 +88,68 @@ int main(int argc, char const *argv[]){
                 switch(e.key.keysym.sym){
                     case SDLK_q :
                         camera.rotateLeft(-10);
+                        break;
                     case SDLK_d :
                         camera.rotateLeft(+10);
+                        break;
                     case SDLK_s :
                         camera.rotateUp(-10);
+                        break;
                     case SDLK_z :
                         camera.rotateUp(10);
+                        break;
+
+                    case SDLK_RIGHT :
+                        cursor.setPosition(glm::vec3(cursor.getPosition().x +1, cursor.getPosition().y, cursor.getPosition().z));
+                        break;
+                    case SDLK_LEFT :
+                        cursor.setPosition(glm::vec3(cursor.getPosition().x -1, cursor.getPosition().y, cursor.getPosition().z));
+                        break;
+                    case SDLK_UP:
+                        cursor.setPosition(glm::vec3(cursor.getPosition().x, cursor.getPosition().y+1, cursor.getPosition().z));
+                        break;
+                    case SDLK_DOWN:
+                        cursor.setPosition(glm::vec3(cursor.getPosition().x, cursor.getPosition().y-1, cursor.getPosition().z));
+                        break;
+
+                    case SDLK_w:
+                        cursor.setPosition(glm::vec3(cursor.getPosition().x, cursor.getPosition().y, cursor.getPosition().z+1));
+                        break;  
+                    case SDLK_x:
+                        cursor.setPosition(glm::vec3(cursor.getPosition().x, cursor.getPosition().y, cursor.getPosition().z-1));
+                        break;
+                    case SDLK_r :
+                        for (int i = 0; i < allCube.size(); ++i)
+                        {
+                            if(cursor.getPosition() == allCube[i].getPosition()){
+                                if(allCube[i].getIsVisible()==false){
+                                    allCube[i].setIsVisible(true);
+                                }
+                                else{
+                                   allCube[i].setIsVisible(false); 
+                                }
+                            }
+
+                        }
+                        break;  
+/*                     case SDLK_t :
+                        for (uint i = 0; i < allCube.size(); ++i)
+                        {
+                            if(cursor.getPosition() == allCube[i].getPosition()){
+                            	
+                            	while(allCube[j].getIsVisible()==true){
+                            		j++;
+                            	}
+                            	allCube[j+1].setIsVisible(true);
+                                
+                            }
+
+                        }
+
+                     	break;*/
+
+
+
 
                 }
             }
@@ -130,16 +189,53 @@ int main(int argc, char const *argv[]){
         
         cube.display();*/
 
+        for (int i = 0; i < allCube.size(); ++i)
+        {
+            MVMatrix = camera.getViewMatrix();
+            glm::mat4 cube2MVMatrix = glm::translate(MVMatrix, allCube[i].getPosition());
+            glUniformMatrix4fv(uMVMatrix, 1, GL_FALSE, glm::value_ptr(cube2MVMatrix));
+            glUniformMatrix4fv(uNormalMatrix, 1, GL_FALSE, glm::value_ptr(glm::transpose(glm::inverse(cube2MVMatrix))));
+            glUniformMatrix4fv(uMVPMatrix, 1, GL_FALSE, glm::value_ptr( ProjMatrix * cube2MVMatrix));
+            //allCube[0].setColor(glm::vec4(1,1,0,1));
+            allCube[i].display();
+            
+        }
 
-        MVMatrix = camera.getViewMatrix();
-        glm::mat4 cube2MVMatrix = glm::translate(MVMatrix, glm::vec3(1,1,1));
+		/*MVMatrix = camera.getViewMatrix();
+		glm::mat4 cubesMVMatrix = glm::translate(MVMatrix, allCube[1].getPosition());
+        glUniformMatrix4fv(uMVMatrix, 1, GL_FALSE, glm::value_ptr(cubesMVMatrix));
+        glUniformMatrix4fv(uNormalMatrix, 1, GL_FALSE, glm::value_ptr(glm::transpose(glm::inverse(cubesMVMatrix))));
+	    glUniformMatrix4fv(uMVPMatrix, 1, GL_FALSE, glm::value_ptr( ProjMatrix * cubesMVMatrix));
+	            //allCube[0].setColor(glm::vec4(1,1,0,1));
+	    allCube[1].setIsVisible(true);
+	    allCube[1].display();*/
+
+        /*MVMatrix = camera.getViewMatrix();
+        glm::mat4 cube2MVMatrix = glm::translate(MVMatrix, cube.getPosition());
         glUniformMatrix4fv(uMVMatrix, 1, GL_FALSE, glm::value_ptr(cube2MVMatrix));
         glUniformMatrix4fv(uNormalMatrix, 1, GL_FALSE, glm::value_ptr(glm::transpose(glm::inverse(cube2MVMatrix))));
         glUniformMatrix4fv(uMVPMatrix, 1, GL_FALSE, glm::value_ptr( ProjMatrix * cube2MVMatrix));
-        allCube[0].setColor(glm::vec4(1,1,0,1));
+        //allCube[0].setColor(glm::vec4(1,1,0,1));
         allCube[0].display();
 
         MVMatrix = camera.getViewMatrix();
+        cube2MVMatrix = glm::translate(MVMatrix, cube2.getPosition());
+        glUniformMatrix4fv(uMVMatrix, 1, GL_FALSE, glm::value_ptr(cube2MVMatrix));
+        glUniformMatrix4fv(uNormalMatrix, 1, GL_FALSE, glm::value_ptr(glm::transpose(glm::inverse(cube2MVMatrix))));
+        glUniformMatrix4fv(uMVPMatrix, 1, GL_FALSE, glm::value_ptr( ProjMatrix * cube2MVMatrix));
+        //allCube[1].setColor(glm::vec4(1,1,0,1));
+        allCube[1].display();*/
+
+
+
+        MVMatrix = camera.getViewMatrix();
+        glm::mat4 cube2MVMatrix = glm::translate(MVMatrix, cursor.getPosition());
+        glUniformMatrix4fv(uMVMatrix, 1, GL_FALSE, glm::value_ptr(cube2MVMatrix));
+        glUniformMatrix4fv(uNormalMatrix, 1, GL_FALSE, glm::value_ptr(glm::transpose(glm::inverse(cube2MVMatrix))));
+        glUniformMatrix4fv(uMVPMatrix, 1, GL_FALSE, glm::value_ptr( ProjMatrix * cube2MVMatrix));
+        cursor.display();
+
+        /*MVMatrix = camera.getViewMatrix();
         cube2MVMatrix = glm::translate(MVMatrix, glm::vec3(2,1,1));
         glUniformMatrix4fv(uMVMatrix, 1, GL_FALSE, glm::value_ptr(cube2MVMatrix));
         glUniformMatrix4fv(uNormalMatrix, 1, GL_FALSE, glm::value_ptr(glm::transpose(glm::inverse(cube2MVMatrix))));
@@ -161,7 +257,7 @@ int main(int argc, char const *argv[]){
         glUniformMatrix4fv(uNormalMatrix, 1, GL_FALSE, glm::value_ptr(glm::transpose(glm::inverse(cube2MVMatrix))));
         glUniformMatrix4fv(uMVPMatrix, 1, GL_FALSE, glm::value_ptr( ProjMatrix * cube2MVMatrix));
         allCube[3].setColor(glm::vec4(0,1,1,1));
-        allCube[3].display();
+        allCube[3].display();*/
 
 
         //allCube[1*+1*1].setColor(glm::vec4(0,1,0,1));
