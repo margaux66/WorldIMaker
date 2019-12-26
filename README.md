@@ -17,8 +17,9 @@ Plusieurs librairies et programmes doivent être installées sur votre machine a
 
 Télécharger le dossier du projet, dans le même répertoire faites les étapes suivantes : 
 
-**mkdir build
+```bash
+mkdir build
 cd build
 cmake ../WorldIMaker
-make 
-./bin/worldIMaker**
+make
+./bin/worldIMaker```
