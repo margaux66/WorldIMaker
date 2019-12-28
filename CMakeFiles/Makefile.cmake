@@ -66,5 +66,5 @@ set(CMAKE_MAKEFILE_PRODUCTS
 set(CMAKE_DEPEND_INFO_FILES
   "CMakeFiles/worldIMaker.dir/DependInfo.cmake"
   "lib/glimac/CMakeFiles/glimac.dir/DependInfo.cmake"
-  "doc/CMakeFiles/html.dir/DependInfo.cmake"
+  "doc/CMakeFiles/doc.dir/DependInfo.cmake"
   )

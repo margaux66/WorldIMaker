@@ -43,10 +43,10 @@ RM = /usr/local/Cellar/cmake/3.15.5/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/victorinemaurel/IMAC/SYNTIMG/imac-s3-opengl-master-GLImac-Template-SDL2/Projet/WorldIMaker
+CMAKE_SOURCE_DIR = /Users/margaux/Desktop/IMAC/S3/Voldemort/WorldIMaker/WorldIMaker
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/victorinemaurel/IMAC/SYNTIMG/imac-s3-opengl-master-GLImac-Template-SDL2/Projet/WorldIMaker
+CMAKE_BINARY_DIR = /Users/margaux/Desktop/IMAC/S3/Voldemort/WorldIMaker/WorldIMaker
 
 # Include any dependencies generated for this target.
 include lib/glimac/CMakeFiles/glimac.dir/depend.make
@@ -59,159 +59,159 @@ include lib/glimac/CMakeFiles/glimac.dir/flags.make
 
 lib/glimac/CMakeFiles/glimac.dir/src/Cone.cpp.o: lib/glimac/CMakeFiles/glimac.dir/flags.make
 lib/glimac/CMakeFiles/glimac.dir/src/Cone.cpp.o: lib/glimac/src/Cone.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/victorinemaurel/IMAC/SYNTIMG/imac-s3-opengl-master-GLImac-Template-SDL2/Projet/WorldIMaker/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object lib/glimac/CMakeFiles/glimac.dir/src/Cone.cpp.o"
-	cd /Users/victorinemaurel/IMAC/SYNTIMG/imac-s3-opengl-master-GLImac-Template-SDL2/Projet/WorldIMaker/lib/glimac && /Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/glimac.dir/src/Cone.cpp.o -c /Users/victorinemaurel/IMAC/SYNTIMG/imac-s3-opengl-master-GLImac-Template-SDL2/Projet/WorldIMaker/lib/glimac/src/Cone.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/margaux/Desktop/IMAC/S3/Voldemort/WorldIMaker/WorldIMaker/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object lib/glimac/CMakeFiles/glimac.dir/src/Cone.cpp.o"
+	cd /Users/margaux/Desktop/IMAC/S3/Voldemort/WorldIMaker/WorldIMaker/lib/glimac && /Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/glimac.dir/src/Cone.cpp.o -c /Users/margaux/Desktop/IMAC/S3/Voldemort/WorldIMaker/WorldIMaker/lib/glimac/src/Cone.cpp
 
 lib/glimac/CMakeFiles/glimac.dir/src/Cone.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/glimac.dir/src/Cone.cpp.i"
-	cd /Users/victorinemaurel/IMAC/SYNTIMG/imac-s3-opengl-master-GLImac-Template-SDL2/Projet/WorldIMaker/lib/glimac && /Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/victorinemaurel/IMAC/SYNTIMG/imac-s3-opengl-master-GLImac-Template-SDL2/Projet/WorldIMaker/lib/glimac/src/Cone.cpp > CMakeFiles/glimac.dir/src/Cone.cpp.i
+	cd /Users/margaux/Desktop/IMAC/S3/Voldemort/WorldIMaker/WorldIMaker/lib/glimac && /Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/margaux/Desktop/IMAC/S3/Voldemort/WorldIMaker/WorldIMaker/lib/glimac/src/Cone.cpp > CMakeFiles/glimac.dir/src/Cone.cpp.i
 
 lib/glimac/CMakeFiles/glimac.dir/src/Cone.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/glimac.dir/src/Cone.cpp.s"
-	cd /Users/victorinemaurel/IMAC/SYNTIMG/imac-s3-opengl-master-GLImac-Template-SDL2/Projet/WorldIMaker/lib/glimac && /Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/victorinemaurel/IMAC/SYNTIMG/imac-s3-opengl-master-GLImac-Template-SDL2/Projet/WorldIMaker/lib/glimac/src/Cone.cpp -o CMakeFiles/glimac.dir/src/Cone.cpp.s
+	cd /Users/margaux/Desktop/IMAC/S3/Voldemort/WorldIMaker/WorldIMaker/lib/glimac && /Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/margaux/Desktop/IMAC/S3/Voldemort/WorldIMaker/WorldIMaker/lib/glimac/src/Cone.cpp -o CMakeFiles/glimac.dir/src/Cone.cpp.s
 
 lib/glimac/CMakeFiles/glimac.dir/src/Cube.cpp.o: lib/glimac/CMakeFiles/glimac.dir/flags.make
 lib/glimac/CMakeFiles/glimac.dir/src/Cube.cpp.o: lib/glimac/src/Cube.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/victorinemaurel/IMAC/SYNTIMG/imac-s3-opengl-master-GLImac-Template-SDL2/Projet/WorldIMaker/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object lib/glimac/CMakeFiles/glimac.dir/src/Cube.cpp.o"
-	cd /Users/victorinemaurel/IMAC/SYNTIMG/imac-s3-opengl-master-GLImac-Template-SDL2/Projet/WorldIMaker/lib/glimac && /Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/glimac.dir/src/Cube.cpp.o -c /Users/victorinemaurel/IMAC/SYNTIMG/imac-s3-opengl-master-GLImac-Template-SDL2/Projet/WorldIMaker/lib/glimac/src/Cube.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/margaux/Desktop/IMAC/S3/Voldemort/WorldIMaker/WorldIMaker/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object lib/glimac/CMakeFiles/glimac.dir/src/Cube.cpp.o"
+	cd /Users/margaux/Desktop/IMAC/S3/Voldemort/WorldIMaker/WorldIMaker/lib/glimac && /Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/glimac.dir/src/Cube.cpp.o -c /Users/margaux/Desktop/IMAC/S3/Voldemort/WorldIMaker/WorldIMaker/lib/glimac/src/Cube.cpp
 
 lib/glimac/CMakeFiles/glimac.dir/src/Cube.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/glimac.dir/src/Cube.cpp.i"
-	cd /Users/victorinemaurel/IMAC/SYNTIMG/imac-s3-opengl-master-GLImac-Template-SDL2/Projet/WorldIMaker/lib/glimac && /Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/victorinemaurel/IMAC/SYNTIMG/imac-s3-opengl-master-GLImac-Template-SDL2/Projet/WorldIMaker/lib/glimac/src/Cube.cpp > CMakeFiles/glimac.dir/src/Cube.cpp.i
+	cd /Users/margaux/Desktop/IMAC/S3/Voldemort/WorldIMaker/WorldIMaker/lib/glimac && /Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/margaux/Desktop/IMAC/S3/Voldemort/WorldIMaker/WorldIMaker/lib/glimac/src/Cube.cpp > CMakeFiles/glimac.dir/src/Cube.cpp.i
 
 lib/glimac/CMakeFiles/glimac.dir/src/Cube.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/glimac.dir/src/Cube.cpp.s"
-	cd /Users/victorinemaurel/IMAC/SYNTIMG/imac-s3-opengl-master-GLImac-Template-SDL2/Projet/WorldIMaker/lib/glimac && /Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/victorinemaurel/IMAC/SYNTIMG/imac-s3-opengl-master-GLImac-Template-SDL2/Projet/WorldIMaker/lib/glimac/src/Cube.cpp -o CMakeFiles/glimac.dir/src/Cube.cpp.s
+	cd /Users/margaux/Desktop/IMAC/S3/Voldemort/WorldIMaker/WorldIMaker/lib/glimac && /Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/margaux/Desktop/IMAC/S3/Voldemort/WorldIMaker/WorldIMaker/lib/glimac/src/Cube.cpp -o CMakeFiles/glimac.dir/src/Cube.cpp.s
 
 lib/glimac/CMakeFiles/glimac.dir/src/Cursor.cpp.o: lib/glimac/CMakeFiles/glimac.dir/flags.make
 lib/glimac/CMakeFiles/glimac.dir/src/Cursor.cpp.o: lib/glimac/src/Cursor.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/victorinemaurel/IMAC/SYNTIMG/imac-s3-opengl-master-GLImac-Template-SDL2/Projet/WorldIMaker/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object lib/glimac/CMakeFiles/glimac.dir/src/Cursor.cpp.o"
-	cd /Users/victorinemaurel/IMAC/SYNTIMG/imac-s3-opengl-master-GLImac-Template-SDL2/Projet/WorldIMaker/lib/glimac && /Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/glimac.dir/src/Cursor.cpp.o -c /Users/victorinemaurel/IMAC/SYNTIMG/imac-s3-opengl-master-GLImac-Template-SDL2/Projet/WorldIMaker/lib/glimac/src/Cursor.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/margaux/Desktop/IMAC/S3/Voldemort/WorldIMaker/WorldIMaker/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object lib/glimac/CMakeFiles/glimac.dir/src/Cursor.cpp.o"
+	cd /Users/margaux/Desktop/IMAC/S3/Voldemort/WorldIMaker/WorldIMaker/lib/glimac && /Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/glimac.dir/src/Cursor.cpp.o -c /Users/margaux/Desktop/IMAC/S3/Voldemort/WorldIMaker/WorldIMaker/lib/glimac/src/Cursor.cpp
 
 lib/glimac/CMakeFiles/glimac.dir/src/Cursor.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/glimac.dir/src/Cursor.cpp.i"
-	cd /Users/victorinemaurel/IMAC/SYNTIMG/imac-s3-opengl-master-GLImac-Template-SDL2/Projet/WorldIMaker/lib/glimac && /Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/victorinemaurel/IMAC/SYNTIMG/imac-s3-opengl-master-GLImac-Template-SDL2/Projet/WorldIMaker/lib/glimac/src/Cursor.cpp > CMakeFiles/glimac.dir/src/Cursor.cpp.i
+	cd /Users/margaux/Desktop/IMAC/S3/Voldemort/WorldIMaker/WorldIMaker/lib/glimac && /Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/margaux/Desktop/IMAC/S3/Voldemort/WorldIMaker/WorldIMaker/lib/glimac/src/Cursor.cpp > CMakeFiles/glimac.dir/src/Cursor.cpp.i
 
 lib/glimac/CMakeFiles/glimac.dir/src/Cursor.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/glimac.dir/src/Cursor.cpp.s"
-	cd /Users/victorinemaurel/IMAC/SYNTIMG/imac-s3-opengl-master-GLImac-Template-SDL2/Projet/WorldIMaker/lib/glimac && /Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/victorinemaurel/IMAC/SYNTIMG/imac-s3-opengl-master-GLImac-Template-SDL2/Projet/WorldIMaker/lib/glimac/src/Cursor.cpp -o CMakeFiles/glimac.dir/src/Cursor.cpp.s
+	cd /Users/margaux/Desktop/IMAC/S3/Voldemort/WorldIMaker/WorldIMaker/lib/glimac && /Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/margaux/Desktop/IMAC/S3/Voldemort/WorldIMaker/WorldIMaker/lib/glimac/src/Cursor.cpp -o CMakeFiles/glimac.dir/src/Cursor.cpp.s
 
 lib/glimac/CMakeFiles/glimac.dir/src/Geometry.cpp.o: lib/glimac/CMakeFiles/glimac.dir/flags.make
 lib/glimac/CMakeFiles/glimac.dir/src/Geometry.cpp.o: lib/glimac/src/Geometry.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/victorinemaurel/IMAC/SYNTIMG/imac-s3-opengl-master-GLImac-Template-SDL2/Projet/WorldIMaker/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object lib/glimac/CMakeFiles/glimac.dir/src/Geometry.cpp.o"
-	cd /Users/victorinemaurel/IMAC/SYNTIMG/imac-s3-opengl-master-GLImac-Template-SDL2/Projet/WorldIMaker/lib/glimac && /Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/glimac.dir/src/Geometry.cpp.o -c /Users/victorinemaurel/IMAC/SYNTIMG/imac-s3-opengl-master-GLImac-Template-SDL2/Projet/WorldIMaker/lib/glimac/src/Geometry.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/margaux/Desktop/IMAC/S3/Voldemort/WorldIMaker/WorldIMaker/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object lib/glimac/CMakeFiles/glimac.dir/src/Geometry.cpp.o"
+	cd /Users/margaux/Desktop/IMAC/S3/Voldemort/WorldIMaker/WorldIMaker/lib/glimac && /Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/glimac.dir/src/Geometry.cpp.o -c /Users/margaux/Desktop/IMAC/S3/Voldemort/WorldIMaker/WorldIMaker/lib/glimac/src/Geometry.cpp
 
 lib/glimac/CMakeFiles/glimac.dir/src/Geometry.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/glimac.dir/src/Geometry.cpp.i"
-	cd /Users/victorinemaurel/IMAC/SYNTIMG/imac-s3-opengl-master-GLImac-Template-SDL2/Projet/WorldIMaker/lib/glimac && /Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/victorinemaurel/IMAC/SYNTIMG/imac-s3-opengl-master-GLImac-Template-SDL2/Projet/WorldIMaker/lib/glimac/src/Geometry.cpp > CMakeFiles/glimac.dir/src/Geometry.cpp.i
+	cd /Users/margaux/Desktop/IMAC/S3/Voldemort/WorldIMaker/WorldIMaker/lib/glimac && /Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/margaux/Desktop/IMAC/S3/Voldemort/WorldIMaker/WorldIMaker/lib/glimac/src/Geometry.cpp > CMakeFiles/glimac.dir/src/Geometry.cpp.i
 
 lib/glimac/CMakeFiles/glimac.dir/src/Geometry.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/glimac.dir/src/Geometry.cpp.s"
-	cd /Users/victorinemaurel/IMAC/SYNTIMG/imac-s3-opengl-master-GLImac-Template-SDL2/Projet/WorldIMaker/lib/glimac && /Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/victorinemaurel/IMAC/SYNTIMG/imac-s3-opengl-master-GLImac-Template-SDL2/Projet/WorldIMaker/lib/glimac/src/Geometry.cpp -o CMakeFiles/glimac.dir/src/Geometry.cpp.s
+	cd /Users/margaux/Desktop/IMAC/S3/Voldemort/WorldIMaker/WorldIMaker/lib/glimac && /Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/margaux/Desktop/IMAC/S3/Voldemort/WorldIMaker/WorldIMaker/lib/glimac/src/Geometry.cpp -o CMakeFiles/glimac.dir/src/Geometry.cpp.s
 
 lib/glimac/CMakeFiles/glimac.dir/src/Image.cpp.o: lib/glimac/CMakeFiles/glimac.dir/flags.make
 lib/glimac/CMakeFiles/glimac.dir/src/Image.cpp.o: lib/glimac/src/Image.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/victorinemaurel/IMAC/SYNTIMG/imac-s3-opengl-master-GLImac-Template-SDL2/Projet/WorldIMaker/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object lib/glimac/CMakeFiles/glimac.dir/src/Image.cpp.o"
-	cd /Users/victorinemaurel/IMAC/SYNTIMG/imac-s3-opengl-master-GLImac-Template-SDL2/Projet/WorldIMaker/lib/glimac && /Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/glimac.dir/src/Image.cpp.o -c /Users/victorinemaurel/IMAC/SYNTIMG/imac-s3-opengl-master-GLImac-Template-SDL2/Projet/WorldIMaker/lib/glimac/src/Image.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/margaux/Desktop/IMAC/S3/Voldemort/WorldIMaker/WorldIMaker/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object lib/glimac/CMakeFiles/glimac.dir/src/Image.cpp.o"
+	cd /Users/margaux/Desktop/IMAC/S3/Voldemort/WorldIMaker/WorldIMaker/lib/glimac && /Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/glimac.dir/src/Image.cpp.o -c /Users/margaux/Desktop/IMAC/S3/Voldemort/WorldIMaker/WorldIMaker/lib/glimac/src/Image.cpp
 
 lib/glimac/CMakeFiles/glimac.dir/src/Image.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/glimac.dir/src/Image.cpp.i"
-	cd /Users/victorinemaurel/IMAC/SYNTIMG/imac-s3-opengl-master-GLImac-Template-SDL2/Projet/WorldIMaker/lib/glimac && /Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/victorinemaurel/IMAC/SYNTIMG/imac-s3-opengl-master-GLImac-Template-SDL2/Projet/WorldIMaker/lib/glimac/src/Image.cpp > CMakeFiles/glimac.dir/src/Image.cpp.i
+	cd /Users/margaux/Desktop/IMAC/S3/Voldemort/WorldIMaker/WorldIMaker/lib/glimac && /Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/margaux/Desktop/IMAC/S3/Voldemort/WorldIMaker/WorldIMaker/lib/glimac/src/Image.cpp > CMakeFiles/glimac.dir/src/Image.cpp.i
 
 lib/glimac/CMakeFiles/glimac.dir/src/Image.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/glimac.dir/src/Image.cpp.s"
-	cd /Users/victorinemaurel/IMAC/SYNTIMG/imac-s3-opengl-master-GLImac-Template-SDL2/Projet/WorldIMaker/lib/glimac && /Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/victorinemaurel/IMAC/SYNTIMG/imac-s3-opengl-master-GLImac-Template-SDL2/Projet/WorldIMaker/lib/glimac/src/Image.cpp -o CMakeFiles/glimac.dir/src/Image.cpp.s
+	cd /Users/margaux/Desktop/IMAC/S3/Voldemort/WorldIMaker/WorldIMaker/lib/glimac && /Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/margaux/Desktop/IMAC/S3/Voldemort/WorldIMaker/WorldIMaker/lib/glimac/src/Image.cpp -o CMakeFiles/glimac.dir/src/Image.cpp.s
 
 lib/glimac/CMakeFiles/glimac.dir/src/Imagev2.cpp.o: lib/glimac/CMakeFiles/glimac.dir/flags.make
 lib/glimac/CMakeFiles/glimac.dir/src/Imagev2.cpp.o: lib/glimac/src/Imagev2.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/victorinemaurel/IMAC/SYNTIMG/imac-s3-opengl-master-GLImac-Template-SDL2/Projet/WorldIMaker/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object lib/glimac/CMakeFiles/glimac.dir/src/Imagev2.cpp.o"
-	cd /Users/victorinemaurel/IMAC/SYNTIMG/imac-s3-opengl-master-GLImac-Template-SDL2/Projet/WorldIMaker/lib/glimac && /Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/glimac.dir/src/Imagev2.cpp.o -c /Users/victorinemaurel/IMAC/SYNTIMG/imac-s3-opengl-master-GLImac-Template-SDL2/Projet/WorldIMaker/lib/glimac/src/Imagev2.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/margaux/Desktop/IMAC/S3/Voldemort/WorldIMaker/WorldIMaker/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object lib/glimac/CMakeFiles/glimac.dir/src/Imagev2.cpp.o"
+	cd /Users/margaux/Desktop/IMAC/S3/Voldemort/WorldIMaker/WorldIMaker/lib/glimac && /Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/glimac.dir/src/Imagev2.cpp.o -c /Users/margaux/Desktop/IMAC/S3/Voldemort/WorldIMaker/WorldIMaker/lib/glimac/src/Imagev2.cpp
 
 lib/glimac/CMakeFiles/glimac.dir/src/Imagev2.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/glimac.dir/src/Imagev2.cpp.i"
-	cd /Users/victorinemaurel/IMAC/SYNTIMG/imac-s3-opengl-master-GLImac-Template-SDL2/Projet/WorldIMaker/lib/glimac && /Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/victorinemaurel/IMAC/SYNTIMG/imac-s3-opengl-master-GLImac-Template-SDL2/Projet/WorldIMaker/lib/glimac/src/Imagev2.cpp > CMakeFiles/glimac.dir/src/Imagev2.cpp.i
+	cd /Users/margaux/Desktop/IMAC/S3/Voldemort/WorldIMaker/WorldIMaker/lib/glimac && /Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/margaux/Desktop/IMAC/S3/Voldemort/WorldIMaker/WorldIMaker/lib/glimac/src/Imagev2.cpp > CMakeFiles/glimac.dir/src/Imagev2.cpp.i
 
 lib/glimac/CMakeFiles/glimac.dir/src/Imagev2.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/glimac.dir/src/Imagev2.cpp.s"
-	cd /Users/victorinemaurel/IMAC/SYNTIMG/imac-s3-opengl-master-GLImac-Template-SDL2/Projet/WorldIMaker/lib/glimac && /Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/victorinemaurel/IMAC/SYNTIMG/imac-s3-opengl-master-GLImac-Template-SDL2/Projet/WorldIMaker/lib/glimac/src/Imagev2.cpp -o CMakeFiles/glimac.dir/src/Imagev2.cpp.s
+	cd /Users/margaux/Desktop/IMAC/S3/Voldemort/WorldIMaker/WorldIMaker/lib/glimac && /Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/margaux/Desktop/IMAC/S3/Voldemort/WorldIMaker/WorldIMaker/lib/glimac/src/Imagev2.cpp -o CMakeFiles/glimac.dir/src/Imagev2.cpp.s
 
 lib/glimac/CMakeFiles/glimac.dir/src/Program.cpp.o: lib/glimac/CMakeFiles/glimac.dir/flags.make
 lib/glimac/CMakeFiles/glimac.dir/src/Program.cpp.o: lib/glimac/src/Program.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/victorinemaurel/IMAC/SYNTIMG/imac-s3-opengl-master-GLImac-Template-SDL2/Projet/WorldIMaker/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object lib/glimac/CMakeFiles/glimac.dir/src/Program.cpp.o"
-	cd /Users/victorinemaurel/IMAC/SYNTIMG/imac-s3-opengl-master-GLImac-Template-SDL2/Projet/WorldIMaker/lib/glimac && /Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/glimac.dir/src/Program.cpp.o -c /Users/victorinemaurel/IMAC/SYNTIMG/imac-s3-opengl-master-GLImac-Template-SDL2/Projet/WorldIMaker/lib/glimac/src/Program.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/margaux/Desktop/IMAC/S3/Voldemort/WorldIMaker/WorldIMaker/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object lib/glimac/CMakeFiles/glimac.dir/src/Program.cpp.o"
+	cd /Users/margaux/Desktop/IMAC/S3/Voldemort/WorldIMaker/WorldIMaker/lib/glimac && /Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/glimac.dir/src/Program.cpp.o -c /Users/margaux/Desktop/IMAC/S3/Voldemort/WorldIMaker/WorldIMaker/lib/glimac/src/Program.cpp
 
 lib/glimac/CMakeFiles/glimac.dir/src/Program.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/glimac.dir/src/Program.cpp.i"
-	cd /Users/victorinemaurel/IMAC/SYNTIMG/imac-s3-opengl-master-GLImac-Template-SDL2/Projet/WorldIMaker/lib/glimac && /Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/victorinemaurel/IMAC/SYNTIMG/imac-s3-opengl-master-GLImac-Template-SDL2/Projet/WorldIMaker/lib/glimac/src/Program.cpp > CMakeFiles/glimac.dir/src/Program.cpp.i
+	cd /Users/margaux/Desktop/IMAC/S3/Voldemort/WorldIMaker/WorldIMaker/lib/glimac && /Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/margaux/Desktop/IMAC/S3/Voldemort/WorldIMaker/WorldIMaker/lib/glimac/src/Program.cpp > CMakeFiles/glimac.dir/src/Program.cpp.i
 
 lib/glimac/CMakeFiles/glimac.dir/src/Program.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/glimac.dir/src/Program.cpp.s"
-	cd /Users/victorinemaurel/IMAC/SYNTIMG/imac-s3-opengl-master-GLImac-Template-SDL2/Projet/WorldIMaker/lib/glimac && /Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/victorinemaurel/IMAC/SYNTIMG/imac-s3-opengl-master-GLImac-Template-SDL2/Projet/WorldIMaker/lib/glimac/src/Program.cpp -o CMakeFiles/glimac.dir/src/Program.cpp.s
+	cd /Users/margaux/Desktop/IMAC/S3/Voldemort/WorldIMaker/WorldIMaker/lib/glimac && /Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/margaux/Desktop/IMAC/S3/Voldemort/WorldIMaker/WorldIMaker/lib/glimac/src/Program.cpp -o CMakeFiles/glimac.dir/src/Program.cpp.s
 
 lib/glimac/CMakeFiles/glimac.dir/src/SDLWindowManager.cpp.o: lib/glimac/CMakeFiles/glimac.dir/flags.make
 lib/glimac/CMakeFiles/glimac.dir/src/SDLWindowManager.cpp.o: lib/glimac/src/SDLWindowManager.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/victorinemaurel/IMAC/SYNTIMG/imac-s3-opengl-master-GLImac-Template-SDL2/Projet/WorldIMaker/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object lib/glimac/CMakeFiles/glimac.dir/src/SDLWindowManager.cpp.o"
-	cd /Users/victorinemaurel/IMAC/SYNTIMG/imac-s3-opengl-master-GLImac-Template-SDL2/Projet/WorldIMaker/lib/glimac && /Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/glimac.dir/src/SDLWindowManager.cpp.o -c /Users/victorinemaurel/IMAC/SYNTIMG/imac-s3-opengl-master-GLImac-Template-SDL2/Projet/WorldIMaker/lib/glimac/src/SDLWindowManager.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/margaux/Desktop/IMAC/S3/Voldemort/WorldIMaker/WorldIMaker/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object lib/glimac/CMakeFiles/glimac.dir/src/SDLWindowManager.cpp.o"
+	cd /Users/margaux/Desktop/IMAC/S3/Voldemort/WorldIMaker/WorldIMaker/lib/glimac && /Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/glimac.dir/src/SDLWindowManager.cpp.o -c /Users/margaux/Desktop/IMAC/S3/Voldemort/WorldIMaker/WorldIMaker/lib/glimac/src/SDLWindowManager.cpp
 
 lib/glimac/CMakeFiles/glimac.dir/src/SDLWindowManager.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/glimac.dir/src/SDLWindowManager.cpp.i"
-	cd /Users/victorinemaurel/IMAC/SYNTIMG/imac-s3-opengl-master-GLImac-Template-SDL2/Projet/WorldIMaker/lib/glimac && /Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/victorinemaurel/IMAC/SYNTIMG/imac-s3-opengl-master-GLImac-Template-SDL2/Projet/WorldIMaker/lib/glimac/src/SDLWindowManager.cpp > CMakeFiles/glimac.dir/src/SDLWindowManager.cpp.i
+	cd /Users/margaux/Desktop/IMAC/S3/Voldemort/WorldIMaker/WorldIMaker/lib/glimac && /Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/margaux/Desktop/IMAC/S3/Voldemort/WorldIMaker/WorldIMaker/lib/glimac/src/SDLWindowManager.cpp > CMakeFiles/glimac.dir/src/SDLWindowManager.cpp.i
 
 lib/glimac/CMakeFiles/glimac.dir/src/SDLWindowManager.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/glimac.dir/src/SDLWindowManager.cpp.s"
-	cd /Users/victorinemaurel/IMAC/SYNTIMG/imac-s3-opengl-master-GLImac-Template-SDL2/Projet/WorldIMaker/lib/glimac && /Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/victorinemaurel/IMAC/SYNTIMG/imac-s3-opengl-master-GLImac-Template-SDL2/Projet/WorldIMaker/lib/glimac/src/SDLWindowManager.cpp -o CMakeFiles/glimac.dir/src/SDLWindowManager.cpp.s
+	cd /Users/margaux/Desktop/IMAC/S3/Voldemort/WorldIMaker/WorldIMaker/lib/glimac && /Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/margaux/Desktop/IMAC/S3/Voldemort/WorldIMaker/WorldIMaker/lib/glimac/src/SDLWindowManager.cpp -o CMakeFiles/glimac.dir/src/SDLWindowManager.cpp.s
 
 lib/glimac/CMakeFiles/glimac.dir/src/Shader.cpp.o: lib/glimac/CMakeFiles/glimac.dir/flags.make
 lib/glimac/CMakeFiles/glimac.dir/src/Shader.cpp.o: lib/glimac/src/Shader.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/victorinemaurel/IMAC/SYNTIMG/imac-s3-opengl-master-GLImac-Template-SDL2/Projet/WorldIMaker/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object lib/glimac/CMakeFiles/glimac.dir/src/Shader.cpp.o"
-	cd /Users/victorinemaurel/IMAC/SYNTIMG/imac-s3-opengl-master-GLImac-Template-SDL2/Projet/WorldIMaker/lib/glimac && /Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/glimac.dir/src/Shader.cpp.o -c /Users/victorinemaurel/IMAC/SYNTIMG/imac-s3-opengl-master-GLImac-Template-SDL2/Projet/WorldIMaker/lib/glimac/src/Shader.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/margaux/Desktop/IMAC/S3/Voldemort/WorldIMaker/WorldIMaker/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object lib/glimac/CMakeFiles/glimac.dir/src/Shader.cpp.o"
+	cd /Users/margaux/Desktop/IMAC/S3/Voldemort/WorldIMaker/WorldIMaker/lib/glimac && /Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/glimac.dir/src/Shader.cpp.o -c /Users/margaux/Desktop/IMAC/S3/Voldemort/WorldIMaker/WorldIMaker/lib/glimac/src/Shader.cpp
 
 lib/glimac/CMakeFiles/glimac.dir/src/Shader.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/glimac.dir/src/Shader.cpp.i"
-	cd /Users/victorinemaurel/IMAC/SYNTIMG/imac-s3-opengl-master-GLImac-Template-SDL2/Projet/WorldIMaker/lib/glimac && /Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/victorinemaurel/IMAC/SYNTIMG/imac-s3-opengl-master-GLImac-Template-SDL2/Projet/WorldIMaker/lib/glimac/src/Shader.cpp > CMakeFiles/glimac.dir/src/Shader.cpp.i
+	cd /Users/margaux/Desktop/IMAC/S3/Voldemort/WorldIMaker/WorldIMaker/lib/glimac && /Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/margaux/Desktop/IMAC/S3/Voldemort/WorldIMaker/WorldIMaker/lib/glimac/src/Shader.cpp > CMakeFiles/glimac.dir/src/Shader.cpp.i
 
 lib/glimac/CMakeFiles/glimac.dir/src/Shader.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/glimac.dir/src/Shader.cpp.s"
-	cd /Users/victorinemaurel/IMAC/SYNTIMG/imac-s3-opengl-master-GLImac-Template-SDL2/Projet/WorldIMaker/lib/glimac && /Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/victorinemaurel/IMAC/SYNTIMG/imac-s3-opengl-master-GLImac-Template-SDL2/Projet/WorldIMaker/lib/glimac/src/Shader.cpp -o CMakeFiles/glimac.dir/src/Shader.cpp.s
+	cd /Users/margaux/Desktop/IMAC/S3/Voldemort/WorldIMaker/WorldIMaker/lib/glimac && /Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/margaux/Desktop/IMAC/S3/Voldemort/WorldIMaker/WorldIMaker/lib/glimac/src/Shader.cpp -o CMakeFiles/glimac.dir/src/Shader.cpp.s
 
 lib/glimac/CMakeFiles/glimac.dir/src/Sphere.cpp.o: lib/glimac/CMakeFiles/glimac.dir/flags.make
 lib/glimac/CMakeFiles/glimac.dir/src/Sphere.cpp.o: lib/glimac/src/Sphere.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/victorinemaurel/IMAC/SYNTIMG/imac-s3-opengl-master-GLImac-Template-SDL2/Projet/WorldIMaker/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object lib/glimac/CMakeFiles/glimac.dir/src/Sphere.cpp.o"
-	cd /Users/victorinemaurel/IMAC/SYNTIMG/imac-s3-opengl-master-GLImac-Template-SDL2/Projet/WorldIMaker/lib/glimac && /Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/glimac.dir/src/Sphere.cpp.o -c /Users/victorinemaurel/IMAC/SYNTIMG/imac-s3-opengl-master-GLImac-Template-SDL2/Projet/WorldIMaker/lib/glimac/src/Sphere.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/margaux/Desktop/IMAC/S3/Voldemort/WorldIMaker/WorldIMaker/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object lib/glimac/CMakeFiles/glimac.dir/src/Sphere.cpp.o"
+	cd /Users/margaux/Desktop/IMAC/S3/Voldemort/WorldIMaker/WorldIMaker/lib/glimac && /Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/glimac.dir/src/Sphere.cpp.o -c /Users/margaux/Desktop/IMAC/S3/Voldemort/WorldIMaker/WorldIMaker/lib/glimac/src/Sphere.cpp
 
 lib/glimac/CMakeFiles/glimac.dir/src/Sphere.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/glimac.dir/src/Sphere.cpp.i"
-	cd /Users/victorinemaurel/IMAC/SYNTIMG/imac-s3-opengl-master-GLImac-Template-SDL2/Projet/WorldIMaker/lib/glimac && /Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/victorinemaurel/IMAC/SYNTIMG/imac-s3-opengl-master-GLImac-Template-SDL2/Projet/WorldIMaker/lib/glimac/src/Sphere.cpp > CMakeFiles/glimac.dir/src/Sphere.cpp.i
+	cd /Users/margaux/Desktop/IMAC/S3/Voldemort/WorldIMaker/WorldIMaker/lib/glimac && /Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/margaux/Desktop/IMAC/S3/Voldemort/WorldIMaker/WorldIMaker/lib/glimac/src/Sphere.cpp > CMakeFiles/glimac.dir/src/Sphere.cpp.i
 
 lib/glimac/CMakeFiles/glimac.dir/src/Sphere.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/glimac.dir/src/Sphere.cpp.s"
-	cd /Users/victorinemaurel/IMAC/SYNTIMG/imac-s3-opengl-master-GLImac-Template-SDL2/Projet/WorldIMaker/lib/glimac && /Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/victorinemaurel/IMAC/SYNTIMG/imac-s3-opengl-master-GLImac-Template-SDL2/Projet/WorldIMaker/lib/glimac/src/Sphere.cpp -o CMakeFiles/glimac.dir/src/Sphere.cpp.s
+	cd /Users/margaux/Desktop/IMAC/S3/Voldemort/WorldIMaker/WorldIMaker/lib/glimac && /Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/margaux/Desktop/IMAC/S3/Voldemort/WorldIMaker/WorldIMaker/lib/glimac/src/Sphere.cpp -o CMakeFiles/glimac.dir/src/Sphere.cpp.s
 
 lib/glimac/CMakeFiles/glimac.dir/src/TrackballCamera.cpp.o: lib/glimac/CMakeFiles/glimac.dir/flags.make
 lib/glimac/CMakeFiles/glimac.dir/src/TrackballCamera.cpp.o: lib/glimac/src/TrackballCamera.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/victorinemaurel/IMAC/SYNTIMG/imac-s3-opengl-master-GLImac-Template-SDL2/Projet/WorldIMaker/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object lib/glimac/CMakeFiles/glimac.dir/src/TrackballCamera.cpp.o"
-	cd /Users/victorinemaurel/IMAC/SYNTIMG/imac-s3-opengl-master-GLImac-Template-SDL2/Projet/WorldIMaker/lib/glimac && /Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/glimac.dir/src/TrackballCamera.cpp.o -c /Users/victorinemaurel/IMAC/SYNTIMG/imac-s3-opengl-master-GLImac-Template-SDL2/Projet/WorldIMaker/lib/glimac/src/TrackballCamera.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/margaux/Desktop/IMAC/S3/Voldemort/WorldIMaker/WorldIMaker/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object lib/glimac/CMakeFiles/glimac.dir/src/TrackballCamera.cpp.o"
+	cd /Users/margaux/Desktop/IMAC/S3/Voldemort/WorldIMaker/WorldIMaker/lib/glimac && /Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/glimac.dir/src/TrackballCamera.cpp.o -c /Users/margaux/Desktop/IMAC/S3/Voldemort/WorldIMaker/WorldIMaker/lib/glimac/src/TrackballCamera.cpp
 
 lib/glimac/CMakeFiles/glimac.dir/src/TrackballCamera.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/glimac.dir/src/TrackballCamera.cpp.i"
-	cd /Users/victorinemaurel/IMAC/SYNTIMG/imac-s3-opengl-master-GLImac-Template-SDL2/Projet/WorldIMaker/lib/glimac && /Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/victorinemaurel/IMAC/SYNTIMG/imac-s3-opengl-master-GLImac-Template-SDL2/Projet/WorldIMaker/lib/glimac/src/TrackballCamera.cpp > CMakeFiles/glimac.dir/src/TrackballCamera.cpp.i
+	cd /Users/margaux/Desktop/IMAC/S3/Voldemort/WorldIMaker/WorldIMaker/lib/glimac && /Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/margaux/Desktop/IMAC/S3/Voldemort/WorldIMaker/WorldIMaker/lib/glimac/src/TrackballCamera.cpp > CMakeFiles/glimac.dir/src/TrackballCamera.cpp.i
 
 lib/glimac/CMakeFiles/glimac.dir/src/TrackballCamera.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/glimac.dir/src/TrackballCamera.cpp.s"
-	cd /Users/victorinemaurel/IMAC/SYNTIMG/imac-s3-opengl-master-GLImac-Template-SDL2/Projet/WorldIMaker/lib/glimac && /Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/victorinemaurel/IMAC/SYNTIMG/imac-s3-opengl-master-GLImac-Template-SDL2/Projet/WorldIMaker/lib/glimac/src/TrackballCamera.cpp -o CMakeFiles/glimac.dir/src/TrackballCamera.cpp.s
+	cd /Users/margaux/Desktop/IMAC/S3/Voldemort/WorldIMaker/WorldIMaker/lib/glimac && /Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/margaux/Desktop/IMAC/S3/Voldemort/WorldIMaker/WorldIMaker/lib/glimac/src/TrackballCamera.cpp -o CMakeFiles/glimac.dir/src/TrackballCamera.cpp.s
 
 lib/glimac/CMakeFiles/glimac.dir/src/tiny_obj_loader.cpp.o: lib/glimac/CMakeFiles/glimac.dir/flags.make
 lib/glimac/CMakeFiles/glimac.dir/src/tiny_obj_loader.cpp.o: lib/glimac/src/tiny_obj_loader.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/victorinemaurel/IMAC/SYNTIMG/imac-s3-opengl-master-GLImac-Template-SDL2/Projet/WorldIMaker/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object lib/glimac/CMakeFiles/glimac.dir/src/tiny_obj_loader.cpp.o"
-	cd /Users/victorinemaurel/IMAC/SYNTIMG/imac-s3-opengl-master-GLImac-Template-SDL2/Projet/WorldIMaker/lib/glimac && /Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/glimac.dir/src/tiny_obj_loader.cpp.o -c /Users/victorinemaurel/IMAC/SYNTIMG/imac-s3-opengl-master-GLImac-Template-SDL2/Projet/WorldIMaker/lib/glimac/src/tiny_obj_loader.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/margaux/Desktop/IMAC/S3/Voldemort/WorldIMaker/WorldIMaker/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object lib/glimac/CMakeFiles/glimac.dir/src/tiny_obj_loader.cpp.o"
+	cd /Users/margaux/Desktop/IMAC/S3/Voldemort/WorldIMaker/WorldIMaker/lib/glimac && /Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/glimac.dir/src/tiny_obj_loader.cpp.o -c /Users/margaux/Desktop/IMAC/S3/Voldemort/WorldIMaker/WorldIMaker/lib/glimac/src/tiny_obj_loader.cpp
 
 lib/glimac/CMakeFiles/glimac.dir/src/tiny_obj_loader.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/glimac.dir/src/tiny_obj_loader.cpp.i"
-	cd /Users/victorinemaurel/IMAC/SYNTIMG/imac-s3-opengl-master-GLImac-Template-SDL2/Projet/WorldIMaker/lib/glimac && /Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/victorinemaurel/IMAC/SYNTIMG/imac-s3-opengl-master-GLImac-Template-SDL2/Projet/WorldIMaker/lib/glimac/src/tiny_obj_loader.cpp > CMakeFiles/glimac.dir/src/tiny_obj_loader.cpp.i
+	cd /Users/margaux/Desktop/IMAC/S3/Voldemort/WorldIMaker/WorldIMaker/lib/glimac && /Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/margaux/Desktop/IMAC/S3/Voldemort/WorldIMaker/WorldIMaker/lib/glimac/src/tiny_obj_loader.cpp > CMakeFiles/glimac.dir/src/tiny_obj_loader.cpp.i
 
 lib/glimac/CMakeFiles/glimac.dir/src/tiny_obj_loader.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/glimac.dir/src/tiny_obj_loader.cpp.s"
-	cd /Users/victorinemaurel/IMAC/SYNTIMG/imac-s3-opengl-master-GLImac-Template-SDL2/Projet/WorldIMaker/lib/glimac && /Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/victorinemaurel/IMAC/SYNTIMG/imac-s3-opengl-master-GLImac-Template-SDL2/Projet/WorldIMaker/lib/glimac/src/tiny_obj_loader.cpp -o CMakeFiles/glimac.dir/src/tiny_obj_loader.cpp.s
+	cd /Users/margaux/Desktop/IMAC/S3/Voldemort/WorldIMaker/WorldIMaker/lib/glimac && /Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/margaux/Desktop/IMAC/S3/Voldemort/WorldIMaker/WorldIMaker/lib/glimac/src/tiny_obj_loader.cpp -o CMakeFiles/glimac.dir/src/tiny_obj_loader.cpp.s
 
 # Object files for target glimac
 glimac_OBJECTS = \
@@ -245,9 +245,9 @@ lib/libglimac.a: lib/glimac/CMakeFiles/glimac.dir/src/TrackballCamera.cpp.o
 lib/libglimac.a: lib/glimac/CMakeFiles/glimac.dir/src/tiny_obj_loader.cpp.o
 lib/libglimac.a: lib/glimac/CMakeFiles/glimac.dir/build.make
 lib/libglimac.a: lib/glimac/CMakeFiles/glimac.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/victorinemaurel/IMAC/SYNTIMG/imac-s3-opengl-master-GLImac-Template-SDL2/Projet/WorldIMaker/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Linking CXX static library ../libglimac.a"
-	cd /Users/victorinemaurel/IMAC/SYNTIMG/imac-s3-opengl-master-GLImac-Template-SDL2/Projet/WorldIMaker/lib/glimac && $(CMAKE_COMMAND) -P CMakeFiles/glimac.dir/cmake_clean_target.cmake
-	cd /Users/victorinemaurel/IMAC/SYNTIMG/imac-s3-opengl-master-GLImac-Template-SDL2/Projet/WorldIMaker/lib/glimac && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/glimac.dir/link.txt --verbose=$(VERBOSE)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/margaux/Desktop/IMAC/S3/Voldemort/WorldIMaker/WorldIMaker/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Linking CXX static library ../libglimac.a"
+	cd /Users/margaux/Desktop/IMAC/S3/Voldemort/WorldIMaker/WorldIMaker/lib/glimac && $(CMAKE_COMMAND) -P CMakeFiles/glimac.dir/cmake_clean_target.cmake
+	cd /Users/margaux/Desktop/IMAC/S3/Voldemort/WorldIMaker/WorldIMaker/lib/glimac && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/glimac.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
 lib/glimac/CMakeFiles/glimac.dir/build: lib/libglimac.a
@@ -255,10 +255,10 @@ lib/glimac/CMakeFiles/glimac.dir/build: lib/libglimac.a
 .PHONY : lib/glimac/CMakeFiles/glimac.dir/build
 
 lib/glimac/CMakeFiles/glimac.dir/clean:
-	cd /Users/victorinemaurel/IMAC/SYNTIMG/imac-s3-opengl-master-GLImac-Template-SDL2/Projet/WorldIMaker/lib/glimac && $(CMAKE_COMMAND) -P CMakeFiles/glimac.dir/cmake_clean.cmake
+	cd /Users/margaux/Desktop/IMAC/S3/Voldemort/WorldIMaker/WorldIMaker/lib/glimac && $(CMAKE_COMMAND) -P CMakeFiles/glimac.dir/cmake_clean.cmake
 .PHONY : lib/glimac/CMakeFiles/glimac.dir/clean
 
 lib/glimac/CMakeFiles/glimac.dir/depend:
-	cd /Users/victorinemaurel/IMAC/SYNTIMG/imac-s3-opengl-master-GLImac-Template-SDL2/Projet/WorldIMaker && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Users/victorinemaurel/IMAC/SYNTIMG/imac-s3-opengl-master-GLImac-Template-SDL2/Projet/WorldIMaker /Users/victorinemaurel/IMAC/SYNTIMG/imac-s3-opengl-master-GLImac-Template-SDL2/Projet/WorldIMaker/lib/glimac /Users/victorinemaurel/IMAC/SYNTIMG/imac-s3-opengl-master-GLImac-Template-SDL2/Projet/WorldIMaker /Users/victorinemaurel/IMAC/SYNTIMG/imac-s3-opengl-master-GLImac-Template-SDL2/Projet/WorldIMaker/lib/glimac /Users/victorinemaurel/IMAC/SYNTIMG/imac-s3-opengl-master-GLImac-Template-SDL2/Projet/WorldIMaker/lib/glimac/CMakeFiles/glimac.dir/DependInfo.cmake --color=$(COLOR)
+	cd /Users/margaux/Desktop/IMAC/S3/Voldemort/WorldIMaker/WorldIMaker && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Users/margaux/Desktop/IMAC/S3/Voldemort/WorldIMaker/WorldIMaker /Users/margaux/Desktop/IMAC/S3/Voldemort/WorldIMaker/WorldIMaker/lib/glimac /Users/margaux/Desktop/IMAC/S3/Voldemort/WorldIMaker/WorldIMaker /Users/margaux/Desktop/IMAC/S3/Voldemort/WorldIMaker/WorldIMaker/lib/glimac /Users/margaux/Desktop/IMAC/S3/Voldemort/WorldIMaker/WorldIMaker/lib/glimac/CMakeFiles/glimac.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : lib/glimac/CMakeFiles/glimac.dir/depend
 

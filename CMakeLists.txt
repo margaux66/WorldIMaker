@@ -39,13 +39,21 @@ if (APPLE)
     set(GLEW_LIBRARY /usr/local/lib/libGLEW.dylib)
 endif (APPLE)
 
+#DOXYGEN
+message("Looking for doxygen...")
+find_package(Doxygen REQUIRED)
+if(${DOXYGEN_FOUND})
+    message(STATUS "lib Doxygen found")
+    message(STATUS "  include " ${DOXYGEN_INCLUDE_DIR})
+endif()
+
 #compilation flags 
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall -O2 -std=c++11")
 set(CMAKE_CXX_FLAGS_DEBUG_init "-g")
 
-include_directories(${SDL2_INCLUDE_DIRS} ${OPENGL_INCLUDE_DIR} ${GLEW_INCLUDE_DIR} lib/glimac/include lib/third-party/include)
+include_directories(${SDL2_INCLUDE_DIRS} ${OPENGL_INCLUDE_DIR} ${GLEW_INCLUDE_DIR} lib/glimac/include lib/third-party/include lib/imgui/include)
 
-set(ALL_LIBRARIES ${SDL2_LIBRARIES} glimac ${OPENGL_LIBRARIES} ${GLEW_LIBRARY})
+set(ALL_LIBRARIES ${SDL2_LIBRARIES} glimac imgui ${OPENGL_LIBRARIES} ${GLEW_LIBRARY})
 
 # Add the glimac library
 add_subdirectory(lib/glimac)
@@ -53,9 +61,12 @@ add_subdirectory(lib/glimac)
 # Add the third-party library
 #add_subdirectory(lib/third-party)
 
-add_subdirectory(doc)
+# Add the imgui library
+add_subdirectory(lib/imgui)
 
-# file(GLOB_RECURSE HEADER_FILES src/include/*) # get all headers
+# Add doxygen
+add_subdirectory(doc)
+file(GLOB_RECURSE HEADER_FILES src/include/*) # get all headers
 file(GLOB_RECURSE SRC_FILES src/*.cpp) # get all sources files
 
 add_executable(worldIMaker ${SRC_FILES}) # add the executable

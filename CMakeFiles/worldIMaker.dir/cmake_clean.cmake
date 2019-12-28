@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "/Users/victorinemaurel/IMAC/SYNTIMG/imac-s3-opengl-master-GLImac-Template-SDL2/Projet/build/bin/worldIMaker"
-  "/Users/victorinemaurel/IMAC/SYNTIMG/imac-s3-opengl-master-GLImac-Template-SDL2/Projet/build/bin/worldIMaker.pdb"
+  "/Users/margaux/Desktop/IMAC/S3/Voldemort/WorldIMaker/build/bin/worldIMaker"
+  "/Users/margaux/Desktop/IMAC/S3/Voldemort/WorldIMaker/build/bin/worldIMaker.pdb"
   "CMakeFiles/worldIMaker.dir/src/main.cpp.o"
 )
 

@@ -1,4 +1,4 @@
-# Install script for directory: /Users/victorinemaurel/IMAC/SYNTIMG/imac-s3-opengl-master-GLImac-Template-SDL2/Projet/WorldIMaker
+# Install script for directory: /Users/margaux/Desktop/IMAC/S3/Voldemort/WorldIMaker/WorldIMaker
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -34,8 +34,8 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-  include("/Users/victorinemaurel/IMAC/SYNTIMG/imac-s3-opengl-master-GLImac-Template-SDL2/Projet/WorldIMaker/lib/glimac/cmake_install.cmake")
-  include("/Users/victorinemaurel/IMAC/SYNTIMG/imac-s3-opengl-master-GLImac-Template-SDL2/Projet/WorldIMaker/doc/cmake_install.cmake")
+  include("/Users/margaux/Desktop/IMAC/S3/Voldemort/WorldIMaker/WorldIMaker/lib/glimac/cmake_install.cmake")
+  include("/Users/margaux/Desktop/IMAC/S3/Voldemort/WorldIMaker/WorldIMaker/doc/cmake_install.cmake")
 
 endif()
 
@@ -47,5 +47,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/Users/victorinemaurel/IMAC/SYNTIMG/imac-s3-opengl-master-GLImac-Template-SDL2/Projet/WorldIMaker/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/Users/margaux/Desktop/IMAC/S3/Voldemort/WorldIMaker/WorldIMaker/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

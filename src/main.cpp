@@ -6,10 +6,13 @@
 #include <glimac/TrackballCamera.hpp>
 #include <glimac/Cube.hpp>
 #include <glimac/Cursor.hpp>
+//#include "../include/menu.hpp"
 
 int main(int argc, char const *argv[]){
      // Initialize SDL and open a window
     glimac::SDLWindowManager windowManager(800, 600, "WorldIMaker");
+
+    //Menu menu;
 
     // Initialize glew for OpenGL3+ support
     GLenum glewInitError = glewInit();
