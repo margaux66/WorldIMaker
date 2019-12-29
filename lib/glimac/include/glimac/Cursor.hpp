@@ -11,6 +11,7 @@ namespace glimac {
 			Cursor(glm::vec3 position);
 			~Cursor()=default;
 			void display();
+			
 		
 	};
 }

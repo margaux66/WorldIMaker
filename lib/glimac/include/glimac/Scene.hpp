@@ -55,6 +55,7 @@ namespace glimac {
 			void dig(Cursor cursor);
 			void changeColor(Cursor cursor, glm::vec4 color);
 			void getColor(Cursor cursor);
+			void clean();
 
 			//get
 			std::vector<Cube> getAllCubes(){return m_allCubes;};

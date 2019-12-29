@@ -125,6 +125,9 @@ int main(int argc, char const *argv[]){
                     case SDLK_k :
                         scene.getColor(cursor);
                         break;
+                    case SDLK_c :
+                        scene.clean();
+                        break;    
 
 
 

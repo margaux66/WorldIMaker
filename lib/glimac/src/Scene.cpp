@@ -153,4 +153,12 @@ namespace glimac {
             }
         }
 	}
+
+	void Scene::clean(){
+		for (int i = 0; i < m_allCubes.size(); ++i)
+		{
+			m_allCubes[i].setIsVisible(false);
+		}
+
+	}
 }
