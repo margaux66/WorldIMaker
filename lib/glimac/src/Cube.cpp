@@ -121,9 +121,7 @@ namespace glimac {
 			
 		}
 		else{
-			//m_color = glm::vec4(0,0,0,0);
-			//glBindVertexArray(m_vao);
-			//glDrawElements(GL_TRIANGLES,36,GL_UNSIGNED_INT,0);
+			
 	        glBindVertexArray(0);
 		}
 
