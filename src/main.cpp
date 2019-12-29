@@ -30,7 +30,7 @@ int main(int argc, char const *argv[]){
     //load les shaders 
     glimac::FilePath applicationPath(argv[0]);
     glimac::Program program = loadProgram(applicationPath.dirPath() + "../assets/shaders/3D.vs.glsl",
-                                        applicationPath.dirPath() + "../assets/shaders/directionallight.fs.glsl");
+                                        applicationPath.dirPath() + "../assets/shaders/coloredCube.fs.glsl");
     program.use();
 
     
