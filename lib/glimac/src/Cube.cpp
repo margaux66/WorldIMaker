@@ -45,13 +45,6 @@ namespace glimac {
 			m_vertices.push_back(vertex);
 		}
 
-		if(m_vertices.empty()){
-			std::cerr<< "Vertices is empty"<<std::endl;
-		}
-		else{
-			std::cerr << "Vertices is full" <<std::endl;
-		}
-
 		//création du vbo
 		glGenBuffers(1,&m_vbo);
 
@@ -114,7 +107,6 @@ namespace glimac {
 	void Cube::display(){
 		if(m_isVisible == true){
 			setColor(m_color);
-			std::cout << "cc   " << m_color << std::endl;
 			glBindVertexArray(m_vao);
 			glDrawElements(GL_TRIANGLES,36,GL_UNSIGNED_INT,0);
         	glBindVertexArray(0);

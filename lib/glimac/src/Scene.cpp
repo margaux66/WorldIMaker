@@ -50,11 +50,8 @@ namespace glimac {
 	void Scene::displayCubes(TrackballCamera camera){
 		for (int i = 0; i < m_allCubes.size(); ++i)
 		{
-
 			updateMatrix(camera,m_allCubes[i].getPosition(),m_allCubes[i]);
-			//m_allCubes[i].setIsVisible(true);
 			m_allCubes[i].setColor(m_allCubes[i].getColor());
-			std::cout << m_allCubes[i].getColor() << std::endl;
 			m_allCubes[i].display();
 		}
 	}
@@ -122,7 +119,7 @@ namespace glimac {
 	void Scene::dig(Cursor cursor){
 		for (int i = 0; i < m_allCubes.size(); ++i){
             if(cursor.getPosition() == m_allCubes[i].getPosition()){
-            	for (int j = 2; j < m_height; ++j)
+            	for (int j = m_height; j > 0 ; --j)
             	{
             		glm::vec3 pos = m_allCubes[i].getPosition();
             		if(m_allCubes[getCubeAtThisPos(glm::vec3(pos.x,j,pos.z))].getIsVisible()==true){
@@ -139,7 +136,6 @@ namespace glimac {
             if(cursor.getPosition() == m_allCubes[i].getPosition()){
             	if(m_allCubes[i].getIsVisible()==true){
             			m_allCubes[i].setColor(color);
-            			std::cout << "changeColor  " << m_allCubes[i].getColor()<<std::endl;
             	}
             }
         }
@@ -148,7 +144,7 @@ namespace glimac {
 		for (int i = 0; i < m_allCubes.size(); ++i){
             if(cursor.getPosition() == m_allCubes[i].getPosition()){
             	if(m_allCubes[i].getIsVisible()==true){
-            			std::cout << "Quelle couleur :  " << m_allCubes[i].getColor()<<std::endl;
+            			std::cout << "Couleur du cube :  " << m_allCubes[i].getColor()<<std::endl;
             	}
             }
         }

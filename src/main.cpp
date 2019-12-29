@@ -34,8 +34,7 @@ int main(int argc, char const *argv[]){
     program.use();
 
     
-    glimac::Cursor cursor(glm::vec3(1,1,1));
-    //glimac::Cube cube(glm::vec3(0,0,0),glm::vec4(0,1,0,1));
+    glimac::Cursor cursor(glm::vec3(0,0,0));
 
     scene.createAllCubes();
     std::vector<glimac::Cube> allCube;
@@ -71,16 +70,16 @@ int main(int argc, char const *argv[]){
             if(e.type == SDL_KEYDOWN){
                 switch(e.key.keysym.sym){
                     case SDLK_q :
-                        camera.rotateLeft(-10);
+                        camera.moveLeft(-1);
                         break;
                     case SDLK_d :
-                        camera.rotateLeft(+10);
+                        camera.moveLeft(+1);
                         break;
                     case SDLK_s :
-                        camera.rotateUp(-10);
+                        camera.moveTop(-1);
                         break;
                     case SDLK_z :
-                        camera.rotateUp(10);
+                        camera.moveTop(1);
                         break;
 
                     case SDLK_RIGHT :
@@ -117,6 +116,9 @@ int main(int argc, char const *argv[]){
                     case SDLK_l :
                         scene.changeColor(cursor,glm::vec4(0,0,1,1));
                         break;
+                    case SDLK_h :
+                        scene.changeColor(cursor,glm::vec4(0,1,1,1));
+                        break;
                     case SDLK_k :
                         scene.getColor(cursor);
                         break;
@@ -151,7 +153,6 @@ int main(int argc, char const *argv[]){
 
         scene.applyDirectionalLight(camera);
         scene.updateMatrix(camera,cursor.getPosition(),cursor);
-        //std::cout << cursor.getColor() << std::endl;
         cursor.display();
 
         windowManager.swapBuffers();
