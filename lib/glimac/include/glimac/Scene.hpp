@@ -24,13 +24,14 @@ namespace glimac {
 			GLint uKs;
 			GLint uShininess;
 			GLint uLightDir_vs;
+			GLint uLightPos_vs;
 			GLint uLightIntensity;
 			GLint uColor;
 
 			//matrice 
 			glm::mat4 m_ProjMatrix, m_MVMatrix;;
 			//directional light caracteristics 
-			glm::vec3 m_Kd,m_Ks, m_LightDir, m_LightIntensity;
+			glm::vec3 m_Kd,m_Ks, m_LightDir,m_LightPos , m_LightIntensity;
 			float m_Shininess;
 
 			//scene catacterictis 
@@ -45,8 +46,8 @@ namespace glimac {
 			void uniformMatrix(Program program);
 			void updateMatrix(TrackballCamera camera, glm::vec3 position, Cube cube);
 			void displayCubes(TrackballCamera camera);
-			void setDirectionalLight(glm::vec3 Kd, glm::vec3 Ks, float Shininess, glm::vec3 LightDir, glm::vec3 LightIntensity);
-			void applyDirectionalLight(TrackballCamera camera);
+			void setLight(glm::vec3 Kd, glm::vec3 Ks, float Shininess, glm::vec3 LightDir,glm::vec3 LightPos, glm::vec3 LightIntensity);
+			void applyLight(TrackballCamera camera);
 			uint getCubeAtThisPos(glm::vec3 position);
 			void add (Cursor cursor);
 			void remove(Cursor cursor);

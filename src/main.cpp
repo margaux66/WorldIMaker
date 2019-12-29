@@ -34,7 +34,7 @@ int main(int argc, char const *argv[]){
     program.use();
 
     
-    glimac::Cursor cursor(glm::vec3(0,0,0));
+    glimac::Cursor cursor(glm::vec3(5,5,0));
 
     scene.createAllCubes();
     std::vector<glimac::Cube> allCube;
@@ -42,16 +42,19 @@ int main(int argc, char const *argv[]){
 
     scene.uniformMatrix(program);
 
+    
+
     // GPU checks depth
     glEnable(GL_DEPTH_TEST);
     glEnable(GL_BLEND);
     glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
 
-    scene.setDirectionalLight(glm::vec3(glm::linearRand (0.0,1.0),glm::linearRand (0.0,1.0),glm::linearRand (0.0,1.0)),
-                                glm::vec3(glm::linearRand (0.0,1.0),glm::linearRand (0.0,1.0),glm::linearRand (0.0,1.0)),
-                                0.5,
-                                glm::vec3(1.0,1.0,1.0),
-                                glm::vec3(1.,1.,1.));
+    scene.setLight(glm::vec3(glm::linearRand (0.0,1.0),glm::linearRand (0.0,1.0),glm::linearRand (0.0,1.0)),
+                        glm::vec3(glm::linearRand (0.0,1.0),glm::linearRand (0.0,1.0),glm::linearRand (0.0,1.0)),
+                        0.5,
+                        glm::vec3(1.0,1.0,1.0),
+                        glm::vec3(1.0,1.0,1.0),
+                        glm::vec3(1.,1.,1.));
 
     bool done = false;
     while(!done) {
@@ -128,6 +131,8 @@ int main(int argc, char const *argv[]){
 
                 }
             }
+
+            std::cout<< cursor.getPosition() << std::endl;
             allCube[1].setIsVisible(true);
             if ( e.type == SDL_MOUSEWHEEL ) {
                 if (e.wheel.y > 0) {
@@ -144,14 +149,23 @@ int main(int argc, char const *argv[]){
          * HERE SHOULD COME THE RENDERING CODE
          *********************************/
 
+        if(cursor.getPosition().x < 0 || cursor.getPosition().x >10 || cursor.getPosition().y < 0 || cursor.getPosition().y >10 ||cursor.getPosition().z < 0 || cursor.getPosition().z >10 ){
+            cursor.setColor(glm::vec4(1,0,0,1));
+        }
+        else{
+           cursor.setColor(glm::vec4(0,0,1,1)); 
+        }
+
+        
+
         //Clear the window
         glClearColor(0,0,0,1);
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
-        scene.applyDirectionalLight(camera);
+        scene.applyLight(camera);
         scene.displayCubes(camera);
 
-        scene.applyDirectionalLight(camera);
+        scene.applyLight(camera);
         scene.updateMatrix(camera,cursor.getPosition(),cursor);
         cursor.display();
 

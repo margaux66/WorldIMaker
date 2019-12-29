@@ -24,6 +24,7 @@ namespace glimac {
 	    uKs = glGetUniformLocation(program.getGLId(), "uKs");
 	    uShininess = glGetUniformLocation(program.getGLId(), "uShininess");
 	    uLightDir_vs = glGetUniformLocation(program.getGLId(), "uLightDir_vs");
+	    uLightPos_vs = glGetUniformLocation(program.getGLId(), "uLightPos_vs");
 	    uLightIntensity = glGetUniformLocation(program.getGLId(), "uLightIntensity");
 
 	    uColor = glGetUniformLocation(program.getGLId(), "uColor");
@@ -56,19 +57,22 @@ namespace glimac {
 		}
 	}
 
-	void Scene::setDirectionalLight(glm::vec3 Kd, glm::vec3 Ks, float Shininess, glm::vec3 LightDir, glm::vec3 LightIntensity){
+	void Scene::setLight(glm::vec3 Kd, glm::vec3 Ks, float Shininess, glm::vec3 LightDir, glm::vec3 LightPos,glm::vec3 LightIntensity){
 		m_Kd = Kd;
 		m_Ks = Ks;
 		m_Shininess = Shininess;
 		m_LightDir = LightDir;
+		m_LightPos = LightPos;
 		m_LightIntensity = LightIntensity;
 	}
 
-	void Scene::applyDirectionalLight(TrackballCamera camera){
+
+	void Scene::applyLight(TrackballCamera camera){
 		glUniform3fv(uKd, 1, glm::value_ptr(m_Kd));
         glUniform3fv(uKs, 1, glm::value_ptr(m_Ks));
         glUniform1f(uShininess, m_Shininess);
         glUniform3fv(uLightDir_vs, 1, glm::value_ptr(glm::mat3(camera.getViewMatrix())*m_LightDir));
+        glUniform3fv(uLightPos_vs, 1, glm::value_ptr(glm::mat3(camera.getViewMatrix())*m_LightPos));
         glUniform3fv(uLightIntensity, 1, glm::value_ptr(m_LightIntensity));
 
 	}
