@@ -7,8 +7,8 @@ namespace glimac {
         m_fDistance=-10;
         m_lDistance = -5;
         m_tDistance = -4;
-        m_fAngleX= -3;
-        m_fAngleY=-3;
+        m_fAngleX= 0;
+        m_fAngleY=2;
     };
 
     void TrackballCamera::moveFront(float delta){
@@ -26,10 +26,20 @@ namespace glimac {
     }
     void TrackballCamera::rotateLeft(float degrees){
         m_fAngleY += degrees;
+        //std::cout <<"LEFT :"<< m_fAngleY<< std::endl;
     }
 
     void TrackballCamera::rotateUp(float degrees){
         m_fAngleX += degrees;
+        //std::cout <<"UP :"<< m_fAngleX << std::endl;
+    }
+
+    void TrackballCamera::resetCameraSetUp(){
+        m_fDistance=-10;
+        m_lDistance = -5;
+        m_tDistance = -4;
+        m_fAngleX= 0;
+        m_fAngleY=2;
     }
 
     glm::mat4 TrackballCamera::getViewMatrix() const{

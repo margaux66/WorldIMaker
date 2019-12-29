@@ -19,6 +19,7 @@ namespace glimac {
 		void moveTop(float delta);
 		void rotateLeft(float degrees);
 		void rotateUp(float degrees);
+		void resetCameraSetUp();
 		glm::mat4 getViewMatrix() const;
 		
 	};	
