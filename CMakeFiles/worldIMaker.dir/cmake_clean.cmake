@@ -1,7 +1,8 @@
 file(REMOVE_RECURSE
-  "/Users/margaux/Desktop/IMAC/S3/Voldemort/WorldIMaker/build/bin/worldIMaker"
-  "/Users/margaux/Desktop/IMAC/S3/Voldemort/WorldIMaker/build/bin/worldIMaker.pdb"
+  "/Users/victorinemaurel/IMAC/SYNTIMG/imac-s3-opengl-master-GLImac-Template-SDL2/Projet/build/bin/worldIMaker"
+  "/Users/victorinemaurel/IMAC/SYNTIMG/imac-s3-opengl-master-GLImac-Template-SDL2/Projet/build/bin/worldIMaker.pdb"
   "CMakeFiles/worldIMaker.dir/src/main.cpp.o"
+  "CMakeFiles/worldIMaker.dir/src/menu.cpp.o"
 )
 
 # Per-language clean rules from dependency scanning.

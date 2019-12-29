@@ -48,10 +48,10 @@ RM = /usr/local/Cellar/cmake/3.15.5/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/margaux/Desktop/IMAC/S3/Voldemort/WorldIMaker/WorldIMaker
+CMAKE_SOURCE_DIR = /Users/victorinemaurel/IMAC/SYNTIMG/imac-s3-opengl-master-GLImac-Template-SDL2/Projet/WorldIMaker
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/margaux/Desktop/IMAC/S3/Voldemort/WorldIMaker/WorldIMaker
+CMAKE_BINARY_DIR = /Users/victorinemaurel/IMAC/SYNTIMG/imac-s3-opengl-master-GLImac-Template-SDL2/Projet/WorldIMaker
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -80,14 +80,14 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	cd /Users/margaux/Desktop/IMAC/S3/Voldemort/WorldIMaker/WorldIMaker && $(CMAKE_COMMAND) -E cmake_progress_start /Users/margaux/Desktop/IMAC/S3/Voldemort/WorldIMaker/WorldIMaker/CMakeFiles /Users/margaux/Desktop/IMAC/S3/Voldemort/WorldIMaker/WorldIMaker/lib/glimac/CMakeFiles/progress.marks
-	cd /Users/margaux/Desktop/IMAC/S3/Voldemort/WorldIMaker/WorldIMaker && $(MAKE) -f CMakeFiles/Makefile2 lib/glimac/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/margaux/Desktop/IMAC/S3/Voldemort/WorldIMaker/WorldIMaker/CMakeFiles 0
+	cd /Users/victorinemaurel/IMAC/SYNTIMG/imac-s3-opengl-master-GLImac-Template-SDL2/Projet/WorldIMaker && $(CMAKE_COMMAND) -E cmake_progress_start /Users/victorinemaurel/IMAC/SYNTIMG/imac-s3-opengl-master-GLImac-Template-SDL2/Projet/WorldIMaker/CMakeFiles /Users/victorinemaurel/IMAC/SYNTIMG/imac-s3-opengl-master-GLImac-Template-SDL2/Projet/WorldIMaker/lib/glimac/CMakeFiles/progress.marks
+	cd /Users/victorinemaurel/IMAC/SYNTIMG/imac-s3-opengl-master-GLImac-Template-SDL2/Projet/WorldIMaker && $(MAKE) -f CMakeFiles/Makefile2 lib/glimac/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/victorinemaurel/IMAC/SYNTIMG/imac-s3-opengl-master-GLImac-Template-SDL2/Projet/WorldIMaker/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /Users/margaux/Desktop/IMAC/S3/Voldemort/WorldIMaker/WorldIMaker && $(MAKE) -f CMakeFiles/Makefile2 lib/glimac/clean
+	cd /Users/victorinemaurel/IMAC/SYNTIMG/imac-s3-opengl-master-GLImac-Template-SDL2/Projet/WorldIMaker && $(MAKE) -f CMakeFiles/Makefile2 lib/glimac/clean
 .PHONY : clean
 
 # The main clean target
@@ -97,22 +97,22 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /Users/margaux/Desktop/IMAC/S3/Voldemort/WorldIMaker/WorldIMaker && $(MAKE) -f CMakeFiles/Makefile2 lib/glimac/preinstall
+	cd /Users/victorinemaurel/IMAC/SYNTIMG/imac-s3-opengl-master-GLImac-Template-SDL2/Projet/WorldIMaker && $(MAKE) -f CMakeFiles/Makefile2 lib/glimac/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /Users/margaux/Desktop/IMAC/S3/Voldemort/WorldIMaker/WorldIMaker && $(MAKE) -f CMakeFiles/Makefile2 lib/glimac/preinstall
+	cd /Users/victorinemaurel/IMAC/SYNTIMG/imac-s3-opengl-master-GLImac-Template-SDL2/Projet/WorldIMaker && $(MAKE) -f CMakeFiles/Makefile2 lib/glimac/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /Users/margaux/Desktop/IMAC/S3/Voldemort/WorldIMaker/WorldIMaker && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /Users/victorinemaurel/IMAC/SYNTIMG/imac-s3-opengl-master-GLImac-Template-SDL2/Projet/WorldIMaker && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
 lib/glimac/CMakeFiles/glimac.dir/rule:
-	cd /Users/margaux/Desktop/IMAC/S3/Voldemort/WorldIMaker/WorldIMaker && $(MAKE) -f CMakeFiles/Makefile2 lib/glimac/CMakeFiles/glimac.dir/rule
+	cd /Users/victorinemaurel/IMAC/SYNTIMG/imac-s3-opengl-master-GLImac-Template-SDL2/Projet/WorldIMaker && $(MAKE) -f CMakeFiles/Makefile2 lib/glimac/CMakeFiles/glimac.dir/rule
 .PHONY : lib/glimac/CMakeFiles/glimac.dir/rule
 
 # Convenience name for target.
@@ -122,7 +122,7 @@ glimac: lib/glimac/CMakeFiles/glimac.dir/rule
 
 # fast build rule for target.
 glimac/fast:
-	cd /Users/margaux/Desktop/IMAC/S3/Voldemort/WorldIMaker/WorldIMaker && $(MAKE) -f lib/glimac/CMakeFiles/glimac.dir/build.make lib/glimac/CMakeFiles/glimac.dir/build
+	cd /Users/victorinemaurel/IMAC/SYNTIMG/imac-s3-opengl-master-GLImac-Template-SDL2/Projet/WorldIMaker && $(MAKE) -f lib/glimac/CMakeFiles/glimac.dir/build.make lib/glimac/CMakeFiles/glimac.dir/build
 .PHONY : glimac/fast
 
 src/Cone.o: src/Cone.cpp.o
@@ -131,7 +131,7 @@ src/Cone.o: src/Cone.cpp.o
 
 # target to build an object file
 src/Cone.cpp.o:
-	cd /Users/margaux/Desktop/IMAC/S3/Voldemort/WorldIMaker/WorldIMaker && $(MAKE) -f lib/glimac/CMakeFiles/glimac.dir/build.make lib/glimac/CMakeFiles/glimac.dir/src/Cone.cpp.o
+	cd /Users/victorinemaurel/IMAC/SYNTIMG/imac-s3-opengl-master-GLImac-Template-SDL2/Projet/WorldIMaker && $(MAKE) -f lib/glimac/CMakeFiles/glimac.dir/build.make lib/glimac/CMakeFiles/glimac.dir/src/Cone.cpp.o
 .PHONY : src/Cone.cpp.o
 
 src/Cone.i: src/Cone.cpp.i
@@ -140,7 +140,7 @@ src/Cone.i: src/Cone.cpp.i
 
 # target to preprocess a source file
 src/Cone.cpp.i:
-	cd /Users/margaux/Desktop/IMAC/S3/Voldemort/WorldIMaker/WorldIMaker && $(MAKE) -f lib/glimac/CMakeFiles/glimac.dir/build.make lib/glimac/CMakeFiles/glimac.dir/src/Cone.cpp.i
+	cd /Users/victorinemaurel/IMAC/SYNTIMG/imac-s3-opengl-master-GLImac-Template-SDL2/Projet/WorldIMaker && $(MAKE) -f lib/glimac/CMakeFiles/glimac.dir/build.make lib/glimac/CMakeFiles/glimac.dir/src/Cone.cpp.i
 .PHONY : src/Cone.cpp.i
 
 src/Cone.s: src/Cone.cpp.s
@@ -149,7 +149,7 @@ src/Cone.s: src/Cone.cpp.s
 
 # target to generate assembly for a file
 src/Cone.cpp.s:
-	cd /Users/margaux/Desktop/IMAC/S3/Voldemort/WorldIMaker/WorldIMaker && $(MAKE) -f lib/glimac/CMakeFiles/glimac.dir/build.make lib/glimac/CMakeFiles/glimac.dir/src/Cone.cpp.s
+	cd /Users/victorinemaurel/IMAC/SYNTIMG/imac-s3-opengl-master-GLImac-Template-SDL2/Projet/WorldIMaker && $(MAKE) -f lib/glimac/CMakeFiles/glimac.dir/build.make lib/glimac/CMakeFiles/glimac.dir/src/Cone.cpp.s
 .PHONY : src/Cone.cpp.s
 
 src/Cube.o: src/Cube.cpp.o
@@ -158,7 +158,7 @@ src/Cube.o: src/Cube.cpp.o
 
 # target to build an object file
 src/Cube.cpp.o:
-	cd /Users/margaux/Desktop/IMAC/S3/Voldemort/WorldIMaker/WorldIMaker && $(MAKE) -f lib/glimac/CMakeFiles/glimac.dir/build.make lib/glimac/CMakeFiles/glimac.dir/src/Cube.cpp.o
+	cd /Users/victorinemaurel/IMAC/SYNTIMG/imac-s3-opengl-master-GLImac-Template-SDL2/Projet/WorldIMaker && $(MAKE) -f lib/glimac/CMakeFiles/glimac.dir/build.make lib/glimac/CMakeFiles/glimac.dir/src/Cube.cpp.o
 .PHONY : src/Cube.cpp.o
 
 src/Cube.i: src/Cube.cpp.i
@@ -167,7 +167,7 @@ src/Cube.i: src/Cube.cpp.i
 
 # target to preprocess a source file
 src/Cube.cpp.i:
-	cd /Users/margaux/Desktop/IMAC/S3/Voldemort/WorldIMaker/WorldIMaker && $(MAKE) -f lib/glimac/CMakeFiles/glimac.dir/build.make lib/glimac/CMakeFiles/glimac.dir/src/Cube.cpp.i
+	cd /Users/victorinemaurel/IMAC/SYNTIMG/imac-s3-opengl-master-GLImac-Template-SDL2/Projet/WorldIMaker && $(MAKE) -f lib/glimac/CMakeFiles/glimac.dir/build.make lib/glimac/CMakeFiles/glimac.dir/src/Cube.cpp.i
 .PHONY : src/Cube.cpp.i
 
 src/Cube.s: src/Cube.cpp.s
@@ -176,7 +176,7 @@ src/Cube.s: src/Cube.cpp.s
 
 # target to generate assembly for a file
 src/Cube.cpp.s:
-	cd /Users/margaux/Desktop/IMAC/S3/Voldemort/WorldIMaker/WorldIMaker && $(MAKE) -f lib/glimac/CMakeFiles/glimac.dir/build.make lib/glimac/CMakeFiles/glimac.dir/src/Cube.cpp.s
+	cd /Users/victorinemaurel/IMAC/SYNTIMG/imac-s3-opengl-master-GLImac-Template-SDL2/Projet/WorldIMaker && $(MAKE) -f lib/glimac/CMakeFiles/glimac.dir/build.make lib/glimac/CMakeFiles/glimac.dir/src/Cube.cpp.s
 .PHONY : src/Cube.cpp.s
 
 src/Cursor.o: src/Cursor.cpp.o
@@ -185,7 +185,7 @@ src/Cursor.o: src/Cursor.cpp.o
 
 # target to build an object file
 src/Cursor.cpp.o:
-	cd /Users/margaux/Desktop/IMAC/S3/Voldemort/WorldIMaker/WorldIMaker && $(MAKE) -f lib/glimac/CMakeFiles/glimac.dir/build.make lib/glimac/CMakeFiles/glimac.dir/src/Cursor.cpp.o
+	cd /Users/victorinemaurel/IMAC/SYNTIMG/imac-s3-opengl-master-GLImac-Template-SDL2/Projet/WorldIMaker && $(MAKE) -f lib/glimac/CMakeFiles/glimac.dir/build.make lib/glimac/CMakeFiles/glimac.dir/src/Cursor.cpp.o
 .PHONY : src/Cursor.cpp.o
 
 src/Cursor.i: src/Cursor.cpp.i
@@ -194,7 +194,7 @@ src/Cursor.i: src/Cursor.cpp.i
 
 # target to preprocess a source file
 src/Cursor.cpp.i:
-	cd /Users/margaux/Desktop/IMAC/S3/Voldemort/WorldIMaker/WorldIMaker && $(MAKE) -f lib/glimac/CMakeFiles/glimac.dir/build.make lib/glimac/CMakeFiles/glimac.dir/src/Cursor.cpp.i
+	cd /Users/victorinemaurel/IMAC/SYNTIMG/imac-s3-opengl-master-GLImac-Template-SDL2/Projet/WorldIMaker && $(MAKE) -f lib/glimac/CMakeFiles/glimac.dir/build.make lib/glimac/CMakeFiles/glimac.dir/src/Cursor.cpp.i
 .PHONY : src/Cursor.cpp.i
 
 src/Cursor.s: src/Cursor.cpp.s
@@ -203,7 +203,7 @@ src/Cursor.s: src/Cursor.cpp.s
 
 # target to generate assembly for a file
 src/Cursor.cpp.s:
-	cd /Users/margaux/Desktop/IMAC/S3/Voldemort/WorldIMaker/WorldIMaker && $(MAKE) -f lib/glimac/CMakeFiles/glimac.dir/build.make lib/glimac/CMakeFiles/glimac.dir/src/Cursor.cpp.s
+	cd /Users/victorinemaurel/IMAC/SYNTIMG/imac-s3-opengl-master-GLImac-Template-SDL2/Projet/WorldIMaker && $(MAKE) -f lib/glimac/CMakeFiles/glimac.dir/build.make lib/glimac/CMakeFiles/glimac.dir/src/Cursor.cpp.s
 .PHONY : src/Cursor.cpp.s
 
 src/Geometry.o: src/Geometry.cpp.o
@@ -212,7 +212,7 @@ src/Geometry.o: src/Geometry.cpp.o
 
 # target to build an object file
 src/Geometry.cpp.o:
-	cd /Users/margaux/Desktop/IMAC/S3/Voldemort/WorldIMaker/WorldIMaker && $(MAKE) -f lib/glimac/CMakeFiles/glimac.dir/build.make lib/glimac/CMakeFiles/glimac.dir/src/Geometry.cpp.o
+	cd /Users/victorinemaurel/IMAC/SYNTIMG/imac-s3-opengl-master-GLImac-Template-SDL2/Projet/WorldIMaker && $(MAKE) -f lib/glimac/CMakeFiles/glimac.dir/build.make lib/glimac/CMakeFiles/glimac.dir/src/Geometry.cpp.o
 .PHONY : src/Geometry.cpp.o
 
 src/Geometry.i: src/Geometry.cpp.i
@@ -221,7 +221,7 @@ src/Geometry.i: src/Geometry.cpp.i
 
 # target to preprocess a source file
 src/Geometry.cpp.i:
-	cd /Users/margaux/Desktop/IMAC/S3/Voldemort/WorldIMaker/WorldIMaker && $(MAKE) -f lib/glimac/CMakeFiles/glimac.dir/build.make lib/glimac/CMakeFiles/glimac.dir/src/Geometry.cpp.i
+	cd /Users/victorinemaurel/IMAC/SYNTIMG/imac-s3-opengl-master-GLImac-Template-SDL2/Projet/WorldIMaker && $(MAKE) -f lib/glimac/CMakeFiles/glimac.dir/build.make lib/glimac/CMakeFiles/glimac.dir/src/Geometry.cpp.i
 .PHONY : src/Geometry.cpp.i
 
 src/Geometry.s: src/Geometry.cpp.s
@@ -230,7 +230,7 @@ src/Geometry.s: src/Geometry.cpp.s
 
 # target to generate assembly for a file
 src/Geometry.cpp.s:
-	cd /Users/margaux/Desktop/IMAC/S3/Voldemort/WorldIMaker/WorldIMaker && $(MAKE) -f lib/glimac/CMakeFiles/glimac.dir/build.make lib/glimac/CMakeFiles/glimac.dir/src/Geometry.cpp.s
+	cd /Users/victorinemaurel/IMAC/SYNTIMG/imac-s3-opengl-master-GLImac-Template-SDL2/Projet/WorldIMaker && $(MAKE) -f lib/glimac/CMakeFiles/glimac.dir/build.make lib/glimac/CMakeFiles/glimac.dir/src/Geometry.cpp.s
 .PHONY : src/Geometry.cpp.s
 
 src/Image.o: src/Image.cpp.o
@@ -239,7 +239,7 @@ src/Image.o: src/Image.cpp.o
 
 # target to build an object file
 src/Image.cpp.o:
-	cd /Users/margaux/Desktop/IMAC/S3/Voldemort/WorldIMaker/WorldIMaker && $(MAKE) -f lib/glimac/CMakeFiles/glimac.dir/build.make lib/glimac/CMakeFiles/glimac.dir/src/Image.cpp.o
+	cd /Users/victorinemaurel/IMAC/SYNTIMG/imac-s3-opengl-master-GLImac-Template-SDL2/Projet/WorldIMaker && $(MAKE) -f lib/glimac/CMakeFiles/glimac.dir/build.make lib/glimac/CMakeFiles/glimac.dir/src/Image.cpp.o
 .PHONY : src/Image.cpp.o
 
 src/Image.i: src/Image.cpp.i
@@ -248,7 +248,7 @@ src/Image.i: src/Image.cpp.i
 
 # target to preprocess a source file
 src/Image.cpp.i:
-	cd /Users/margaux/Desktop/IMAC/S3/Voldemort/WorldIMaker/WorldIMaker && $(MAKE) -f lib/glimac/CMakeFiles/glimac.dir/build.make lib/glimac/CMakeFiles/glimac.dir/src/Image.cpp.i
+	cd /Users/victorinemaurel/IMAC/SYNTIMG/imac-s3-opengl-master-GLImac-Template-SDL2/Projet/WorldIMaker && $(MAKE) -f lib/glimac/CMakeFiles/glimac.dir/build.make lib/glimac/CMakeFiles/glimac.dir/src/Image.cpp.i
 .PHONY : src/Image.cpp.i
 
 src/Image.s: src/Image.cpp.s
@@ -257,7 +257,7 @@ src/Image.s: src/Image.cpp.s
 
 # target to generate assembly for a file
 src/Image.cpp.s:
-	cd /Users/margaux/Desktop/IMAC/S3/Voldemort/WorldIMaker/WorldIMaker && $(MAKE) -f lib/glimac/CMakeFiles/glimac.dir/build.make lib/glimac/CMakeFiles/glimac.dir/src/Image.cpp.s
+	cd /Users/victorinemaurel/IMAC/SYNTIMG/imac-s3-opengl-master-GLImac-Template-SDL2/Projet/WorldIMaker && $(MAKE) -f lib/glimac/CMakeFiles/glimac.dir/build.make lib/glimac/CMakeFiles/glimac.dir/src/Image.cpp.s
 .PHONY : src/Image.cpp.s
 
 src/Imagev2.o: src/Imagev2.cpp.o
@@ -266,7 +266,7 @@ src/Imagev2.o: src/Imagev2.cpp.o
 
 # target to build an object file
 src/Imagev2.cpp.o:
-	cd /Users/margaux/Desktop/IMAC/S3/Voldemort/WorldIMaker/WorldIMaker && $(MAKE) -f lib/glimac/CMakeFiles/glimac.dir/build.make lib/glimac/CMakeFiles/glimac.dir/src/Imagev2.cpp.o
+	cd /Users/victorinemaurel/IMAC/SYNTIMG/imac-s3-opengl-master-GLImac-Template-SDL2/Projet/WorldIMaker && $(MAKE) -f lib/glimac/CMakeFiles/glimac.dir/build.make lib/glimac/CMakeFiles/glimac.dir/src/Imagev2.cpp.o
 .PHONY : src/Imagev2.cpp.o
 
 src/Imagev2.i: src/Imagev2.cpp.i
@@ -275,7 +275,7 @@ src/Imagev2.i: src/Imagev2.cpp.i
 
 # target to preprocess a source file
 src/Imagev2.cpp.i:
-	cd /Users/margaux/Desktop/IMAC/S3/Voldemort/WorldIMaker/WorldIMaker && $(MAKE) -f lib/glimac/CMakeFiles/glimac.dir/build.make lib/glimac/CMakeFiles/glimac.dir/src/Imagev2.cpp.i
+	cd /Users/victorinemaurel/IMAC/SYNTIMG/imac-s3-opengl-master-GLImac-Template-SDL2/Projet/WorldIMaker && $(MAKE) -f lib/glimac/CMakeFiles/glimac.dir/build.make lib/glimac/CMakeFiles/glimac.dir/src/Imagev2.cpp.i
 .PHONY : src/Imagev2.cpp.i
 
 src/Imagev2.s: src/Imagev2.cpp.s
@@ -284,7 +284,7 @@ src/Imagev2.s: src/Imagev2.cpp.s
 
 # target to generate assembly for a file
 src/Imagev2.cpp.s:
-	cd /Users/margaux/Desktop/IMAC/S3/Voldemort/WorldIMaker/WorldIMaker && $(MAKE) -f lib/glimac/CMakeFiles/glimac.dir/build.make lib/glimac/CMakeFiles/glimac.dir/src/Imagev2.cpp.s
+	cd /Users/victorinemaurel/IMAC/SYNTIMG/imac-s3-opengl-master-GLImac-Template-SDL2/Projet/WorldIMaker && $(MAKE) -f lib/glimac/CMakeFiles/glimac.dir/build.make lib/glimac/CMakeFiles/glimac.dir/src/Imagev2.cpp.s
 .PHONY : src/Imagev2.cpp.s
 
 src/Program.o: src/Program.cpp.o
@@ -293,7 +293,7 @@ src/Program.o: src/Program.cpp.o
 
 # target to build an object file
 src/Program.cpp.o:
-	cd /Users/margaux/Desktop/IMAC/S3/Voldemort/WorldIMaker/WorldIMaker && $(MAKE) -f lib/glimac/CMakeFiles/glimac.dir/build.make lib/glimac/CMakeFiles/glimac.dir/src/Program.cpp.o
+	cd /Users/victorinemaurel/IMAC/SYNTIMG/imac-s3-opengl-master-GLImac-Template-SDL2/Projet/WorldIMaker && $(MAKE) -f lib/glimac/CMakeFiles/glimac.dir/build.make lib/glimac/CMakeFiles/glimac.dir/src/Program.cpp.o
 .PHONY : src/Program.cpp.o
 
 src/Program.i: src/Program.cpp.i
@@ -302,7 +302,7 @@ src/Program.i: src/Program.cpp.i
 
 # target to preprocess a source file
 src/Program.cpp.i:
-	cd /Users/margaux/Desktop/IMAC/S3/Voldemort/WorldIMaker/WorldIMaker && $(MAKE) -f lib/glimac/CMakeFiles/glimac.dir/build.make lib/glimac/CMakeFiles/glimac.dir/src/Program.cpp.i
+	cd /Users/victorinemaurel/IMAC/SYNTIMG/imac-s3-opengl-master-GLImac-Template-SDL2/Projet/WorldIMaker && $(MAKE) -f lib/glimac/CMakeFiles/glimac.dir/build.make lib/glimac/CMakeFiles/glimac.dir/src/Program.cpp.i
 .PHONY : src/Program.cpp.i
 
 src/Program.s: src/Program.cpp.s
@@ -311,7 +311,7 @@ src/Program.s: src/Program.cpp.s
 
 # target to generate assembly for a file
 src/Program.cpp.s:
-	cd /Users/margaux/Desktop/IMAC/S3/Voldemort/WorldIMaker/WorldIMaker && $(MAKE) -f lib/glimac/CMakeFiles/glimac.dir/build.make lib/glimac/CMakeFiles/glimac.dir/src/Program.cpp.s
+	cd /Users/victorinemaurel/IMAC/SYNTIMG/imac-s3-opengl-master-GLImac-Template-SDL2/Projet/WorldIMaker && $(MAKE) -f lib/glimac/CMakeFiles/glimac.dir/build.make lib/glimac/CMakeFiles/glimac.dir/src/Program.cpp.s
 .PHONY : src/Program.cpp.s
 
 src/SDLWindowManager.o: src/SDLWindowManager.cpp.o
@@ -320,7 +320,7 @@ src/SDLWindowManager.o: src/SDLWindowManager.cpp.o
 
 # target to build an object file
 src/SDLWindowManager.cpp.o:
-	cd /Users/margaux/Desktop/IMAC/S3/Voldemort/WorldIMaker/WorldIMaker && $(MAKE) -f lib/glimac/CMakeFiles/glimac.dir/build.make lib/glimac/CMakeFiles/glimac.dir/src/SDLWindowManager.cpp.o
+	cd /Users/victorinemaurel/IMAC/SYNTIMG/imac-s3-opengl-master-GLImac-Template-SDL2/Projet/WorldIMaker && $(MAKE) -f lib/glimac/CMakeFiles/glimac.dir/build.make lib/glimac/CMakeFiles/glimac.dir/src/SDLWindowManager.cpp.o
 .PHONY : src/SDLWindowManager.cpp.o
 
 src/SDLWindowManager.i: src/SDLWindowManager.cpp.i
@@ -329,7 +329,7 @@ src/SDLWindowManager.i: src/SDLWindowManager.cpp.i
 
 # target to preprocess a source file
 src/SDLWindowManager.cpp.i:
-	cd /Users/margaux/Desktop/IMAC/S3/Voldemort/WorldIMaker/WorldIMaker && $(MAKE) -f lib/glimac/CMakeFiles/glimac.dir/build.make lib/glimac/CMakeFiles/glimac.dir/src/SDLWindowManager.cpp.i
+	cd /Users/victorinemaurel/IMAC/SYNTIMG/imac-s3-opengl-master-GLImac-Template-SDL2/Projet/WorldIMaker && $(MAKE) -f lib/glimac/CMakeFiles/glimac.dir/build.make lib/glimac/CMakeFiles/glimac.dir/src/SDLWindowManager.cpp.i
 .PHONY : src/SDLWindowManager.cpp.i
 
 src/SDLWindowManager.s: src/SDLWindowManager.cpp.s
@@ -338,7 +338,7 @@ src/SDLWindowManager.s: src/SDLWindowManager.cpp.s
 
 # target to generate assembly for a file
 src/SDLWindowManager.cpp.s:
-	cd /Users/margaux/Desktop/IMAC/S3/Voldemort/WorldIMaker/WorldIMaker && $(MAKE) -f lib/glimac/CMakeFiles/glimac.dir/build.make lib/glimac/CMakeFiles/glimac.dir/src/SDLWindowManager.cpp.s
+	cd /Users/victorinemaurel/IMAC/SYNTIMG/imac-s3-opengl-master-GLImac-Template-SDL2/Projet/WorldIMaker && $(MAKE) -f lib/glimac/CMakeFiles/glimac.dir/build.make lib/glimac/CMakeFiles/glimac.dir/src/SDLWindowManager.cpp.s
 .PHONY : src/SDLWindowManager.cpp.s
 
 src/Shader.o: src/Shader.cpp.o
@@ -347,7 +347,7 @@ src/Shader.o: src/Shader.cpp.o
 
 # target to build an object file
 src/Shader.cpp.o:
-	cd /Users/margaux/Desktop/IMAC/S3/Voldemort/WorldIMaker/WorldIMaker && $(MAKE) -f lib/glimac/CMakeFiles/glimac.dir/build.make lib/glimac/CMakeFiles/glimac.dir/src/Shader.cpp.o
+	cd /Users/victorinemaurel/IMAC/SYNTIMG/imac-s3-opengl-master-GLImac-Template-SDL2/Projet/WorldIMaker && $(MAKE) -f lib/glimac/CMakeFiles/glimac.dir/build.make lib/glimac/CMakeFiles/glimac.dir/src/Shader.cpp.o
 .PHONY : src/Shader.cpp.o
 
 src/Shader.i: src/Shader.cpp.i
@@ -356,7 +356,7 @@ src/Shader.i: src/Shader.cpp.i
 
 # target to preprocess a source file
 src/Shader.cpp.i:
-	cd /Users/margaux/Desktop/IMAC/S3/Voldemort/WorldIMaker/WorldIMaker && $(MAKE) -f lib/glimac/CMakeFiles/glimac.dir/build.make lib/glimac/CMakeFiles/glimac.dir/src/Shader.cpp.i
+	cd /Users/victorinemaurel/IMAC/SYNTIMG/imac-s3-opengl-master-GLImac-Template-SDL2/Projet/WorldIMaker && $(MAKE) -f lib/glimac/CMakeFiles/glimac.dir/build.make lib/glimac/CMakeFiles/glimac.dir/src/Shader.cpp.i
 .PHONY : src/Shader.cpp.i
 
 src/Shader.s: src/Shader.cpp.s
@@ -365,7 +365,7 @@ src/Shader.s: src/Shader.cpp.s
 
 # target to generate assembly for a file
 src/Shader.cpp.s:
-	cd /Users/margaux/Desktop/IMAC/S3/Voldemort/WorldIMaker/WorldIMaker && $(MAKE) -f lib/glimac/CMakeFiles/glimac.dir/build.make lib/glimac/CMakeFiles/glimac.dir/src/Shader.cpp.s
+	cd /Users/victorinemaurel/IMAC/SYNTIMG/imac-s3-opengl-master-GLImac-Template-SDL2/Projet/WorldIMaker && $(MAKE) -f lib/glimac/CMakeFiles/glimac.dir/build.make lib/glimac/CMakeFiles/glimac.dir/src/Shader.cpp.s
 .PHONY : src/Shader.cpp.s
 
 src/Sphere.o: src/Sphere.cpp.o
@@ -374,7 +374,7 @@ src/Sphere.o: src/Sphere.cpp.o
 
 # target to build an object file
 src/Sphere.cpp.o:
-	cd /Users/margaux/Desktop/IMAC/S3/Voldemort/WorldIMaker/WorldIMaker && $(MAKE) -f lib/glimac/CMakeFiles/glimac.dir/build.make lib/glimac/CMakeFiles/glimac.dir/src/Sphere.cpp.o
+	cd /Users/victorinemaurel/IMAC/SYNTIMG/imac-s3-opengl-master-GLImac-Template-SDL2/Projet/WorldIMaker && $(MAKE) -f lib/glimac/CMakeFiles/glimac.dir/build.make lib/glimac/CMakeFiles/glimac.dir/src/Sphere.cpp.o
 .PHONY : src/Sphere.cpp.o
 
 src/Sphere.i: src/Sphere.cpp.i
@@ -383,7 +383,7 @@ src/Sphere.i: src/Sphere.cpp.i
 
 # target to preprocess a source file
 src/Sphere.cpp.i:
-	cd /Users/margaux/Desktop/IMAC/S3/Voldemort/WorldIMaker/WorldIMaker && $(MAKE) -f lib/glimac/CMakeFiles/glimac.dir/build.make lib/glimac/CMakeFiles/glimac.dir/src/Sphere.cpp.i
+	cd /Users/victorinemaurel/IMAC/SYNTIMG/imac-s3-opengl-master-GLImac-Template-SDL2/Projet/WorldIMaker && $(MAKE) -f lib/glimac/CMakeFiles/glimac.dir/build.make lib/glimac/CMakeFiles/glimac.dir/src/Sphere.cpp.i
 .PHONY : src/Sphere.cpp.i
 
 src/Sphere.s: src/Sphere.cpp.s
@@ -392,7 +392,7 @@ src/Sphere.s: src/Sphere.cpp.s
 
 # target to generate assembly for a file
 src/Sphere.cpp.s:
-	cd /Users/margaux/Desktop/IMAC/S3/Voldemort/WorldIMaker/WorldIMaker && $(MAKE) -f lib/glimac/CMakeFiles/glimac.dir/build.make lib/glimac/CMakeFiles/glimac.dir/src/Sphere.cpp.s
+	cd /Users/victorinemaurel/IMAC/SYNTIMG/imac-s3-opengl-master-GLImac-Template-SDL2/Projet/WorldIMaker && $(MAKE) -f lib/glimac/CMakeFiles/glimac.dir/build.make lib/glimac/CMakeFiles/glimac.dir/src/Sphere.cpp.s
 .PHONY : src/Sphere.cpp.s
 
 src/TrackballCamera.o: src/TrackballCamera.cpp.o
@@ -401,7 +401,7 @@ src/TrackballCamera.o: src/TrackballCamera.cpp.o
 
 # target to build an object file
 src/TrackballCamera.cpp.o:
-	cd /Users/margaux/Desktop/IMAC/S3/Voldemort/WorldIMaker/WorldIMaker && $(MAKE) -f lib/glimac/CMakeFiles/glimac.dir/build.make lib/glimac/CMakeFiles/glimac.dir/src/TrackballCamera.cpp.o
+	cd /Users/victorinemaurel/IMAC/SYNTIMG/imac-s3-opengl-master-GLImac-Template-SDL2/Projet/WorldIMaker && $(MAKE) -f lib/glimac/CMakeFiles/glimac.dir/build.make lib/glimac/CMakeFiles/glimac.dir/src/TrackballCamera.cpp.o
 .PHONY : src/TrackballCamera.cpp.o
 
 src/TrackballCamera.i: src/TrackballCamera.cpp.i
@@ -410,7 +410,7 @@ src/TrackballCamera.i: src/TrackballCamera.cpp.i
 
 # target to preprocess a source file
 src/TrackballCamera.cpp.i:
-	cd /Users/margaux/Desktop/IMAC/S3/Voldemort/WorldIMaker/WorldIMaker && $(MAKE) -f lib/glimac/CMakeFiles/glimac.dir/build.make lib/glimac/CMakeFiles/glimac.dir/src/TrackballCamera.cpp.i
+	cd /Users/victorinemaurel/IMAC/SYNTIMG/imac-s3-opengl-master-GLImac-Template-SDL2/Projet/WorldIMaker && $(MAKE) -f lib/glimac/CMakeFiles/glimac.dir/build.make lib/glimac/CMakeFiles/glimac.dir/src/TrackballCamera.cpp.i
 .PHONY : src/TrackballCamera.cpp.i
 
 src/TrackballCamera.s: src/TrackballCamera.cpp.s
@@ -419,7 +419,7 @@ src/TrackballCamera.s: src/TrackballCamera.cpp.s
 
 # target to generate assembly for a file
 src/TrackballCamera.cpp.s:
-	cd /Users/margaux/Desktop/IMAC/S3/Voldemort/WorldIMaker/WorldIMaker && $(MAKE) -f lib/glimac/CMakeFiles/glimac.dir/build.make lib/glimac/CMakeFiles/glimac.dir/src/TrackballCamera.cpp.s
+	cd /Users/victorinemaurel/IMAC/SYNTIMG/imac-s3-opengl-master-GLImac-Template-SDL2/Projet/WorldIMaker && $(MAKE) -f lib/glimac/CMakeFiles/glimac.dir/build.make lib/glimac/CMakeFiles/glimac.dir/src/TrackballCamera.cpp.s
 .PHONY : src/TrackballCamera.cpp.s
 
 src/tiny_obj_loader.o: src/tiny_obj_loader.cpp.o
@@ -428,7 +428,7 @@ src/tiny_obj_loader.o: src/tiny_obj_loader.cpp.o
 
 # target to build an object file
 src/tiny_obj_loader.cpp.o:
-	cd /Users/margaux/Desktop/IMAC/S3/Voldemort/WorldIMaker/WorldIMaker && $(MAKE) -f lib/glimac/CMakeFiles/glimac.dir/build.make lib/glimac/CMakeFiles/glimac.dir/src/tiny_obj_loader.cpp.o
+	cd /Users/victorinemaurel/IMAC/SYNTIMG/imac-s3-opengl-master-GLImac-Template-SDL2/Projet/WorldIMaker && $(MAKE) -f lib/glimac/CMakeFiles/glimac.dir/build.make lib/glimac/CMakeFiles/glimac.dir/src/tiny_obj_loader.cpp.o
 .PHONY : src/tiny_obj_loader.cpp.o
 
 src/tiny_obj_loader.i: src/tiny_obj_loader.cpp.i
@@ -437,7 +437,7 @@ src/tiny_obj_loader.i: src/tiny_obj_loader.cpp.i
 
 # target to preprocess a source file
 src/tiny_obj_loader.cpp.i:
-	cd /Users/margaux/Desktop/IMAC/S3/Voldemort/WorldIMaker/WorldIMaker && $(MAKE) -f lib/glimac/CMakeFiles/glimac.dir/build.make lib/glimac/CMakeFiles/glimac.dir/src/tiny_obj_loader.cpp.i
+	cd /Users/victorinemaurel/IMAC/SYNTIMG/imac-s3-opengl-master-GLImac-Template-SDL2/Projet/WorldIMaker && $(MAKE) -f lib/glimac/CMakeFiles/glimac.dir/build.make lib/glimac/CMakeFiles/glimac.dir/src/tiny_obj_loader.cpp.i
 .PHONY : src/tiny_obj_loader.cpp.i
 
 src/tiny_obj_loader.s: src/tiny_obj_loader.cpp.s
@@ -446,7 +446,7 @@ src/tiny_obj_loader.s: src/tiny_obj_loader.cpp.s
 
 # target to generate assembly for a file
 src/tiny_obj_loader.cpp.s:
-	cd /Users/margaux/Desktop/IMAC/S3/Voldemort/WorldIMaker/WorldIMaker && $(MAKE) -f lib/glimac/CMakeFiles/glimac.dir/build.make lib/glimac/CMakeFiles/glimac.dir/src/tiny_obj_loader.cpp.s
+	cd /Users/victorinemaurel/IMAC/SYNTIMG/imac-s3-opengl-master-GLImac-Template-SDL2/Projet/WorldIMaker && $(MAKE) -f lib/glimac/CMakeFiles/glimac.dir/build.make lib/glimac/CMakeFiles/glimac.dir/src/tiny_obj_loader.cpp.s
 .PHONY : src/tiny_obj_loader.cpp.s
 
 # Help Target
@@ -505,6 +505,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /Users/margaux/Desktop/IMAC/S3/Voldemort/WorldIMaker/WorldIMaker && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /Users/victorinemaurel/IMAC/SYNTIMG/imac-s3-opengl-master-GLImac-Template-SDL2/Projet/WorldIMaker && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

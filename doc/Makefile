@@ -48,10 +48,10 @@ RM = /usr/local/Cellar/cmake/3.15.5/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/margaux/Desktop/IMAC/S3/Voldemort/WorldIMaker/WorldIMaker
+CMAKE_SOURCE_DIR = /Users/victorinemaurel/IMAC/SYNTIMG/imac-s3-opengl-master-GLImac-Template-SDL2/Projet/WorldIMaker
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/margaux/Desktop/IMAC/S3/Voldemort/WorldIMaker/WorldIMaker
+CMAKE_BINARY_DIR = /Users/victorinemaurel/IMAC/SYNTIMG/imac-s3-opengl-master-GLImac-Template-SDL2/Projet/WorldIMaker
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -80,14 +80,14 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	cd /Users/margaux/Desktop/IMAC/S3/Voldemort/WorldIMaker/WorldIMaker && $(CMAKE_COMMAND) -E cmake_progress_start /Users/margaux/Desktop/IMAC/S3/Voldemort/WorldIMaker/WorldIMaker/CMakeFiles /Users/margaux/Desktop/IMAC/S3/Voldemort/WorldIMaker/WorldIMaker/doc/CMakeFiles/progress.marks
-	cd /Users/margaux/Desktop/IMAC/S3/Voldemort/WorldIMaker/WorldIMaker && $(MAKE) -f CMakeFiles/Makefile2 doc/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/margaux/Desktop/IMAC/S3/Voldemort/WorldIMaker/WorldIMaker/CMakeFiles 0
+	cd /Users/victorinemaurel/IMAC/SYNTIMG/imac-s3-opengl-master-GLImac-Template-SDL2/Projet/WorldIMaker && $(CMAKE_COMMAND) -E cmake_progress_start /Users/victorinemaurel/IMAC/SYNTIMG/imac-s3-opengl-master-GLImac-Template-SDL2/Projet/WorldIMaker/CMakeFiles /Users/victorinemaurel/IMAC/SYNTIMG/imac-s3-opengl-master-GLImac-Template-SDL2/Projet/WorldIMaker/doc/CMakeFiles/progress.marks
+	cd /Users/victorinemaurel/IMAC/SYNTIMG/imac-s3-opengl-master-GLImac-Template-SDL2/Projet/WorldIMaker && $(MAKE) -f CMakeFiles/Makefile2 doc/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/victorinemaurel/IMAC/SYNTIMG/imac-s3-opengl-master-GLImac-Template-SDL2/Projet/WorldIMaker/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /Users/margaux/Desktop/IMAC/S3/Voldemort/WorldIMaker/WorldIMaker && $(MAKE) -f CMakeFiles/Makefile2 doc/clean
+	cd /Users/victorinemaurel/IMAC/SYNTIMG/imac-s3-opengl-master-GLImac-Template-SDL2/Projet/WorldIMaker && $(MAKE) -f CMakeFiles/Makefile2 doc/clean
 .PHONY : clean
 
 # The main clean target
@@ -97,33 +97,33 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /Users/margaux/Desktop/IMAC/S3/Voldemort/WorldIMaker/WorldIMaker && $(MAKE) -f CMakeFiles/Makefile2 doc/preinstall
+	cd /Users/victorinemaurel/IMAC/SYNTIMG/imac-s3-opengl-master-GLImac-Template-SDL2/Projet/WorldIMaker && $(MAKE) -f CMakeFiles/Makefile2 doc/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /Users/margaux/Desktop/IMAC/S3/Voldemort/WorldIMaker/WorldIMaker && $(MAKE) -f CMakeFiles/Makefile2 doc/preinstall
+	cd /Users/victorinemaurel/IMAC/SYNTIMG/imac-s3-opengl-master-GLImac-Template-SDL2/Projet/WorldIMaker && $(MAKE) -f CMakeFiles/Makefile2 doc/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /Users/margaux/Desktop/IMAC/S3/Voldemort/WorldIMaker/WorldIMaker && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /Users/victorinemaurel/IMAC/SYNTIMG/imac-s3-opengl-master-GLImac-Template-SDL2/Projet/WorldIMaker && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
-doc/CMakeFiles/doc.dir/rule:
-	cd /Users/margaux/Desktop/IMAC/S3/Voldemort/WorldIMaker/WorldIMaker && $(MAKE) -f CMakeFiles/Makefile2 doc/CMakeFiles/doc.dir/rule
-.PHONY : doc/CMakeFiles/doc.dir/rule
+doc/CMakeFiles/html.dir/rule:
+	cd /Users/victorinemaurel/IMAC/SYNTIMG/imac-s3-opengl-master-GLImac-Template-SDL2/Projet/WorldIMaker && $(MAKE) -f CMakeFiles/Makefile2 doc/CMakeFiles/html.dir/rule
+.PHONY : doc/CMakeFiles/html.dir/rule
 
 # Convenience name for target.
-doc: doc/CMakeFiles/doc.dir/rule
+html: doc/CMakeFiles/html.dir/rule
 
-.PHONY : doc
+.PHONY : html
 
 # fast build rule for target.
-doc/fast:
-	cd /Users/margaux/Desktop/IMAC/S3/Voldemort/WorldIMaker/WorldIMaker && $(MAKE) -f doc/CMakeFiles/doc.dir/build.make doc/CMakeFiles/doc.dir/build
-.PHONY : doc/fast
+html/fast:
+	cd /Users/victorinemaurel/IMAC/SYNTIMG/imac-s3-opengl-master-GLImac-Template-SDL2/Projet/WorldIMaker && $(MAKE) -f doc/CMakeFiles/html.dir/build.make doc/CMakeFiles/html.dir/build
+.PHONY : html/fast
 
 # Help Target
 help:
@@ -133,7 +133,7 @@ help:
 	@echo "... depend"
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
-	@echo "... doc"
+	@echo "... html"
 .PHONY : help
 
 
@@ -145,6 +145,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /Users/margaux/Desktop/IMAC/S3/Voldemort/WorldIMaker/WorldIMaker && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /Users/victorinemaurel/IMAC/SYNTIMG/imac-s3-opengl-master-GLImac-Template-SDL2/Projet/WorldIMaker && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

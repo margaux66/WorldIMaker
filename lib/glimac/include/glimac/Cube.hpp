@@ -19,11 +19,12 @@ namespace glimac {
 			bool m_isVisible;
 			bool m_isSelected;
 			glm::vec3 m_position;
+			//std::vector<glimac::Cube> m_allCubes;
 
 		public :
 			Cube(glm::vec3 position,glm::vec4 color);
 			~Cube()= default;
-			void create();
+			//void createScene(int nbCube);
 			void display();
 			//Cube select();
 			//void remove();
@@ -37,8 +38,10 @@ namespace glimac {
 
 			//getter
 			inline glm::vec3 getPosition(){return m_position;};
+			inline glm::vec4 getColor(){return m_color;};
 			inline bool getIsSelected(){return m_isSelected;};
 			inline bool getIsVisible(){return m_isVisible;};
+			//inline std::vector<glimac::Cube> getAllCube(){return m_allCubes;};
 
 
 	};

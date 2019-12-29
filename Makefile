@@ -48,10 +48,10 @@ RM = /usr/local/Cellar/cmake/3.15.5/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/margaux/Desktop/IMAC/S3/Voldemort/WorldIMaker/WorldIMaker
+CMAKE_SOURCE_DIR = /Users/victorinemaurel/IMAC/SYNTIMG/imac-s3-opengl-master-GLImac-Template-SDL2/Projet/WorldIMaker
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/margaux/Desktop/IMAC/S3/Voldemort/WorldIMaker/WorldIMaker
+CMAKE_BINARY_DIR = /Users/victorinemaurel/IMAC/SYNTIMG/imac-s3-opengl-master-GLImac-Template-SDL2/Projet/WorldIMaker
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -80,9 +80,9 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/margaux/Desktop/IMAC/S3/Voldemort/WorldIMaker/WorldIMaker/CMakeFiles /Users/margaux/Desktop/IMAC/S3/Voldemort/WorldIMaker/WorldIMaker/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/victorinemaurel/IMAC/SYNTIMG/imac-s3-opengl-master-GLImac-Template-SDL2/Projet/WorldIMaker/CMakeFiles /Users/victorinemaurel/IMAC/SYNTIMG/imac-s3-opengl-master-GLImac-Template-SDL2/Projet/WorldIMaker/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/margaux/Desktop/IMAC/S3/Voldemort/WorldIMaker/WorldIMaker/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/victorinemaurel/IMAC/SYNTIMG/imac-s3-opengl-master-GLImac-Template-SDL2/Projet/WorldIMaker/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -137,17 +137,30 @@ glimac/fast:
 .PHONY : glimac/fast
 
 #=============================================================================
-# Target rules for targets named doc
+# Target rules for targets named imgui
 
 # Build rule for target.
-doc: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 doc
-.PHONY : doc
+imgui: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 imgui
+.PHONY : imgui
 
 # fast build rule for target.
-doc/fast:
-	$(MAKE) -f doc/CMakeFiles/doc.dir/build.make doc/CMakeFiles/doc.dir/build
-.PHONY : doc/fast
+imgui/fast:
+	$(MAKE) -f lib/imgui/CMakeFiles/imgui.dir/build.make lib/imgui/CMakeFiles/imgui.dir/build
+.PHONY : imgui/fast
+
+#=============================================================================
+# Target rules for targets named html
+
+# Build rule for target.
+html: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 html
+.PHONY : html
+
+# fast build rule for target.
+html/fast:
+	$(MAKE) -f doc/CMakeFiles/html.dir/build.make doc/CMakeFiles/html.dir/build
+.PHONY : html/fast
 
 src/main.o: src/main.cpp.o
 
@@ -176,6 +189,33 @@ src/main.cpp.s:
 	$(MAKE) -f CMakeFiles/worldIMaker.dir/build.make CMakeFiles/worldIMaker.dir/src/main.cpp.s
 .PHONY : src/main.cpp.s
 
+src/menu.o: src/menu.cpp.o
+
+.PHONY : src/menu.o
+
+# target to build an object file
+src/menu.cpp.o:
+	$(MAKE) -f CMakeFiles/worldIMaker.dir/build.make CMakeFiles/worldIMaker.dir/src/menu.cpp.o
+.PHONY : src/menu.cpp.o
+
+src/menu.i: src/menu.cpp.i
+
+.PHONY : src/menu.i
+
+# target to preprocess a source file
+src/menu.cpp.i:
+	$(MAKE) -f CMakeFiles/worldIMaker.dir/build.make CMakeFiles/worldIMaker.dir/src/menu.cpp.i
+.PHONY : src/menu.cpp.i
+
+src/menu.s: src/menu.cpp.s
+
+.PHONY : src/menu.s
+
+# target to generate assembly for a file
+src/menu.cpp.s:
+	$(MAKE) -f CMakeFiles/worldIMaker.dir/build.make CMakeFiles/worldIMaker.dir/src/menu.cpp.s
+.PHONY : src/menu.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -186,10 +226,14 @@ help:
 	@echo "... edit_cache"
 	@echo "... worldIMaker"
 	@echo "... glimac"
-	@echo "... doc"
+	@echo "... imgui"
+	@echo "... html"
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"
+	@echo "... src/menu.o"
+	@echo "... src/menu.i"
+	@echo "... src/menu.s"
 .PHONY : help
 
 

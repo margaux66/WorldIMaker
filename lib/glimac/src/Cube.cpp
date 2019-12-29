@@ -12,20 +12,20 @@ namespace glimac {
 	        5,6,7,    5,7,4 //back
 	};
 
-	Cube::Cube(glm::vec3 position,glm::vec4 color): m_isVisible(false), m_isSelected(false), m_color(color), m_position(position){
-
-		//coordonnées des sommets
-		std::vector<glm::vec3> temporary_vertices = {
-			glm::vec3(0.5f,0.5f,0.5f),
-	        glm::vec3(-0.5f,0.5f,0.5f),
-	        glm::vec3(-0.5f,-0.5f,0.5f),
-	        glm::vec3(0.5f,-0.5f,0.5f),
+	//coordonnées des sommets
+	std::vector<glm::vec3> temporary_vertices = {
+		glm::vec3(0.5f,0.5f,0.5f),
+	    glm::vec3(-0.5f,0.5f,0.5f),
+	    glm::vec3(-0.5f,-0.5f,0.5f),
+	    glm::vec3(0.5f,-0.5f,0.5f),
 	        
-	        glm::vec3(0.5f,-0.5f,-0.5f),
-	        glm::vec3(0.5f,0.5f,-0.5f),
-	        glm::vec3(-0.5f,0.5f,-0.5f),
-	        glm::vec3(-0.5f,-0.5f,-0.5f)
-		};
+	    glm::vec3(0.5f,-0.5f,-0.5f),
+	    glm::vec3(0.5f,0.5f,-0.5f),
+	    glm::vec3(-0.5f,0.5f,-0.5f),
+	    glm::vec3(-0.5f,-0.5f,-0.5f)
+	};
+
+	Cube::Cube(glm::vec3 position,glm::vec4 color): m_isVisible(false), m_isSelected(false), m_color(color), m_position(position){
 
 		for (uint i = 0; i < temporary_vertices.size(); ++i)
 		{
@@ -45,13 +45,12 @@ namespace glimac {
 			m_vertices.push_back(vertex);
 		}
 
-		std::cout << m_vertices[1].color << std::endl;
 
 		if(m_vertices.empty()){
-			std::cout<< "Vertices is empty"<<std::endl;
+			std::cerr<< "Vertices is empty"<<std::endl;
 		}
 		else{
-			std::cout << "Vertices is full" <<std::endl;
+			std::cerr << "Vertices is full" <<std::endl;
 		}
 
 		//création du vbo
@@ -145,6 +144,7 @@ namespace glimac {
 			m_vertices[i].color = color;
 			//std::cout << m_vertices[i].color << std::endl;
 		}
+		m_color = color;
 
 		glGenBuffers(1,&m_vbo);
 
@@ -189,7 +189,5 @@ namespace glimac {
         //debinder this->vao
         glBindVertexArray(0);
 	}
-
-
 
 }

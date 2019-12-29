@@ -9,6 +9,8 @@ out vec4 fFragColor;
 
 //uniform sampler2D uTexture;
 
+uniform vec4 uColor;
+
 uniform vec3 uKd;
 uniform vec3 uKs;
 uniform float uShininess;
@@ -26,6 +28,5 @@ vec3 blinnPhong(vec3 uKd,vec3 uKs, float uShininess, vec3 uLightDir_vs, vec3 uLi
 void main() {
 	//vec3 texture_color = texture(uTexture, vTexCoords).xyz;
 	//fFragColor = texture_color * blinnPhong();
-	fFragColor = vColor;
-	// + blinnPhong(uKd, uKs, uShininess, uLightDir_vs, uLightIntensity);
+	fFragColor = uColor + vec4(blinnPhong(uKd, uKs, uShininess, uLightDir_vs, uLightIntensity).xyz,0);
 }

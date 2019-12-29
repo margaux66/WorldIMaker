@@ -6,13 +6,12 @@
 #include <glimac/TrackballCamera.hpp>
 #include <glimac/Cube.hpp>
 #include <glimac/Cursor.hpp>
-//#include "../include/menu.hpp"
+#include <glimac/Scene.hpp>
+
 
 int main(int argc, char const *argv[]){
      // Initialize SDL and open a window
     glimac::SDLWindowManager windowManager(800, 600, "WorldIMaker");
-
-    //Menu menu;
 
     // Initialize glew for OpenGL3+ support
     GLenum glewInitError = glewInit();
@@ -22,7 +21,8 @@ int main(int argc, char const *argv[]){
     }
 
     //Creation TrackballCamera
-    TrackballCamera camera = TrackballCamera();
+    glimac::Scene scene;
+    glimac::TrackballCamera camera;
 
     std::cout << "OpenGL Version : " << glGetString(GL_VERSION) << std::endl;
     std::cout << "GLEW Version : " << glewGetString(GLEW_VERSION) << std::endl;
@@ -35,43 +35,24 @@ int main(int argc, char const *argv[]){
 
     
     glimac::Cursor cursor(glm::vec3(1,1,1),glm::vec4(0,0,1,1));
-    glm::vec4 color = glm::vec4(0,1,0,1);
+    glimac::Cube cube(glm::vec3(0,0,0),glm::vec4(0,1,0,1));
+
+    scene.createAllCubes();
     std::vector<glimac::Cube> allCube;
+    allCube = scene.getAllCubes();
 
-    for(uint i = 0; i<10; i++){
-        for (int j = 0; j < 10; ++j){
-            for (int k = 0; k < 10; ++k){
-
-                allCube.push_back(glimac::Cube(glm::vec3(i,j,k),color));
-
-            }
-        }
-    }
-    
-
-    GLint uMVPMatrix = glGetUniformLocation(program.getGLId(), "uMVPMatrix");
-    GLint uMVMatrix = glGetUniformLocation(program.getGLId(), "uMVMatrix");
-    GLint uNormalMatrix = glGetUniformLocation(program.getGLId(), "uNormalMatrix");
-    GLint uKd = glGetUniformLocation(program.getGLId(), "uKd");
-    GLint uKs = glGetUniformLocation(program.getGLId(), "uKs");
-    GLint uShininess = glGetUniformLocation(program.getGLId(), "uShininess");
-    GLint uLightDir_vs = glGetUniformLocation(program.getGLId(), "uLightDir_vs");
-    GLint uLightIntensity = glGetUniformLocation(program.getGLId(), "uLightIntensity");
+    scene.uniformMatrix(program);
 
     // GPU checks depth
     glEnable(GL_DEPTH_TEST);
     glEnable(GL_BLEND);
     glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
 
-    glm::mat4 ProjMatrix = glm::perspective(glm::radians(70.f),800.f/600.f,0.1f, 100.f);
-
-    glm::mat4 MVMatrix = camera.getViewMatrix();
-
-    glm::vec3 Kd = glm::vec3(glm::linearRand (0.0,1.0),glm::linearRand (0.0,1.0),glm::linearRand (0.0,1.0));
-    glm::vec3 Ks = glm::vec3(glm::linearRand (0.0,1.0),glm::linearRand (0.0,1.0),glm::linearRand (0.0,1.0));
-    float Shininess = 0.5;
-    glm::vec3 LightDir= glm::vec3(1.0,1.0,1.0);
-    glm::vec3 LightIntensity = glm::vec3(1.,1.,1.);
+    scene.setDirectionalLight(glm::vec3(glm::linearRand (0.0,1.0),glm::linearRand (0.0,1.0),glm::linearRand (0.0,1.0)),
+                                glm::vec3(glm::linearRand (0.0,1.0),glm::linearRand (0.0,1.0),glm::linearRand (0.0,1.0)),
+                                0.5,
+                                glm::vec3(1.0,1.0,1.0),
+                                glm::vec3(1.,1.,1.));
 
     bool done = false;
     while(!done) {
@@ -122,41 +103,30 @@ int main(int argc, char const *argv[]){
                         cursor.setPosition(glm::vec3(cursor.getPosition().x, cursor.getPosition().y, cursor.getPosition().z-1));
                         break;
                     case SDLK_r :
-                        for (int i = 0; i < allCube.size(); ++i)
-                        {
-                            if(cursor.getPosition() == allCube[i].getPosition()){
-                                if(allCube[i].getIsVisible()==false){
-                                    allCube[i].setIsVisible(true);
-                                }
-                                else{
-                                   allCube[i].setIsVisible(false); 
-                                }
-                            }
-
-                        }
-                        break;  
-/*                     case SDLK_t :
-                        for (uint i = 0; i < allCube.size(); ++i)
-                        {
-                            if(cursor.getPosition() == allCube[i].getPosition()){
-                            	
-                            	while(allCube[j].getIsVisible()==true){
-                            		j++;
-                            	}
-                            	allCube[j+1].setIsVisible(true);
-                                
-                            }
-
-                        }
-
-                     	break;*/
+                        scene.add(cursor);
+                        break;
+                    case SDLK_t :
+                        scene.remove(cursor);   
+                        break;   
+                    case SDLK_u :
+                         scene.extrud(cursor);
+                      	break;
+                    case SDLK_i :
+                         scene.dig(cursor);
+                        break;
+                    case SDLK_l :
+                        scene.changeColor(cursor,glm::vec4(0,0,1,1));
+                        break;
+                    case SDLK_k :
+                        scene.getColor(cursor);
+                        break;
 
 
 
 
                 }
             }
-            
+            allCube[1].setIsVisible(true);
             if ( e.type == SDL_MOUSEWHEEL ) {
                 if (e.wheel.y > 0) {
                     camera.moveFront(0.1f);
@@ -176,131 +146,12 @@ int main(int argc, char const *argv[]){
         glClearColor(1,0,0,1);
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
-/*        MVMatrix = camera.getViewMatrix();
+        scene.applyDirectionalLight(camera);
+        scene.displayCubes(camera);
 
-        glUniform3fv(uKd, 1, glm::value_ptr(Kd));
-        glUniform3fv(uKs, 1, glm::value_ptr(Ks));
-        glUniform1f(uShininess, Shininess);
-        glUniform3fv(uLightDir_vs, 1, glm::value_ptr(glm::mat3(camera.getViewMatrix())*LightDir));
-        glUniform3fv(uLightIntensity, 1, glm::value_ptr(LightIntensity));
-
-        glUniformMatrix4fv(uMVMatrix, 1, GL_FALSE, glm::value_ptr(MVMatrix));
-        glUniformMatrix4fv(uNormalMatrix, 1, GL_FALSE, glm::value_ptr(glm::transpose(glm::inverse(MVMatrix))));
-        //glm::mat4 mvp = ProjMatrix * MVMatrix;
-        glUniformMatrix4fv(uMVPMatrix, 1, GL_FALSE, glm::value_ptr(ProjMatrix * MVMatrix));
-
-        
-        cube.display();*/
-
-        for (int i = 0; i < allCube.size(); ++i)
-        {
-            MVMatrix = camera.getViewMatrix();
-            glm::mat4 cube2MVMatrix = glm::translate(MVMatrix, allCube[i].getPosition());
-            glUniformMatrix4fv(uMVMatrix, 1, GL_FALSE, glm::value_ptr(cube2MVMatrix));
-            glUniformMatrix4fv(uNormalMatrix, 1, GL_FALSE, glm::value_ptr(glm::transpose(glm::inverse(cube2MVMatrix))));
-            glUniformMatrix4fv(uMVPMatrix, 1, GL_FALSE, glm::value_ptr( ProjMatrix * cube2MVMatrix));
-            //allCube[0].setColor(glm::vec4(1,1,0,1));
-            allCube[i].display();
-            
-        }
-
-		/*MVMatrix = camera.getViewMatrix();
-		glm::mat4 cubesMVMatrix = glm::translate(MVMatrix, allCube[1].getPosition());
-        glUniformMatrix4fv(uMVMatrix, 1, GL_FALSE, glm::value_ptr(cubesMVMatrix));
-        glUniformMatrix4fv(uNormalMatrix, 1, GL_FALSE, glm::value_ptr(glm::transpose(glm::inverse(cubesMVMatrix))));
-	    glUniformMatrix4fv(uMVPMatrix, 1, GL_FALSE, glm::value_ptr( ProjMatrix * cubesMVMatrix));
-	            //allCube[0].setColor(glm::vec4(1,1,0,1));
-	    allCube[1].setIsVisible(true);
-	    allCube[1].display();*/
-
-        /*MVMatrix = camera.getViewMatrix();
-        glm::mat4 cube2MVMatrix = glm::translate(MVMatrix, cube.getPosition());
-        glUniformMatrix4fv(uMVMatrix, 1, GL_FALSE, glm::value_ptr(cube2MVMatrix));
-        glUniformMatrix4fv(uNormalMatrix, 1, GL_FALSE, glm::value_ptr(glm::transpose(glm::inverse(cube2MVMatrix))));
-        glUniformMatrix4fv(uMVPMatrix, 1, GL_FALSE, glm::value_ptr( ProjMatrix * cube2MVMatrix));
-        //allCube[0].setColor(glm::vec4(1,1,0,1));
-        allCube[0].display();
-
-        MVMatrix = camera.getViewMatrix();
-        cube2MVMatrix = glm::translate(MVMatrix, cube2.getPosition());
-        glUniformMatrix4fv(uMVMatrix, 1, GL_FALSE, glm::value_ptr(cube2MVMatrix));
-        glUniformMatrix4fv(uNormalMatrix, 1, GL_FALSE, glm::value_ptr(glm::transpose(glm::inverse(cube2MVMatrix))));
-        glUniformMatrix4fv(uMVPMatrix, 1, GL_FALSE, glm::value_ptr( ProjMatrix * cube2MVMatrix));
-        //allCube[1].setColor(glm::vec4(1,1,0,1));
-        allCube[1].display();*/
-
-
-
-        MVMatrix = camera.getViewMatrix();
-        glm::mat4 cube2MVMatrix = glm::translate(MVMatrix, cursor.getPosition());
-        glUniformMatrix4fv(uMVMatrix, 1, GL_FALSE, glm::value_ptr(cube2MVMatrix));
-        glUniformMatrix4fv(uNormalMatrix, 1, GL_FALSE, glm::value_ptr(glm::transpose(glm::inverse(cube2MVMatrix))));
-        glUniformMatrix4fv(uMVPMatrix, 1, GL_FALSE, glm::value_ptr( ProjMatrix * cube2MVMatrix));
+        scene.applyDirectionalLight(camera);
+        scene.updateMatrix(camera,cursor.getPosition(),cursor);
         cursor.display();
-
-        /*MVMatrix = camera.getViewMatrix();
-        cube2MVMatrix = glm::translate(MVMatrix, glm::vec3(2,1,1));
-        glUniformMatrix4fv(uMVMatrix, 1, GL_FALSE, glm::value_ptr(cube2MVMatrix));
-        glUniformMatrix4fv(uNormalMatrix, 1, GL_FALSE, glm::value_ptr(glm::transpose(glm::inverse(cube2MVMatrix))));
-        glUniformMatrix4fv(uMVPMatrix, 1, GL_FALSE, glm::value_ptr( ProjMatrix * cube2MVMatrix));
-        allCube[1].setColor(glm::vec4(0,1,0,1));
-        allCube[1].display();
-
-        MVMatrix = camera.getViewMatrix();
-        cube2MVMatrix = glm::translate(MVMatrix, glm::vec3(2,2,1));
-        glUniformMatrix4fv(uMVMatrix, 1, GL_FALSE, glm::value_ptr(cube2MVMatrix));
-        glUniformMatrix4fv(uNormalMatrix, 1, GL_FALSE, glm::value_ptr(glm::transpose(glm::inverse(cube2MVMatrix))));
-        glUniformMatrix4fv(uMVPMatrix, 1, GL_FALSE, glm::value_ptr( ProjMatrix * cube2MVMatrix));
-        allCube[2].setColor(glm::vec4(0,0,1,1));
-        allCube[2].display();
-
-        MVMatrix = camera.getViewMatrix();
-        cube2MVMatrix = glm::translate(MVMatrix, glm::vec3(1,2,1));
-        glUniformMatrix4fv(uMVMatrix, 1, GL_FALSE, glm::value_ptr(cube2MVMatrix));
-        glUniformMatrix4fv(uNormalMatrix, 1, GL_FALSE, glm::value_ptr(glm::transpose(glm::inverse(cube2MVMatrix))));
-        glUniformMatrix4fv(uMVPMatrix, 1, GL_FALSE, glm::value_ptr( ProjMatrix * cube2MVMatrix));
-        allCube[3].setColor(glm::vec4(0,1,1,1));
-        allCube[3].display();*/
-
-
-        //allCube[1*+1*1].setColor(glm::vec4(0,1,0,1));
-
-        
-        //cube.setColor(glm::vec4(0,0,1,0.3));
-
-        // for (int i = 0; i < 3; ++i)
-        // {
-        //     for (int j = 0; j < 3; ++j)
-        //     {
-        //         for (int k = 0; k < 3; ++k)
-        //         {
-        //             /*if (k%2 == 0){
-        //                 cube.setIsVisible(false);
-        //             }
-        //             else{
-        //                 cube.setIsVisible(true);
-        //             }*/
-        //             MVMatrix = camera.getViewMatrix();
-            
-        //             glUniform3fv(uKd, 1, glm::value_ptr(Kd));
-        //             glUniform3fv(uKs, 1, glm::value_ptr(Ks));
-        //             glUniform1f(uShininess, Shininess);
-        //             glUniform3fv(uLightDir_vs, 1, glm::value_ptr(glm::mat3(camera.getViewMatrix())*LightDir));
-        //             glUniform3fv(uLightIntensity, 1, glm::value_ptr(LightIntensity));
-
-        //             glm::mat4 cube2MVMatrix = glm::translate(MVMatrix, glm::vec3(i,j,k));
-
-        //             glUniformMatrix4fv(uMVMatrix, 1, GL_FALSE, glm::value_ptr(cube2MVMatrix));
-        //             glUniformMatrix4fv(uNormalMatrix, 1, GL_FALSE, glm::value_ptr(glm::transpose(glm::inverse(cube2MVMatrix))));
-        //             glUniformMatrix4fv(uMVPMatrix, 1, GL_FALSE, glm::value_ptr( ProjMatrix * cube2MVMatrix));
-
-        //             cube.display();
-        //         }
-        //         /* code */
-        //     }
-        //     /* code */
-
-        // }
 
         windowManager.swapBuffers();
 

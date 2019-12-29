@@ -48,10 +48,10 @@ RM = /usr/local/Cellar/cmake/3.15.5/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/margaux/Desktop/IMAC/S3/Voldemort/WorldIMaker/WorldIMaker
+CMAKE_SOURCE_DIR = /Users/victorinemaurel/IMAC/SYNTIMG/imac-s3-opengl-master-GLImac-Template-SDL2/Projet/WorldIMaker
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/margaux/Desktop/IMAC/S3/Voldemort/WorldIMaker/WorldIMaker
+CMAKE_BINARY_DIR = /Users/victorinemaurel/IMAC/SYNTIMG/imac-s3-opengl-master-GLImac-Template-SDL2/Projet/WorldIMaker
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -80,14 +80,14 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	cd /Users/margaux/Desktop/IMAC/S3/Voldemort/WorldIMaker/WorldIMaker && $(CMAKE_COMMAND) -E cmake_progress_start /Users/margaux/Desktop/IMAC/S3/Voldemort/WorldIMaker/WorldIMaker/CMakeFiles /Users/margaux/Desktop/IMAC/S3/Voldemort/WorldIMaker/WorldIMaker/lib/imgui/CMakeFiles/progress.marks
-	cd /Users/margaux/Desktop/IMAC/S3/Voldemort/WorldIMaker/WorldIMaker && $(MAKE) -f CMakeFiles/Makefile2 lib/imgui/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/margaux/Desktop/IMAC/S3/Voldemort/WorldIMaker/WorldIMaker/CMakeFiles 0
+	cd /Users/victorinemaurel/IMAC/SYNTIMG/imac-s3-opengl-master-GLImac-Template-SDL2/Projet/WorldIMaker && $(CMAKE_COMMAND) -E cmake_progress_start /Users/victorinemaurel/IMAC/SYNTIMG/imac-s3-opengl-master-GLImac-Template-SDL2/Projet/WorldIMaker/CMakeFiles /Users/victorinemaurel/IMAC/SYNTIMG/imac-s3-opengl-master-GLImac-Template-SDL2/Projet/WorldIMaker/lib/imgui/CMakeFiles/progress.marks
+	cd /Users/victorinemaurel/IMAC/SYNTIMG/imac-s3-opengl-master-GLImac-Template-SDL2/Projet/WorldIMaker && $(MAKE) -f CMakeFiles/Makefile2 lib/imgui/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/victorinemaurel/IMAC/SYNTIMG/imac-s3-opengl-master-GLImac-Template-SDL2/Projet/WorldIMaker/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /Users/margaux/Desktop/IMAC/S3/Voldemort/WorldIMaker/WorldIMaker && $(MAKE) -f CMakeFiles/Makefile2 lib/imgui/clean
+	cd /Users/victorinemaurel/IMAC/SYNTIMG/imac-s3-opengl-master-GLImac-Template-SDL2/Projet/WorldIMaker && $(MAKE) -f CMakeFiles/Makefile2 lib/imgui/clean
 .PHONY : clean
 
 # The main clean target
@@ -97,22 +97,22 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /Users/margaux/Desktop/IMAC/S3/Voldemort/WorldIMaker/WorldIMaker && $(MAKE) -f CMakeFiles/Makefile2 lib/imgui/preinstall
+	cd /Users/victorinemaurel/IMAC/SYNTIMG/imac-s3-opengl-master-GLImac-Template-SDL2/Projet/WorldIMaker && $(MAKE) -f CMakeFiles/Makefile2 lib/imgui/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /Users/margaux/Desktop/IMAC/S3/Voldemort/WorldIMaker/WorldIMaker && $(MAKE) -f CMakeFiles/Makefile2 lib/imgui/preinstall
+	cd /Users/victorinemaurel/IMAC/SYNTIMG/imac-s3-opengl-master-GLImac-Template-SDL2/Projet/WorldIMaker && $(MAKE) -f CMakeFiles/Makefile2 lib/imgui/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /Users/margaux/Desktop/IMAC/S3/Voldemort/WorldIMaker/WorldIMaker && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /Users/victorinemaurel/IMAC/SYNTIMG/imac-s3-opengl-master-GLImac-Template-SDL2/Projet/WorldIMaker && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
 lib/imgui/CMakeFiles/imgui.dir/rule:
-	cd /Users/margaux/Desktop/IMAC/S3/Voldemort/WorldIMaker/WorldIMaker && $(MAKE) -f CMakeFiles/Makefile2 lib/imgui/CMakeFiles/imgui.dir/rule
+	cd /Users/victorinemaurel/IMAC/SYNTIMG/imac-s3-opengl-master-GLImac-Template-SDL2/Projet/WorldIMaker && $(MAKE) -f CMakeFiles/Makefile2 lib/imgui/CMakeFiles/imgui.dir/rule
 .PHONY : lib/imgui/CMakeFiles/imgui.dir/rule
 
 # Convenience name for target.
@@ -122,7 +122,7 @@ imgui: lib/imgui/CMakeFiles/imgui.dir/rule
 
 # fast build rule for target.
 imgui/fast:
-	cd /Users/margaux/Desktop/IMAC/S3/Voldemort/WorldIMaker/WorldIMaker && $(MAKE) -f lib/imgui/CMakeFiles/imgui.dir/build.make lib/imgui/CMakeFiles/imgui.dir/build
+	cd /Users/victorinemaurel/IMAC/SYNTIMG/imac-s3-opengl-master-GLImac-Template-SDL2/Projet/WorldIMaker && $(MAKE) -f lib/imgui/CMakeFiles/imgui.dir/build.make lib/imgui/CMakeFiles/imgui.dir/build
 .PHONY : imgui/fast
 
 src/imgui.o: src/imgui.cpp.o
@@ -131,7 +131,7 @@ src/imgui.o: src/imgui.cpp.o
 
 # target to build an object file
 src/imgui.cpp.o:
-	cd /Users/margaux/Desktop/IMAC/S3/Voldemort/WorldIMaker/WorldIMaker && $(MAKE) -f lib/imgui/CMakeFiles/imgui.dir/build.make lib/imgui/CMakeFiles/imgui.dir/src/imgui.cpp.o
+	cd /Users/victorinemaurel/IMAC/SYNTIMG/imac-s3-opengl-master-GLImac-Template-SDL2/Projet/WorldIMaker && $(MAKE) -f lib/imgui/CMakeFiles/imgui.dir/build.make lib/imgui/CMakeFiles/imgui.dir/src/imgui.cpp.o
 .PHONY : src/imgui.cpp.o
 
 src/imgui.i: src/imgui.cpp.i
@@ -140,7 +140,7 @@ src/imgui.i: src/imgui.cpp.i
 
 # target to preprocess a source file
 src/imgui.cpp.i:
-	cd /Users/margaux/Desktop/IMAC/S3/Voldemort/WorldIMaker/WorldIMaker && $(MAKE) -f lib/imgui/CMakeFiles/imgui.dir/build.make lib/imgui/CMakeFiles/imgui.dir/src/imgui.cpp.i
+	cd /Users/victorinemaurel/IMAC/SYNTIMG/imac-s3-opengl-master-GLImac-Template-SDL2/Projet/WorldIMaker && $(MAKE) -f lib/imgui/CMakeFiles/imgui.dir/build.make lib/imgui/CMakeFiles/imgui.dir/src/imgui.cpp.i
 .PHONY : src/imgui.cpp.i
 
 src/imgui.s: src/imgui.cpp.s
@@ -149,7 +149,7 @@ src/imgui.s: src/imgui.cpp.s
 
 # target to generate assembly for a file
 src/imgui.cpp.s:
-	cd /Users/margaux/Desktop/IMAC/S3/Voldemort/WorldIMaker/WorldIMaker && $(MAKE) -f lib/imgui/CMakeFiles/imgui.dir/build.make lib/imgui/CMakeFiles/imgui.dir/src/imgui.cpp.s
+	cd /Users/victorinemaurel/IMAC/SYNTIMG/imac-s3-opengl-master-GLImac-Template-SDL2/Projet/WorldIMaker && $(MAKE) -f lib/imgui/CMakeFiles/imgui.dir/build.make lib/imgui/CMakeFiles/imgui.dir/src/imgui.cpp.s
 .PHONY : src/imgui.cpp.s
 
 src/imgui_demo.o: src/imgui_demo.cpp.o
@@ -158,7 +158,7 @@ src/imgui_demo.o: src/imgui_demo.cpp.o
 
 # target to build an object file
 src/imgui_demo.cpp.o:
-	cd /Users/margaux/Desktop/IMAC/S3/Voldemort/WorldIMaker/WorldIMaker && $(MAKE) -f lib/imgui/CMakeFiles/imgui.dir/build.make lib/imgui/CMakeFiles/imgui.dir/src/imgui_demo.cpp.o
+	cd /Users/victorinemaurel/IMAC/SYNTIMG/imac-s3-opengl-master-GLImac-Template-SDL2/Projet/WorldIMaker && $(MAKE) -f lib/imgui/CMakeFiles/imgui.dir/build.make lib/imgui/CMakeFiles/imgui.dir/src/imgui_demo.cpp.o
 .PHONY : src/imgui_demo.cpp.o
 
 src/imgui_demo.i: src/imgui_demo.cpp.i
@@ -167,7 +167,7 @@ src/imgui_demo.i: src/imgui_demo.cpp.i
 
 # target to preprocess a source file
 src/imgui_demo.cpp.i:
-	cd /Users/margaux/Desktop/IMAC/S3/Voldemort/WorldIMaker/WorldIMaker && $(MAKE) -f lib/imgui/CMakeFiles/imgui.dir/build.make lib/imgui/CMakeFiles/imgui.dir/src/imgui_demo.cpp.i
+	cd /Users/victorinemaurel/IMAC/SYNTIMG/imac-s3-opengl-master-GLImac-Template-SDL2/Projet/WorldIMaker && $(MAKE) -f lib/imgui/CMakeFiles/imgui.dir/build.make lib/imgui/CMakeFiles/imgui.dir/src/imgui_demo.cpp.i
 .PHONY : src/imgui_demo.cpp.i
 
 src/imgui_demo.s: src/imgui_demo.cpp.s
@@ -176,7 +176,7 @@ src/imgui_demo.s: src/imgui_demo.cpp.s
 
 # target to generate assembly for a file
 src/imgui_demo.cpp.s:
-	cd /Users/margaux/Desktop/IMAC/S3/Voldemort/WorldIMaker/WorldIMaker && $(MAKE) -f lib/imgui/CMakeFiles/imgui.dir/build.make lib/imgui/CMakeFiles/imgui.dir/src/imgui_demo.cpp.s
+	cd /Users/victorinemaurel/IMAC/SYNTIMG/imac-s3-opengl-master-GLImac-Template-SDL2/Projet/WorldIMaker && $(MAKE) -f lib/imgui/CMakeFiles/imgui.dir/build.make lib/imgui/CMakeFiles/imgui.dir/src/imgui_demo.cpp.s
 .PHONY : src/imgui_demo.cpp.s
 
 src/imgui_draw.o: src/imgui_draw.cpp.o
@@ -185,7 +185,7 @@ src/imgui_draw.o: src/imgui_draw.cpp.o
 
 # target to build an object file
 src/imgui_draw.cpp.o:
-	cd /Users/margaux/Desktop/IMAC/S3/Voldemort/WorldIMaker/WorldIMaker && $(MAKE) -f lib/imgui/CMakeFiles/imgui.dir/build.make lib/imgui/CMakeFiles/imgui.dir/src/imgui_draw.cpp.o
+	cd /Users/victorinemaurel/IMAC/SYNTIMG/imac-s3-opengl-master-GLImac-Template-SDL2/Projet/WorldIMaker && $(MAKE) -f lib/imgui/CMakeFiles/imgui.dir/build.make lib/imgui/CMakeFiles/imgui.dir/src/imgui_draw.cpp.o
 .PHONY : src/imgui_draw.cpp.o
 
 src/imgui_draw.i: src/imgui_draw.cpp.i
@@ -194,7 +194,7 @@ src/imgui_draw.i: src/imgui_draw.cpp.i
 
 # target to preprocess a source file
 src/imgui_draw.cpp.i:
-	cd /Users/margaux/Desktop/IMAC/S3/Voldemort/WorldIMaker/WorldIMaker && $(MAKE) -f lib/imgui/CMakeFiles/imgui.dir/build.make lib/imgui/CMakeFiles/imgui.dir/src/imgui_draw.cpp.i
+	cd /Users/victorinemaurel/IMAC/SYNTIMG/imac-s3-opengl-master-GLImac-Template-SDL2/Projet/WorldIMaker && $(MAKE) -f lib/imgui/CMakeFiles/imgui.dir/build.make lib/imgui/CMakeFiles/imgui.dir/src/imgui_draw.cpp.i
 .PHONY : src/imgui_draw.cpp.i
 
 src/imgui_draw.s: src/imgui_draw.cpp.s
@@ -203,7 +203,7 @@ src/imgui_draw.s: src/imgui_draw.cpp.s
 
 # target to generate assembly for a file
 src/imgui_draw.cpp.s:
-	cd /Users/margaux/Desktop/IMAC/S3/Voldemort/WorldIMaker/WorldIMaker && $(MAKE) -f lib/imgui/CMakeFiles/imgui.dir/build.make lib/imgui/CMakeFiles/imgui.dir/src/imgui_draw.cpp.s
+	cd /Users/victorinemaurel/IMAC/SYNTIMG/imac-s3-opengl-master-GLImac-Template-SDL2/Projet/WorldIMaker && $(MAKE) -f lib/imgui/CMakeFiles/imgui.dir/build.make lib/imgui/CMakeFiles/imgui.dir/src/imgui_draw.cpp.s
 .PHONY : src/imgui_draw.cpp.s
 
 src/imgui_impl_opengl3.o: src/imgui_impl_opengl3.cpp.o
@@ -212,7 +212,7 @@ src/imgui_impl_opengl3.o: src/imgui_impl_opengl3.cpp.o
 
 # target to build an object file
 src/imgui_impl_opengl3.cpp.o:
-	cd /Users/margaux/Desktop/IMAC/S3/Voldemort/WorldIMaker/WorldIMaker && $(MAKE) -f lib/imgui/CMakeFiles/imgui.dir/build.make lib/imgui/CMakeFiles/imgui.dir/src/imgui_impl_opengl3.cpp.o
+	cd /Users/victorinemaurel/IMAC/SYNTIMG/imac-s3-opengl-master-GLImac-Template-SDL2/Projet/WorldIMaker && $(MAKE) -f lib/imgui/CMakeFiles/imgui.dir/build.make lib/imgui/CMakeFiles/imgui.dir/src/imgui_impl_opengl3.cpp.o
 .PHONY : src/imgui_impl_opengl3.cpp.o
 
 src/imgui_impl_opengl3.i: src/imgui_impl_opengl3.cpp.i
@@ -221,7 +221,7 @@ src/imgui_impl_opengl3.i: src/imgui_impl_opengl3.cpp.i
 
 # target to preprocess a source file
 src/imgui_impl_opengl3.cpp.i:
-	cd /Users/margaux/Desktop/IMAC/S3/Voldemort/WorldIMaker/WorldIMaker && $(MAKE) -f lib/imgui/CMakeFiles/imgui.dir/build.make lib/imgui/CMakeFiles/imgui.dir/src/imgui_impl_opengl3.cpp.i
+	cd /Users/victorinemaurel/IMAC/SYNTIMG/imac-s3-opengl-master-GLImac-Template-SDL2/Projet/WorldIMaker && $(MAKE) -f lib/imgui/CMakeFiles/imgui.dir/build.make lib/imgui/CMakeFiles/imgui.dir/src/imgui_impl_opengl3.cpp.i
 .PHONY : src/imgui_impl_opengl3.cpp.i
 
 src/imgui_impl_opengl3.s: src/imgui_impl_opengl3.cpp.s
@@ -230,7 +230,7 @@ src/imgui_impl_opengl3.s: src/imgui_impl_opengl3.cpp.s
 
 # target to generate assembly for a file
 src/imgui_impl_opengl3.cpp.s:
-	cd /Users/margaux/Desktop/IMAC/S3/Voldemort/WorldIMaker/WorldIMaker && $(MAKE) -f lib/imgui/CMakeFiles/imgui.dir/build.make lib/imgui/CMakeFiles/imgui.dir/src/imgui_impl_opengl3.cpp.s
+	cd /Users/victorinemaurel/IMAC/SYNTIMG/imac-s3-opengl-master-GLImac-Template-SDL2/Projet/WorldIMaker && $(MAKE) -f lib/imgui/CMakeFiles/imgui.dir/build.make lib/imgui/CMakeFiles/imgui.dir/src/imgui_impl_opengl3.cpp.s
 .PHONY : src/imgui_impl_opengl3.cpp.s
 
 src/imgui_impl_sdl.o: src/imgui_impl_sdl.cpp.o
@@ -239,7 +239,7 @@ src/imgui_impl_sdl.o: src/imgui_impl_sdl.cpp.o
 
 # target to build an object file
 src/imgui_impl_sdl.cpp.o:
-	cd /Users/margaux/Desktop/IMAC/S3/Voldemort/WorldIMaker/WorldIMaker && $(MAKE) -f lib/imgui/CMakeFiles/imgui.dir/build.make lib/imgui/CMakeFiles/imgui.dir/src/imgui_impl_sdl.cpp.o
+	cd /Users/victorinemaurel/IMAC/SYNTIMG/imac-s3-opengl-master-GLImac-Template-SDL2/Projet/WorldIMaker && $(MAKE) -f lib/imgui/CMakeFiles/imgui.dir/build.make lib/imgui/CMakeFiles/imgui.dir/src/imgui_impl_sdl.cpp.o
 .PHONY : src/imgui_impl_sdl.cpp.o
 
 src/imgui_impl_sdl.i: src/imgui_impl_sdl.cpp.i
@@ -248,7 +248,7 @@ src/imgui_impl_sdl.i: src/imgui_impl_sdl.cpp.i
 
 # target to preprocess a source file
 src/imgui_impl_sdl.cpp.i:
-	cd /Users/margaux/Desktop/IMAC/S3/Voldemort/WorldIMaker/WorldIMaker && $(MAKE) -f lib/imgui/CMakeFiles/imgui.dir/build.make lib/imgui/CMakeFiles/imgui.dir/src/imgui_impl_sdl.cpp.i
+	cd /Users/victorinemaurel/IMAC/SYNTIMG/imac-s3-opengl-master-GLImac-Template-SDL2/Projet/WorldIMaker && $(MAKE) -f lib/imgui/CMakeFiles/imgui.dir/build.make lib/imgui/CMakeFiles/imgui.dir/src/imgui_impl_sdl.cpp.i
 .PHONY : src/imgui_impl_sdl.cpp.i
 
 src/imgui_impl_sdl.s: src/imgui_impl_sdl.cpp.s
@@ -257,7 +257,7 @@ src/imgui_impl_sdl.s: src/imgui_impl_sdl.cpp.s
 
 # target to generate assembly for a file
 src/imgui_impl_sdl.cpp.s:
-	cd /Users/margaux/Desktop/IMAC/S3/Voldemort/WorldIMaker/WorldIMaker && $(MAKE) -f lib/imgui/CMakeFiles/imgui.dir/build.make lib/imgui/CMakeFiles/imgui.dir/src/imgui_impl_sdl.cpp.s
+	cd /Users/victorinemaurel/IMAC/SYNTIMG/imac-s3-opengl-master-GLImac-Template-SDL2/Projet/WorldIMaker && $(MAKE) -f lib/imgui/CMakeFiles/imgui.dir/build.make lib/imgui/CMakeFiles/imgui.dir/src/imgui_impl_sdl.cpp.s
 .PHONY : src/imgui_impl_sdl.cpp.s
 
 src/imgui_stdlib.o: src/imgui_stdlib.cpp.o
@@ -266,7 +266,7 @@ src/imgui_stdlib.o: src/imgui_stdlib.cpp.o
 
 # target to build an object file
 src/imgui_stdlib.cpp.o:
-	cd /Users/margaux/Desktop/IMAC/S3/Voldemort/WorldIMaker/WorldIMaker && $(MAKE) -f lib/imgui/CMakeFiles/imgui.dir/build.make lib/imgui/CMakeFiles/imgui.dir/src/imgui_stdlib.cpp.o
+	cd /Users/victorinemaurel/IMAC/SYNTIMG/imac-s3-opengl-master-GLImac-Template-SDL2/Projet/WorldIMaker && $(MAKE) -f lib/imgui/CMakeFiles/imgui.dir/build.make lib/imgui/CMakeFiles/imgui.dir/src/imgui_stdlib.cpp.o
 .PHONY : src/imgui_stdlib.cpp.o
 
 src/imgui_stdlib.i: src/imgui_stdlib.cpp.i
@@ -275,7 +275,7 @@ src/imgui_stdlib.i: src/imgui_stdlib.cpp.i
 
 # target to preprocess a source file
 src/imgui_stdlib.cpp.i:
-	cd /Users/margaux/Desktop/IMAC/S3/Voldemort/WorldIMaker/WorldIMaker && $(MAKE) -f lib/imgui/CMakeFiles/imgui.dir/build.make lib/imgui/CMakeFiles/imgui.dir/src/imgui_stdlib.cpp.i
+	cd /Users/victorinemaurel/IMAC/SYNTIMG/imac-s3-opengl-master-GLImac-Template-SDL2/Projet/WorldIMaker && $(MAKE) -f lib/imgui/CMakeFiles/imgui.dir/build.make lib/imgui/CMakeFiles/imgui.dir/src/imgui_stdlib.cpp.i
 .PHONY : src/imgui_stdlib.cpp.i
 
 src/imgui_stdlib.s: src/imgui_stdlib.cpp.s
@@ -284,7 +284,7 @@ src/imgui_stdlib.s: src/imgui_stdlib.cpp.s
 
 # target to generate assembly for a file
 src/imgui_stdlib.cpp.s:
-	cd /Users/margaux/Desktop/IMAC/S3/Voldemort/WorldIMaker/WorldIMaker && $(MAKE) -f lib/imgui/CMakeFiles/imgui.dir/build.make lib/imgui/CMakeFiles/imgui.dir/src/imgui_stdlib.cpp.s
+	cd /Users/victorinemaurel/IMAC/SYNTIMG/imac-s3-opengl-master-GLImac-Template-SDL2/Projet/WorldIMaker && $(MAKE) -f lib/imgui/CMakeFiles/imgui.dir/build.make lib/imgui/CMakeFiles/imgui.dir/src/imgui_stdlib.cpp.s
 .PHONY : src/imgui_stdlib.cpp.s
 
 src/imgui_widgets.o: src/imgui_widgets.cpp.o
@@ -293,7 +293,7 @@ src/imgui_widgets.o: src/imgui_widgets.cpp.o
 
 # target to build an object file
 src/imgui_widgets.cpp.o:
-	cd /Users/margaux/Desktop/IMAC/S3/Voldemort/WorldIMaker/WorldIMaker && $(MAKE) -f lib/imgui/CMakeFiles/imgui.dir/build.make lib/imgui/CMakeFiles/imgui.dir/src/imgui_widgets.cpp.o
+	cd /Users/victorinemaurel/IMAC/SYNTIMG/imac-s3-opengl-master-GLImac-Template-SDL2/Projet/WorldIMaker && $(MAKE) -f lib/imgui/CMakeFiles/imgui.dir/build.make lib/imgui/CMakeFiles/imgui.dir/src/imgui_widgets.cpp.o
 .PHONY : src/imgui_widgets.cpp.o
 
 src/imgui_widgets.i: src/imgui_widgets.cpp.i
@@ -302,7 +302,7 @@ src/imgui_widgets.i: src/imgui_widgets.cpp.i
 
 # target to preprocess a source file
 src/imgui_widgets.cpp.i:
-	cd /Users/margaux/Desktop/IMAC/S3/Voldemort/WorldIMaker/WorldIMaker && $(MAKE) -f lib/imgui/CMakeFiles/imgui.dir/build.make lib/imgui/CMakeFiles/imgui.dir/src/imgui_widgets.cpp.i
+	cd /Users/victorinemaurel/IMAC/SYNTIMG/imac-s3-opengl-master-GLImac-Template-SDL2/Projet/WorldIMaker && $(MAKE) -f lib/imgui/CMakeFiles/imgui.dir/build.make lib/imgui/CMakeFiles/imgui.dir/src/imgui_widgets.cpp.i
 .PHONY : src/imgui_widgets.cpp.i
 
 src/imgui_widgets.s: src/imgui_widgets.cpp.s
@@ -311,7 +311,7 @@ src/imgui_widgets.s: src/imgui_widgets.cpp.s
 
 # target to generate assembly for a file
 src/imgui_widgets.cpp.s:
-	cd /Users/margaux/Desktop/IMAC/S3/Voldemort/WorldIMaker/WorldIMaker && $(MAKE) -f lib/imgui/CMakeFiles/imgui.dir/build.make lib/imgui/CMakeFiles/imgui.dir/src/imgui_widgets.cpp.s
+	cd /Users/victorinemaurel/IMAC/SYNTIMG/imac-s3-opengl-master-GLImac-Template-SDL2/Projet/WorldIMaker && $(MAKE) -f lib/imgui/CMakeFiles/imgui.dir/build.make lib/imgui/CMakeFiles/imgui.dir/src/imgui_widgets.cpp.s
 .PHONY : src/imgui_widgets.cpp.s
 
 # Help Target
@@ -355,6 +355,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /Users/margaux/Desktop/IMAC/S3/Voldemort/WorldIMaker/WorldIMaker && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /Users/victorinemaurel/IMAC/SYNTIMG/imac-s3-opengl-master-GLImac-Template-SDL2/Projet/WorldIMaker && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

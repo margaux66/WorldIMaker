@@ -40,9 +40,8 @@ public:
 	void use() const {
 		glUseProgram(m_nGLId);
 	}
-
-private:
-	Program(const Program&);
+	
+	Program(const Program&) = default;
 	Program& operator =(const Program&);
 
 	GLuint m_nGLId;

@@ -14,6 +14,7 @@ set(CMAKE_MAKEFILE_DEPENDS
   "doc/CMakeLists.txt"
   "doc/Doxyfile-html.cmake"
   "lib/glimac/CMakeLists.txt"
+  "lib/imgui/CMakeLists.txt"
   "/usr/local/Cellar/cmake/3.15.5/share/cmake/Modules/CMakeCInformation.cmake"
   "/usr/local/Cellar/cmake/3.15.5/share/cmake/Modules/CMakeCXXInformation.cmake"
   "/usr/local/Cellar/cmake/3.15.5/share/cmake/Modules/CMakeCheckCompilerFlagCommonPatterns.cmake"
@@ -59,6 +60,7 @@ set(CMAKE_MAKEFILE_OUTPUTS
 set(CMAKE_MAKEFILE_PRODUCTS
   "CMakeFiles/CMakeDirectoryInformation.cmake"
   "lib/glimac/CMakeFiles/CMakeDirectoryInformation.cmake"
+  "lib/imgui/CMakeFiles/CMakeDirectoryInformation.cmake"
   "doc/CMakeFiles/CMakeDirectoryInformation.cmake"
   )
 
@@ -66,5 +68,6 @@ set(CMAKE_MAKEFILE_PRODUCTS
 set(CMAKE_DEPEND_INFO_FILES
   "CMakeFiles/worldIMaker.dir/DependInfo.cmake"
   "lib/glimac/CMakeFiles/glimac.dir/DependInfo.cmake"
-  "doc/CMakeFiles/doc.dir/DependInfo.cmake"
+  "lib/imgui/CMakeFiles/imgui.dir/DependInfo.cmake"
+  "doc/CMakeFiles/html.dir/DependInfo.cmake"
   )
