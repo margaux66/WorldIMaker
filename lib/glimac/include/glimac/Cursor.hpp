@@ -8,7 +8,7 @@ namespace glimac {
 	class Cursor : public Cube{
 
 		public:
-			Cursor(glm::vec3 position, glm::vec4 color);
+			Cursor(glm::vec3 position);
 			~Cursor()=default;
 			void display();
 		

@@ -34,8 +34,8 @@ int main(int argc, char const *argv[]){
     program.use();
 
     
-    glimac::Cursor cursor(glm::vec3(1,1,1),glm::vec4(0,0,1,1));
-    glimac::Cube cube(glm::vec3(0,0,0),glm::vec4(0,1,0,1));
+    glimac::Cursor cursor(glm::vec3(1,1,1));
+    //glimac::Cube cube(glm::vec3(0,0,0),glm::vec4(0,1,0,1));
 
     scene.createAllCubes();
     std::vector<glimac::Cube> allCube;
@@ -151,6 +151,7 @@ int main(int argc, char const *argv[]){
 
         scene.applyDirectionalLight(camera);
         scene.updateMatrix(camera,cursor.getPosition(),cursor);
+        //std::cout << cursor.getColor() << std::endl;
         cursor.display();
 
         windowManager.swapBuffers();

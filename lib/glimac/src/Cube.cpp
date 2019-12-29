@@ -25,8 +25,8 @@ namespace glimac {
 	    glm::vec3(-0.5f,-0.5f,-0.5f)
 	};
 
-	Cube::Cube(glm::vec3 position,glm::vec4 color): m_isVisible(false), m_isSelected(false), m_color(color), m_position(position){
-
+	Cube::Cube(glm::vec3 position): m_isVisible(false), m_isSelected(false), m_position(position){
+		//m_color = glm::vec4(0,1,0,1);
 		for (uint i = 0; i < temporary_vertices.size(); ++i)
 		{
 			glimac::ShapeVertex vertex;
@@ -44,7 +44,6 @@ namespace glimac {
 
 			m_vertices.push_back(vertex);
 		}
-
 
 		if(m_vertices.empty()){
 			std::cerr<< "Vertices is empty"<<std::endl;
@@ -114,16 +113,17 @@ namespace glimac {
 
 	void Cube::display(){
 		if(m_isVisible == true){
-			setColor(glm::vec4(0,1,0,1));
+			setColor(m_color);
+			std::cout << "cc   " << m_color << std::endl;
 			glBindVertexArray(m_vao);
 			glDrawElements(GL_TRIANGLES,36,GL_UNSIGNED_INT,0);
         	glBindVertexArray(0);
 			
 		}
 		else{
-			setColor(glm::vec4(0,0,0,0));
-			glBindVertexArray(m_vao);
-			glDrawElements(GL_TRIANGLES,36,GL_UNSIGNED_INT,0);
+			//m_color = glm::vec4(0,0,0,0);
+			//glBindVertexArray(m_vao);
+			//glDrawElements(GL_TRIANGLES,36,GL_UNSIGNED_INT,0);
 	        glBindVertexArray(0);
 		}
 
@@ -139,12 +139,13 @@ namespace glimac {
 
 
 	void Cube::setColor(glm::vec4 color){
+		m_color = color;
 		for (uint i = 0; i < m_vertices.size(); ++i)
 		{
 			m_vertices[i].color = color;
-			//std::cout << m_vertices[i].color << std::endl;
+			
 		}
-		m_color = color;
+		
 
 		glGenBuffers(1,&m_vbo);
 

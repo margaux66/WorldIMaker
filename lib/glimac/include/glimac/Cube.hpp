@@ -15,19 +15,18 @@ namespace glimac {
 			GLuint m_vao;
 			GLuint m_vbo;
 			GLuint m_ibo;
-			glm::vec4 m_color;
+			glm::vec4 m_color= glm::vec4(0,1,0,1);
+			glm::vec4 m_transparent;
 			bool m_isVisible;
 			bool m_isSelected;
 			glm::vec3 m_position;
-			//std::vector<glimac::Cube> m_allCubes;
 
 		public :
-			Cube(glm::vec3 position,glm::vec4 color);
+			Cube(glm::vec3 position);
 			~Cube()= default;
-			//void createScene(int nbCube);
+			
 			void display();
-			//Cube select();
-			//void remove();
+			
 
 			void setColor(glm::vec4 color);
 

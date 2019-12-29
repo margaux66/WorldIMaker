@@ -2,15 +2,18 @@
 
 namespace glimac {
 	void Scene::createAllCubes(){
-		glm::vec4 color = glm::vec4(0,1,0,1);
+		//glm::vec4 color = glm::vec4(0,1,0,1);
+
 		for(uint i = 0; i<10; i++){
 	        for (int j = 0; j < 10; ++j){
 	            for (int k = 0; k < 10; ++k){
-	            	Cube cube(glm::vec3(k,j,i),color);
+	            	Cube cube(glm::vec3(k,j,i));
+	            	//cube.setColor(glm::vec4(0,1,0,1));
 	                m_allCubes.push_back(cube);
 	            }
 	        }
 	    }
+	    //std::cout << m_allCubes[1].getColor() << std::endl;
 	}
 
 	void Scene::uniformMatrix(Program program){
@@ -47,8 +50,11 @@ namespace glimac {
 	void Scene::displayCubes(TrackballCamera camera){
 		for (int i = 0; i < m_allCubes.size(); ++i)
 		{
+
 			updateMatrix(camera,m_allCubes[i].getPosition(),m_allCubes[i]);
 			//m_allCubes[i].setIsVisible(true);
+			m_allCubes[i].setColor(m_allCubes[i].getColor());
+			std::cout << m_allCubes[i].getColor() << std::endl;
 			m_allCubes[i].display();
 		}
 	}
