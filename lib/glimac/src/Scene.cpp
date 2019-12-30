@@ -16,7 +16,7 @@ namespace glimac {
 	    //std::cout << m_allCubes[1].getColor() << std::endl;
 	}
 
-	void Scene::uniformMatrix(Program program){
+	const void Scene::uniformMatrix(Program program){
 		uMVPMatrix = glGetUniformLocation(program.getGLId(), "uMVPMatrix");
 	    uMVMatrix = glGetUniformLocation(program.getGLId(), "uMVMatrix");
 	    uNormalMatrix = glGetUniformLocation(program.getGLId(), "uNormalMatrix");
@@ -77,7 +77,7 @@ namespace glimac {
 
 	}
 
-	uint Scene::getCubeAtThisPos(glm::vec3 position){
+	const uint Scene::getCubeAtThisPos(glm::vec3 position){
 		std::cout << position.y * m_width + position.x + position.z * m_width * m_length << std::endl;
 		return position.y * m_width + position.x + position.z * m_width * m_length;
 	}
@@ -143,7 +143,7 @@ namespace glimac {
             }
         }
 	}
-	void Scene::getColor(Cursor cursor){
+	const void Scene::getColor(Cursor cursor){
 		for (int i = 0; i < m_allCubes.size(); ++i){
             if(cursor.getPosition() == m_allCubes[i].getPosition()){
             	if(m_allCubes[i].getIsVisible()==true){
