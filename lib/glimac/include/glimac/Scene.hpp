@@ -35,9 +35,9 @@ namespace glimac {
 			float m_Shininess;
 
 			//scene catacterictis 
-			uint m_width = 10;
-			uint m_height = 10;
-			uint m_length = 10;
+			uint m_width = 20;
+			uint m_height = 20;
+			uint m_length = 20;
 
 		public: 
 			Scene()=default;
@@ -56,8 +56,12 @@ namespace glimac {
 			void changeColor(Cursor cursor, glm::vec4 color);
 			void getColor(Cursor cursor);
 			void clean();
+			void setUp();
 
 			//get
 			std::vector<Cube> getAllCubes(){return m_allCubes;};
+			inline uint getWidth(){return m_width;}
+			inline uint getHeight(){return m_height;}
+			inline uint getLenght(){return m_length;}
 	};
 }

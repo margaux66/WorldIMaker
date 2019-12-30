@@ -4,9 +4,9 @@ namespace glimac {
 	void Scene::createAllCubes(){
 		//glm::vec4 color = glm::vec4(0,1,0,1);
 
-		for(uint i = 0; i<10; i++){
-	        for (int j = 0; j < 10; ++j){
-	            for (int k = 0; k < 10; ++k){
+		for(uint i = 0; i<m_length; i++){
+	        for (int j = 0; j < m_height; ++j){
+	            for (int k = 0; k < m_width; ++k){
 	            	Cube cube(glm::vec3(k,j,i));
 	            	//cube.setColor(glm::vec4(0,1,0,1));
 	                m_allCubes.push_back(cube);
@@ -112,7 +112,6 @@ namespace glimac {
             		if(m_allCubes[getCubeAtThisPos(glm::vec3(pos.x,j,pos.z))].getIsVisible()==false){
             			m_allCubes[getCubeAtThisPos(glm::vec3(pos.x,j,pos.z))].setIsVisible(true);
             			m_allCubes[getCubeAtThisPos(glm::vec3(pos.x,j,pos.z))].setColor(m_allCubes[i].getColor());
-            			std::cout << m_allCubes[getCubeAtThisPos(glm::vec3(pos.x,j,pos.z))].getColor() << std::endl;
             			return;
             		}
             	}
@@ -158,6 +157,23 @@ namespace glimac {
 		for (int i = 0; i < m_allCubes.size(); ++i)
 		{
 			m_allCubes[i].setIsVisible(false);
+		}
+
+	}
+
+	void Scene::setUp(){
+		for (int x = 0; x < m_width ; ++x){	
+			for (int z = 0; z < m_length; ++z){
+				for (int y = 0; y < 3; ++y)
+				{
+					m_allCubes[getCubeAtThisPos(glm::vec3(x,y,z))].setIsVisible(true);
+					m_allCubes[getCubeAtThisPos(glm::vec3(x,y,z))].setColor(glm::vec4 (253, 238, 0,1));
+				}
+
+				
+				/*m_allCubes[getCubeAtThisPos(glm::vec3(x,1,k))].setIsVisible(true);
+				m_allCubes[getCubeAtThisPos(glm::vec3(x,2,k))].setIsVisible(true);*/
+			}
 		}
 
 	}

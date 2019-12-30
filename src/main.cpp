@@ -34,7 +34,7 @@ int main(int argc, char const *argv[]){
     program.use();
 
     
-    glimac::Cursor cursor(glm::vec3(5,5,0));
+    glimac::Cursor cursor(glm::vec3(10,4,10));
 
     scene.createAllCubes();
     std::vector<glimac::Cube> allCube;
@@ -55,6 +55,8 @@ int main(int argc, char const *argv[]){
                         glm::vec3(1.0,1.0,1.0),
                         glm::vec3(1.0,1.0,1.0),
                         glm::vec3(1.,1.,1.));
+
+    scene.setUp();
 
     bool done = false;
     while(!done) {
@@ -152,7 +154,7 @@ int main(int argc, char const *argv[]){
          * HERE SHOULD COME THE RENDERING CODE
          *********************************/
 
-        if(cursor.getPosition().x < 0 || cursor.getPosition().x >10 || cursor.getPosition().y < 0 || cursor.getPosition().y >10 ||cursor.getPosition().z < 0 || cursor.getPosition().z >10 ){
+        if(cursor.getPosition().x < 0 || cursor.getPosition().x >scene.getWidth() || cursor.getPosition().y < 0 || cursor.getPosition().y >scene.getHeight()||cursor.getPosition().z < 0 || cursor.getPosition().z >scene.getLenght() ){
             cursor.setColor(glm::vec4(1,0,0,1));
         }
         else{
