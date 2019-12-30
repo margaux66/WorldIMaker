@@ -47,11 +47,19 @@ if(${DOXYGEN_FOUND})
     message(STATUS "  include " ${DOXYGEN_INCLUDE_DIR})
 endif()
 
+#EIGEN 
+message("Looking for eigen...")
+find_package(Eigen3 REQUIRED)
+if(${EIGEN3_FOUND})
+    message(STATUS "lib Eigen found")
+    message(STATUS "  include " ${EIGEN3_INCLUDE_DIR})
+endif()
+
 #compilation flags 
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall -O2 -std=c++11")
 set(CMAKE_CXX_FLAGS_DEBUG_init "-g")
 
-include_directories(${SDL2_INCLUDE_DIRS} ${OPENGL_INCLUDE_DIR} ${GLEW_INCLUDE_DIR} lib/glimac/include lib/third-party/include lib/imgui/include)
+include_directories(${SDL2_INCLUDE_DIRS} ${OPENGL_INCLUDE_DIR} ${GLEW_INCLUDE_DIR} ${EIGEN3_INCLUDE_DIRS} lib/glimac/include lib/third-party/include lib/imgui/include)
 
 set(ALL_LIBRARIES ${SDL2_LIBRARIES} glimac imgui ${OPENGL_LIBRARIES} ${GLEW_LIBRARY})
 

@@ -129,6 +129,9 @@ int main(int argc, char const *argv[]){
                         break;
                     case SDLK_c :
                         scene.clean();
+                        break;
+                    case SDLK_b :
+                        scene.setUp();
                         break;    
 
 
