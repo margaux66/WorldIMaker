@@ -39,7 +39,7 @@ namespace glimac {
 
 	}
 
-	void Scene::updateMatrix(TrackballCamera camera, glm::vec3 position, Cube cube){
+	const void Scene::updateMatrix(TrackballCamera camera, glm::vec3 position, Cube cube){
 		m_MVMatrix = camera.getViewMatrix();
 		glm::mat4 cubeMVMatrix = glm::translate(m_MVMatrix,position);
 		glUniform4fv(uColor, 1, glm::value_ptr(cube.getColor()));
@@ -78,7 +78,6 @@ namespace glimac {
 	}
 
 	const uint Scene::getCubeAtThisPos(glm::vec3 position){
-		std::cout << position.y * m_width + position.x + position.z * m_width * m_length << std::endl;
 		return position.y * m_width + position.x + position.z * m_width * m_length;
 	}
 
@@ -176,5 +175,13 @@ namespace glimac {
 			}
 		}
 
+	}
+	void Scene::generateScene(std::string filename){
+		Generate gen;
+		gen.readControlPoints(filename);
+		//gen.applyRBF(m_allCubes);
+		//gen.RBF;
+		//gen.RBF(m_allCubes[1].getPosition());
+		//gen.applyRBF(m_allCubes);
 	}
 }

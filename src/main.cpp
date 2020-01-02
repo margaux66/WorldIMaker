@@ -1,12 +1,14 @@
 #include <glimac/SDLWindowManager.hpp>
 #include <GL/glew.h>
 #include <iostream>
+#include <string>
 #include <glimac/Program.hpp>
 #include <glimac/FilePath.hpp>
 #include <glimac/TrackballCamera.hpp>
 #include <glimac/Cube.hpp>
 #include <glimac/Cursor.hpp>
 #include <glimac/Scene.hpp>
+#include <glimac/Generate.hpp>
 
 
 int main(int argc, char const *argv[]){
@@ -23,9 +25,12 @@ int main(int argc, char const *argv[]){
     //Creation TrackballCamera
     glimac::Scene scene;
     glimac::TrackballCamera camera;
+    glimac::Generate gen;
 
     std::cout << "OpenGL Version : " << glGetString(GL_VERSION) << std::endl;
     std::cout << "GLEW Version : " << glewGetString(GLEW_VERSION) << std::endl;
+
+
 
     //load les shaders 
     glimac::FilePath applicationPath(argv[0]);
@@ -33,12 +38,18 @@ int main(int argc, char const *argv[]){
                                         applicationPath.dirPath() + "../assets/shaders/coloredCube.fs.glsl");
     program.use();
 
+    //std::string cp = "controlpoints.txt";
+    scene.generateScene(applicationPath.dirPath()+"../assets/controlPoints/controlpoints.txt");
+    //gen.readControlPoints(applicationPath.dirPath()+"../assets/controlPoints/controlpoints.txt");
     
     glimac::Cursor cursor(glm::vec3(10,4,10));
 
     scene.createAllCubes();
-    std::vector<glimac::Cube> allCube;
-    allCube = scene.getAllCubes();
+    std::vector<glimac::Cube> allCube = scene.getAllCubes();
+
+
+
+
 
     scene.uniformMatrix(program);
 
@@ -140,7 +151,6 @@ int main(int argc, char const *argv[]){
                 }
             }
 
-            std::cout<< cursor.getPosition() << std::endl;
             allCube[1].setIsVisible(true);
             if ( e.type == SDL_MOUSEWHEEL ) {
                 if (e.wheel.y > 0) {

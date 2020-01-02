@@ -6,9 +6,11 @@
 #include <glimac/common.hpp>
 #include <glimac/Cube.hpp>
 #include <glimac/TrackballCamera.hpp>
+#include <glimac/Generate.hpp>
 #include <glimac/Cursor.hpp>
 #include <GL/glew.h>
 #include <vector>
+#include <string>
 #include <iostream>
 
 namespace glimac {
@@ -45,7 +47,7 @@ namespace glimac {
 			~Scene()=default;
 			void createAllCubes();
 			const void uniformMatrix(Program program);
-			void updateMatrix(TrackballCamera camera, glm::vec3 position, Cube cube);
+			const void updateMatrix(TrackballCamera camera, glm::vec3 position, Cube cube);
 			void displayCubes(TrackballCamera camera);
 			void setLight(glm::vec3 Kd, glm::vec3 Ks, float Shininess, glm::vec3 LightDir,glm::vec3 LightPos, glm::vec3 LightIntensity);
 			void applyLight(TrackballCamera camera);
@@ -58,6 +60,7 @@ namespace glimac {
 			const void getColor(Cursor cursor);
 			void clean();
 			void setUp();
+			void generateScene(std::string filename);
 
 			//get
 			const std::vector<Cube>  getAllCubes(){return m_allCubes;};
