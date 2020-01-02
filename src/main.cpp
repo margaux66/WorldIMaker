@@ -10,6 +10,7 @@
 #include <glimac/Scene.hpp>
 #include <glimac/Generate.hpp>
 #include <glimac/Scult.hpp>
+#include <glimac/Save.hpp>
 
 
 int main(int argc, char const *argv[]){
@@ -28,6 +29,7 @@ int main(int argc, char const *argv[]){
     glimac::TrackballCamera camera;
     glimac::Generate gen;
     glimac::Scult scult;
+    glimac::Save save;
 
     std::cout << "OpenGL Version : " << glGetString(GL_VERSION) << std::endl;
     std::cout << "GLEW Version : " << glewGetString(GLEW_VERSION) << std::endl;
@@ -50,8 +52,8 @@ int main(int argc, char const *argv[]){
     std::vector<glimac::Cube> allCube = scene.getAllCubes();
 
 
-    gen.readControlPoints(applicationPath.dirPath()+"../assets/controlPoints/controlpoints.txt");
-    gen.applyRBF(scene.m_allCubes);
+    //gen.readControlPoints(applicationPath.dirPath()+"../assets/controlPoints/controlpoints.txt");
+    //gen.applyRBF(scene.m_allCubes);
 
 
 
@@ -147,7 +149,13 @@ int main(int argc, char const *argv[]){
                         break;
                     case SDLK_b :
                         scene.setUp();
-                        break;    
+                        break; 
+                    case SDLK_f :
+                        save.saveScene(applicationPath.dirPath()+"../assets/save/save1.txt", scene.m_allCubes);
+                        break;
+                    case SDLK_v :
+                        save.loadScene(applicationPath.dirPath()+"../assets/save/save1.txt", scene.m_allCubes);
+                        break;     
 
 
 
