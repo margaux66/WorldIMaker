@@ -8,12 +8,12 @@ namespace glimac {
 			getline(controlPts,element);
 
 			if(element.compare("RBF") != 0){
-				std::cerr <<"The file is not valid." <<std::endl;
+				std::cerr <<"Read control points : The file is not valid." <<std::endl;
 				controlPts.close();
 				return;
 			}
-
-			while(getline(controlPts,element)){
+			
+			while(controlPts){
 				ControlPoint cp;
 				controlPts >> cp.position.x;
 				controlPts >> cp.position.y;
@@ -21,7 +21,6 @@ namespace glimac {
 				controlPts >> cp.value;
 
 				m_controlPoints.push_back(cp);
-
 			}
 
 			controlPts.close();
@@ -39,13 +38,10 @@ namespace glimac {
 	}
 
 	const Eigen::VectorXd Generate::omega(){
-		std::cout<< "OMEG coucou 2" <<std::endl;
 		Eigen::MatrixXd mat = Eigen::MatrixXd::Ones(m_controlPoints.size(),m_controlPoints.size());
 		Eigen::VectorXd value = Eigen::VectorXd::Ones(m_controlPoints.size());
-		std::cout<< "OMEG coucou 3 +++ " << m_controlPoints.size() <<std::endl;
 		for (uint i = 0; i < m_controlPoints.size(); ++i)
 		{
-			std::cout<< "OMEG coucou 4" <<std::endl;
 
 			value[i]=m_controlPoints[i].value;
 		}
@@ -65,29 +61,28 @@ namespace glimac {
 		return result;
 	}
 
-	const std::vector<double> Generate::RBF(glm::vec3 vec){
+	void Generate::RBF(glm::vec3 vec){
 		Eigen::VectorXd Omega = this->omega();
 		std::vector <double> result;
-		//std::cout<< Omega[2] <<std::endl;
 
 		for (int i = 0; i < m_controlPoints.size(); ++i)
 		{
-			result[i] = Omega[i]*glm::distance(vec,m_controlPoints[i].position);	
+			result.push_back(Omega[i]*glm::distance(vec,m_controlPoints[i].position));
 		}
 
-		return result;
+		m_rbf = result;
+
+		
 	}
 
-	const void Generate::applyRBF(std::vector<Cube> allCube){
+	const void Generate::applyRBF(std::vector<Cube> &allCube){
 		std::cout<< "RBF coucou 2" <<std::endl;
-		for( uint c = 0; c < 8000; ++c){
-			std::cout<< "RBF coucou 3" <<std::endl;
-			std::vector<double> rbf = this->RBF(allCube[c].getPosition());
+		for( uint c = 0; c < allCube.size(); ++c){
+			RBF(allCube[c].getPosition());
 			double value = 0 ;
-			std::cout<< "RBF coucou 4" <<std::endl;  
-			for (int i = 0; i < rbf.size(); ++i)
-			{
-				value += rbf[i];
+			for (int i = 0; i < m_rbf.size(); ++i)
+			{	
+				value += m_rbf[i];
 			}
 
 			if (value > 0.0)

@@ -6,7 +6,6 @@
 #include <glimac/common.hpp>
 #include <glimac/Cube.hpp>
 #include <glimac/TrackballCamera.hpp>
-#include <glimac/Generate.hpp>
 #include <glimac/Cursor.hpp>
 #include <GL/glew.h>
 #include <vector>
@@ -16,7 +15,7 @@
 namespace glimac {
 	class Scene {
 		protected:
-			std::vector<Cube> m_allCubes;
+			
 
 			//matrice uniformes
 			GLint uMVPMatrix;
@@ -43,6 +42,7 @@ namespace glimac {
 			uint m_length = 20;
 
 		public: 
+			std::vector<Cube> m_allCubes;
 			Scene()=default;
 			~Scene()=default;
 			void createAllCubes();
@@ -52,12 +52,6 @@ namespace glimac {
 			void setLight(glm::vec3 Kd, glm::vec3 Ks, float Shininess, glm::vec3 LightDir,glm::vec3 LightPos, glm::vec3 LightIntensity);
 			void applyLight(TrackballCamera camera);
 			const uint getCubeAtThisPos(glm::vec3 position);
-			void add (Cursor cursor);
-			void remove(Cursor cursor);
-			void extrud(Cursor cursor);
-			void dig(Cursor cursor);
-			void changeColor(Cursor cursor, glm::vec4 color);
-			const void getColor(Cursor cursor);
 			void clean();
 			void setUp();
 			void generateScene(std::string filename);

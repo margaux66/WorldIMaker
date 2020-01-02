@@ -9,6 +9,7 @@
 #include <glimac/Cursor.hpp>
 #include <glimac/Scene.hpp>
 #include <glimac/Generate.hpp>
+#include <glimac/Scult.hpp>
 
 
 int main(int argc, char const *argv[]){
@@ -26,6 +27,7 @@ int main(int argc, char const *argv[]){
     glimac::Scene scene;
     glimac::TrackballCamera camera;
     glimac::Generate gen;
+    glimac::Scult scult;
 
     std::cout << "OpenGL Version : " << glGetString(GL_VERSION) << std::endl;
     std::cout << "GLEW Version : " << glewGetString(GLEW_VERSION) << std::endl;
@@ -39,7 +41,7 @@ int main(int argc, char const *argv[]){
     program.use();
 
     //std::string cp = "controlpoints.txt";
-    scene.generateScene(applicationPath.dirPath()+"../assets/controlPoints/controlpoints.txt");
+    //scene.generateScene(applicationPath.dirPath()+"../assets/controlPoints/controlpoints.txt");
     //gen.readControlPoints(applicationPath.dirPath()+"../assets/controlPoints/controlpoints.txt");
     
     glimac::Cursor cursor(glm::vec3(10,4,10));
@@ -48,6 +50,8 @@ int main(int argc, char const *argv[]){
     std::vector<glimac::Cube> allCube = scene.getAllCubes();
 
 
+    gen.readControlPoints(applicationPath.dirPath()+"../assets/controlPoints/controlpoints.txt");
+    gen.applyRBF(scene.m_allCubes);
 
 
 
@@ -118,25 +122,25 @@ int main(int argc, char const *argv[]){
                         cursor.setPosition(glm::vec3(cursor.getPosition().x, cursor.getPosition().y, cursor.getPosition().z-1));
                         break;
                     case SDLK_r :
-                        scene.add(cursor);
+                        scult.add(cursor,scene.m_allCubes);
                         break;
                     case SDLK_t :
-                        scene.remove(cursor);   
+                        scult.remove(cursor,scene.m_allCubes);   
                         break;   
                     case SDLK_u :
-                         scene.extrud(cursor);
+                         scult.extrud(cursor,scene.m_allCubes);
                       	break;
                     case SDLK_i :
-                         scene.dig(cursor);
+                         scult.dig(cursor,scene.m_allCubes);
                         break;
                     case SDLK_l :
-                        scene.changeColor(cursor,glm::vec4(0,0,1,1));
+                        scult.changeColor(cursor,glm::vec4(0,0,1,1),scene.m_allCubes);
                         break;
                     case SDLK_h :
-                        scene.changeColor(cursor,glm::vec4(0,1,1,1));
+                        scult.changeColor(cursor,glm::vec4(0,1,1,1),scene.m_allCubes);
                         break;
                     case SDLK_k :
-                        scene.getColor(cursor);
+                        scult.getColor(cursor,scene.m_allCubes);
                         break;
                     case SDLK_c :
                         scene.clean();

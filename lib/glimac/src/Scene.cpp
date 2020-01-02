@@ -82,76 +82,7 @@ namespace glimac {
 	}
 
 
-	void Scene::add(Cursor cursor){
-		for (int i = 0; i < m_allCubes.size(); ++i){
-            if(cursor.getPosition() == m_allCubes[i].getPosition()){
-                if(m_allCubes[i].getIsVisible()==false){
-                    m_allCubes[i].setIsVisible(true);
-                }
-            }
-       }
-	}
-
-	void Scene::remove(Cursor cursor){
-		for (int i = 0; i < m_allCubes.size(); ++i){
-            if(cursor.getPosition() == m_allCubes[i].getPosition()){
-                if(m_allCubes[i].getIsVisible()==true){
-                    m_allCubes[i].setIsVisible(false);
-                }
-            }
-       }
-	}
-
-	void Scene::extrud(Cursor cursor){
-		for (int i = 0; i < m_allCubes.size(); ++i){
-            if(cursor.getPosition() == m_allCubes[i].getPosition()){
-            	for (int j = 2; j < m_height; ++j)
-            	{
-            		glm::vec3 pos = m_allCubes[i].getPosition();
-            		if(m_allCubes[getCubeAtThisPos(glm::vec3(pos.x,j,pos.z))].getIsVisible()==false){
-            			m_allCubes[getCubeAtThisPos(glm::vec3(pos.x,j,pos.z))].setIsVisible(true);
-            			m_allCubes[getCubeAtThisPos(glm::vec3(pos.x,j,pos.z))].setColor(m_allCubes[i].getColor());
-            			return;
-            		}
-            	}
-            }
-        }    	
-	}
-
-	void Scene::dig(Cursor cursor){
-		for (int i = 0; i < m_allCubes.size(); ++i){
-            if(cursor.getPosition() == m_allCubes[i].getPosition()){
-            	for (int j = m_height; j > 0 ; --j)
-            	{
-            		glm::vec3 pos = m_allCubes[i].getPosition();
-            		if(m_allCubes[getCubeAtThisPos(glm::vec3(pos.x,j,pos.z))].getIsVisible()==true){
-            			m_allCubes[getCubeAtThisPos(glm::vec3(pos.x,j,pos.z))].setIsVisible(false);
-            			return;
-            		}
-            	}
-            }
-        } 
-
-	}
-	void Scene::changeColor(Cursor cursor, glm::vec4 color){
-		for (int i = 0; i < m_allCubes.size(); ++i){
-            if(cursor.getPosition() == m_allCubes[i].getPosition()){
-            	if(m_allCubes[i].getIsVisible()==true){
-            			m_allCubes[i].setColor(color);
-            	}
-            }
-        }
-	}
-	const void Scene::getColor(Cursor cursor){
-		for (int i = 0; i < m_allCubes.size(); ++i){
-            if(cursor.getPosition() == m_allCubes[i].getPosition()){
-            	if(m_allCubes[i].getIsVisible()==true){
-            			std::cout << "Couleur du cube :  " << m_allCubes[i].getColor()<<std::endl;
-            	}
-            }
-        }
-	}
-
+	
 	void Scene::clean(){
 		for (int i = 0; i < m_allCubes.size(); ++i)
 		{
@@ -176,12 +107,5 @@ namespace glimac {
 		}
 
 	}
-	void Scene::generateScene(std::string filename){
-		Generate gen;
-		gen.readControlPoints(filename);
-		//gen.applyRBF(m_allCubes);
-		//gen.RBF;
-		//gen.RBF(m_allCubes[1].getPosition());
-		//gen.applyRBF(m_allCubes);
-	}
+
 }

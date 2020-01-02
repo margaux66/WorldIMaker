@@ -4,6 +4,7 @@
 #include <Eigen/Dense>
 #include <GL/glew.h>
 #include <glimac/Cube.hpp>
+#include <glimac/Scene.hpp>
 #include <vector>
 #include <string>
 #include <iostream>
@@ -22,6 +23,7 @@ namespace glimac {
 	class Generate {
 	private:
 		std::vector<ControlPoint> m_controlPoints;
+		std::vector<double> m_rbf;
 
 	public:
 		Generate() = default;
@@ -30,8 +32,8 @@ namespace glimac {
 		void readControlPoints(std::string filepath);
 		const double norm(const glm::vec3 &vec);
 		const Eigen::VectorXd omega();
-		const std::vector<double> RBF(glm::vec3 vec);
-		const void applyRBF(std::vector<Cube> allCube);
+		void RBF(glm::vec3 vec);
+		const void applyRBF(std::vector<Cube> &allCube);
 
 	};
 }
