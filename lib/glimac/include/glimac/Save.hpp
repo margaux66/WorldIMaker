@@ -19,7 +19,7 @@ namespace glimac {
 		~Save() = default;
 
 		void saveScene(std::string filepath, std::vector<Cube> allCube);
-		void loadScene(std::string filepath, std::vector<Cube> allCube);
+		void loadScene(std::string filepath, std::vector<Cube> &allCube);
 
 	};
 }

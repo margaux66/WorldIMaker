@@ -16,14 +16,14 @@ namespace glimac {
 			GLuint m_vbo;
 			GLuint m_ibo;
 			glm::vec4 m_color= glm::vec4(0,1,0,1);
-			glm::vec4 m_transparent;
 			bool m_isVisible;
-			bool m_isSelected;
 			glm::vec3 m_position;
 
 		public :
 			Cube(glm::vec3 position);
 			~Cube()= default;
+			Cube(const Cube& c);
+			Cube operator=(const Cube& cube);
 			
 			void display();
 			
@@ -32,13 +32,11 @@ namespace glimac {
 
 			//setter
 			inline void setIsVisible(bool visibility){m_isVisible = visibility;};
-			inline void setIsSelected(bool selected){m_isSelected = selected;};
 			inline void setPosition(glm::vec3 position){m_position = position;};
 
 			//getter
 			inline glm::vec3 getPosition(){return m_position;};
 			inline glm::vec4 getColor(){return m_color;};
-			inline bool getIsSelected(){return m_isSelected;};
 			inline bool getIsVisible(){return m_isVisible;};
 			//inline std::vector<glimac::Cube> getAllCube(){return m_allCubes;};
 

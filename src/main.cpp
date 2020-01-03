@@ -52,8 +52,8 @@ int main(int argc, char const *argv[]){
     std::vector<glimac::Cube> allCube = scene.getAllCubes();
 
 
-    //gen.readControlPoints(applicationPath.dirPath()+"../assets/controlPoints/controlpoints.txt");
-    //gen.applyRBF(scene.m_allCubes);
+    gen.readControlPoints(applicationPath.dirPath()+"../assets/controlPoints/controlpoints.txt");
+   	gen.applyRBF(scene.m_allCubes);
 
 
 

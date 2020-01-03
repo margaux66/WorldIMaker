@@ -16,9 +16,13 @@ namespace glimac {
 			while(controlPts){
 				ControlPoint cp;
 				controlPts >> cp.position.x;
+				std::cout<< cp.position.x <<std::endl;
 				controlPts >> cp.position.y;
+				std::cout<< cp.position.y <<std::endl;
 				controlPts >> cp.position.z;
+				std::cout<< cp.position.z <<std::endl;
 				controlPts >> cp.value;
+				std::cout<< cp.value<<std::endl;
 
 				m_controlPoints.push_back(cp);
 			}
@@ -55,8 +59,8 @@ namespace glimac {
 			
 		}
 
-		Eigen::PartialPivLU<Eigen::MatrixXd> lu(mat);
-		Eigen::VectorXd result = lu.solve(value);
+		Eigen::ColPivHouseholderQR<Eigen::MatrixXd> qr(mat);
+		Eigen::VectorXd result = qr.solve(value);
 
 		return result;
 	}
@@ -64,10 +68,12 @@ namespace glimac {
 	void Generate::RBF(glm::vec3 vec){
 		Eigen::VectorXd Omega = this->omega();
 		std::vector <double> result;
+		
 
 		for (int i = 0; i < m_controlPoints.size(); ++i)
 		{
-			result.push_back(Omega[i]*glm::distance(vec,m_controlPoints[i].position));
+			double d = glm::distance(vec,m_controlPoints[i].position);
+			result.push_back(Omega[i]* sqrt(1 + pow(1+d,2)));
 		}
 
 		m_rbf = result;
@@ -76,7 +82,6 @@ namespace glimac {
 	}
 
 	const void Generate::applyRBF(std::vector<Cube> &allCube){
-		std::cout<< "RBF coucou 2" <<std::endl;
 		for( uint c = 0; c < allCube.size(); ++c){
 			RBF(allCube[c].getPosition());
 			double value = 0 ;

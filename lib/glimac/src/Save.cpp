@@ -32,34 +32,44 @@ namespace glimac {
 		file.close();
 	}
 
-	void Save::loadScene(std::string filepath, std::vector<Cube> allCube){
+	void Save::loadScene(std::string filepath, std::vector<Cube> &allCube){
 		std::ifstream file(filepath);
-
 		if (!file.is_open())
 		   std::cout << "Save scene : Can't read the file" << std::endl;
 		else{
-			while(file){
-				for (uint i = 0; i < allCube.size(); ++i)
-				{
-					glm::vec3 pos;
-					glm::vec4 color;
-					bool visible;
-					file >> pos.x;
-					file >> pos.y;
-					file >> pos.z;
-					allCube[i].setPosition(pos);
-					file >> color.x;
-					file >> color.y;
-					file >> color.z;
-					file >> color.w;
-					allCube[i].setColor(color);
-					file >> visible;
-					allCube[i].setIsVisible(visible);
+			int i = 0;
 
-					std::cout << pos << " " << color << " " << visible<< std::endl;
+			while(file){
+				glm::vec3 pos;
+				glm::vec4 color;
+				bool visible;
+
+				file >> pos.x;
+				file >> pos.y;
+				file >> pos.z;
+
+				Cube cube(pos);
+
+				file >> color.x;
+				file >> color.y;
+				file >> color.z;
+				file >> color.w;
+
+				cube.setColor(color);
+
+				file >> visible;
+				
+				allCube[i] = cube;
+				if (visible == 1){
+					allCube[i].setIsVisible(visible);
 				}
+				else{
+					allCube[i].setIsVisible(visible);
+				}
+				i++;
 			}
 		}
+		//allCube = temp_allCube;
 		file.close();
 	}
 }

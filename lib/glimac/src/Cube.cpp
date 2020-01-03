@@ -25,7 +25,7 @@ namespace glimac {
 	    glm::vec3(-0.5f,-0.5f,-0.5f)
 	};
 
-	Cube::Cube(glm::vec3 position): m_isVisible(false), m_isSelected(false), m_position(position){
+	Cube::Cube(glm::vec3 position): m_isVisible(false), m_position(position){
 		//m_color = glm::vec4(0,1,0,1);
 		for (uint i = 0; i < temporary_vertices.size(); ++i)
 		{
@@ -102,6 +102,21 @@ namespace glimac {
         //debinder this->vao
         glBindVertexArray(0);
 
+	}
+
+	Cube::Cube(const Cube& c): m_vertices(c.m_vertices), m_vao(c.m_vao), m_vbo(c.m_vbo), m_ibo(c.m_ibo), m_color(c.m_color), m_isVisible(c.m_isVisible),m_position(c.m_position){}
+
+	Cube Cube::operator =(const Cube &cube){
+		Cube res(cube.m_position);
+		res.m_vertices = cube.m_vertices;
+		res.m_vao = cube.m_vao;
+		res.m_vbo = cube.m_vbo;
+		res.m_ibo = cube.m_ibo;
+		res.m_color = cube.m_color;
+		res.m_isVisible = cube.m_isVisible;
+		res.m_position = cube.m_position;
+
+		return res; 
 	}
 
 	void Cube::display(){
