@@ -16,13 +16,9 @@ namespace glimac {
 			while(controlPts){
 				ControlPoint cp;
 				controlPts >> cp.position.x;
-				std::cout<< cp.position.x <<std::endl;
 				controlPts >> cp.position.y;
-				std::cout<< cp.position.y <<std::endl;
 				controlPts >> cp.position.z;
-				std::cout<< cp.position.z <<std::endl;
 				controlPts >> cp.value;
-				std::cout<< cp.value<<std::endl;
 
 				m_controlPoints.push_back(cp);
 			}
@@ -54,18 +50,19 @@ namespace glimac {
 		{
 			for (uint k = 0; k < m_controlPoints.size() ; ++k)
 			{
-				mat(j,k) = norm(m_controlPoints[j].position - m_controlPoints[k].position);
+				mat(j,k) = norm(m_controlPoints[k].position - m_controlPoints[j].position);
 			}
 			
 		}
 
 		Eigen::ColPivHouseholderQR<Eigen::MatrixXd> qr(mat);
 		Eigen::VectorXd result = qr.solve(value);
+		
 
 		return result;
 	}
 
-	void Generate::RBF(glm::vec3 vec){
+	void Generate::RBF(glm::vec3 vec, int type){
 		Eigen::VectorXd Omega = this->omega();
 		std::vector <double> result;
 		
@@ -73,7 +70,14 @@ namespace glimac {
 		for (int i = 0; i < m_controlPoints.size(); ++i)
 		{
 			double d = glm::distance(vec,m_controlPoints[i].position);
-			result.push_back(Omega[i]* sqrt(1 + pow(1+d,2)));
+			switch (type){
+				case 1:
+					result.push_back(Omega[i]*d);
+					break;
+				case 2: 
+					result.push_back(Omega[i]* sqrt(1 + pow(1+d,2)));
+					break;
+			}
 		}
 
 		m_rbf = result;
@@ -81,9 +85,9 @@ namespace glimac {
 		
 	}
 
-	const void Generate::applyRBF(std::vector<Cube> &allCube){
+	const void Generate::applyRBF(std::vector<Cube> &allCube,int type){
 		for( uint c = 0; c < allCube.size(); ++c){
-			RBF(allCube[c].getPosition());
+			RBF(allCube[c].getPosition(),type);
 			double value = 0 ;
 			for (int i = 0; i < m_rbf.size(); ++i)
 			{	

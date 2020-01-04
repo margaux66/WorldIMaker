@@ -11,6 +11,7 @@
 #include <glimac/Generate.hpp>
 #include <glimac/Scult.hpp>
 #include <glimac/Save.hpp>
+#include <glimac/Object.hpp>
 
 
 int main(int argc, char const *argv[]){
@@ -30,6 +31,7 @@ int main(int argc, char const *argv[]){
     glimac::Generate gen;
     glimac::Scult scult;
     glimac::Save save;
+    glimac::Object obj;
 
     std::cout << "OpenGL Version : " << glGetString(GL_VERSION) << std::endl;
     std::cout << "GLEW Version : " << glewGetString(GLEW_VERSION) << std::endl;
@@ -49,15 +51,15 @@ int main(int argc, char const *argv[]){
     glimac::Cursor cursor(glm::vec3(10,4,10));
 
     scene.createAllCubes();
-    std::vector<glimac::Cube> allCube = scene.getAllCubes();
-
-
-    gen.readControlPoints(applicationPath.dirPath()+"../assets/controlPoints/controlpoints.txt");
-   	gen.applyRBF(scene.m_allCubes);
-
-
-
+    //std::vector<glimac::Cube> allCube = scene.getAllCubes();
     scene.uniformMatrix(program);
+
+    std::vector<glm::vec3> m_vertices;
+    std::vector<glm::vec2> m_uvs;
+    std::vector < glm::vec3 > m_normals;
+
+    obj.loadOBJ(applicationPath.dirPath() + "../assets/models/cube.obj", 4);
+    obj.setUpOBJ();
 
     
 
@@ -155,7 +157,11 @@ int main(int argc, char const *argv[]){
                         break;
                     case SDLK_v :
                         save.loadScene(applicationPath.dirPath()+"../assets/save/save1.txt", scene.m_allCubes);
-                        break;     
+                        break;
+                    case SDLK_p :
+                        gen.readControlPoints(applicationPath.dirPath()+"../assets/controlPoints/controlpoints.txt");
+                        gen.applyRBF(scene.m_allCubes, 2);    
+                        break; 
 
 
 
@@ -163,7 +169,7 @@ int main(int argc, char const *argv[]){
                 }
             }
 
-            allCube[1].setIsVisible(true);
+            //allCube[1].setIsVisible(true);
             if ( e.type == SDL_MOUSEWHEEL ) {
                 if (e.wheel.y > 0) {
                     camera.moveFront(0.1f);
@@ -198,6 +204,13 @@ int main(int argc, char const *argv[]){
         scene.applyLight(camera);
         scene.updateMatrix(camera,cursor.getPosition(),cursor);
         cursor.display();
+
+		scene.applyLight(camera);
+		scene.updateMatrix(camera);
+        obj.displayOBJ(4);
+
+
+        //obj.setUpOBJ(applicationPath.dirPath() + "../assets/models/cube.obj");
 
         windowManager.swapBuffers();
 

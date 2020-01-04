@@ -3,14 +3,14 @@
 namespace glimac {
 
 	//tableau d'indices 
-	std::vector<uint32_t> indices ={
+		std::vector<uint32_t> indices ={
 			0,1,2,    0,2,3, //front
 	        0,5,4,    0,4,3, //right
 	        5,6,1,    5,1,0, //top
 	        1,2,7,    1,7,6, //left
 	        4,7,2,    4,2,3, //bottom
 	        5,6,7,    5,7,4 //back
-	};
+		};
 
 	//coordonnées des sommets
 	std::vector<glm::vec3> temporary_vertices = {
@@ -26,6 +26,7 @@ namespace glimac {
 	};
 
 	Cube::Cube(glm::vec3 position): m_isVisible(false), m_position(position){
+
 		//m_color = glm::vec4(0,1,0,1);
 		for (uint i = 0; i < temporary_vertices.size(); ++i)
 		{
@@ -62,8 +63,6 @@ namespace glimac {
 
 		//bindage de ibo
 		glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, m_ibo);
-
-
 
 		//on passe le tableau d'indices dans l'ibo
 		glBufferData(GL_ELEMENT_ARRAY_BUFFER, indices.size()*sizeof(uint32_t),indices.data(),GL_STATIC_DRAW);
@@ -123,7 +122,7 @@ namespace glimac {
 		if(m_isVisible == true){
 			setColor(m_color);
 			glBindVertexArray(m_vao);
-			glDrawElements(GL_TRIANGLES,36,GL_UNSIGNED_INT,0);
+			glDrawElements(GL_TRIANGLES,indices.size(),GL_UNSIGNED_INT,0);
         	glBindVertexArray(0);
 			
 		}

@@ -48,6 +48,15 @@ namespace glimac {
         glUniformMatrix4fv(uMVPMatrix, 1, GL_FALSE, glm::value_ptr( m_ProjMatrix * cubeMVMatrix));
 	}
 
+	const void Scene::updateMatrix(TrackballCamera camera){
+		m_MVMatrix = camera.getViewMatrix();
+		glm::mat4 cubeMVMatrix = glm::translate(m_MVMatrix,glm::vec3(0,0,0));
+		glUniform4fv(uColor, 1, glm::value_ptr(glm::vec4(0,1,1,1)));
+        glUniformMatrix4fv(uMVMatrix, 1, GL_FALSE, glm::value_ptr(cubeMVMatrix));
+        glUniformMatrix4fv(uNormalMatrix, 1, GL_FALSE, glm::value_ptr(glm::transpose(glm::inverse(cubeMVMatrix))));
+        glUniformMatrix4fv(uMVPMatrix, 1, GL_FALSE, glm::value_ptr( m_ProjMatrix * cubeMVMatrix));
+	}
+
 	void Scene::displayCubes(TrackballCamera camera){
 		for (int i = 0; i < m_allCubes.size(); ++i)
 		{

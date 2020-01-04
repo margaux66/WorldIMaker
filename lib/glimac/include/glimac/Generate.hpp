@@ -32,8 +32,8 @@ namespace glimac {
 		void readControlPoints(std::string filepath);
 		const double norm(const glm::vec3 &vec);
 		const Eigen::VectorXd omega();
-		void RBF(glm::vec3 vec);
-		const void applyRBF(std::vector<Cube> &allCube);
+		void RBF(glm::vec3 vec,int type);
+		const void applyRBF(std::vector<Cube> &allCube,int type);
 
 	};
 }
