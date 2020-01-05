@@ -68,12 +68,16 @@ int main(int argc, char const *argv[]){
     glEnable(GL_BLEND);
     glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
 
-    scene.setLight(glm::vec3(glm::linearRand (0.0,1.0),glm::linearRand (0.0,1.0),glm::linearRand (0.0,1.0)),
+    scene.setPointLight(glm::vec3(glm::linearRand (0.0,1.0),glm::linearRand (0.0,1.0),glm::linearRand (0.0,1.0)),
                         glm::vec3(glm::linearRand (0.0,1.0),glm::linearRand (0.0,1.0),glm::linearRand (0.0,1.0)),
                         0.5,
-                        glm::vec3(1.0,1.0,1.0),
-                        glm::vec3(1.0,1.0,1.0),
+                        glm::vec3(3.0,3.0,3.0),
                         glm::vec3(1.,1.,1.));
+    scene.setDirectionalLight(glm::vec3(glm::linearRand (0.0,1.0),glm::linearRand (0.0,1.0),glm::linearRand (0.0,1.0)),
+                                            glm::vec3(glm::linearRand (0.0,1.0),glm::linearRand (0.0,1.0),glm::linearRand (0.0,1.0)),
+                                            0.5,
+                                            glm::vec3(1.0,1.0,1.0),
+                                            glm::vec3(1.,1.,1.));
 
     scene.setUp();
 
@@ -161,7 +165,22 @@ int main(int argc, char const *argv[]){
                     case SDLK_p :
                         gen.readControlPoints(applicationPath.dirPath()+"../assets/controlPoints/controlpoints.txt");
                         gen.applyRBF(scene.m_allCubes, 2);    
-                        break; 
+                        break;
+                    case SDLK_j :
+                        scene.setDirectionalLight(glm::vec3(glm::linearRand (0.0,1.0),glm::linearRand (0.0,1.0),glm::linearRand (0.0,1.0)),
+                                            glm::vec3(glm::linearRand (0.0,1.0),glm::linearRand (0.0,1.0),glm::linearRand (0.0,1.0)),
+                                            0.5,
+                                            glm::vec3(1.0,1.0,1.0),
+                                            glm::vec3(1.,1.,1.));
+                        break;
+                    case SDLK_n :
+                        scene.setDirectionalLight(glm::vec3(glm::linearRand (0.0,1.0),glm::linearRand (0.0,1.0),glm::linearRand (0.0,1.0)),
+                                        glm::vec3(glm::linearRand (0.0,1.0),glm::linearRand (0.0,1.0),glm::linearRand (0.0,1.0)),
+                                        0.5,
+                                        glm::vec3(1.0,1.0,1.0),
+                                        glm::vec3(0.,0.,0.));
+                        break;
+
 
 
 

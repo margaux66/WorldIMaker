@@ -66,11 +66,17 @@ namespace glimac {
 		}
 	}
 
-	void Scene::setLight(glm::vec3 Kd, glm::vec3 Ks, float Shininess, glm::vec3 LightDir, glm::vec3 LightPos,glm::vec3 LightIntensity){
+	void Scene::setDirectionalLight(glm::vec3 Kd, glm::vec3 Ks, float Shininess, glm::vec3 LightDir,glm::vec3 LightIntensity){
 		m_Kd = Kd;
 		m_Ks = Ks;
 		m_Shininess = Shininess;
 		m_LightDir = LightDir;
+		m_LightIntensity = LightIntensity;
+	}
+	void Scene::setPointLight(glm::vec3 Kd, glm::vec3 Ks, float Shininess, glm::vec3 LightPos,glm::vec3 LightIntensity){
+		m_Kd = Kd;
+		m_Ks = Ks;
+		m_Shininess = Shininess;
 		m_LightPos = LightPos;
 		m_LightIntensity = LightIntensity;
 	}

@@ -50,7 +50,8 @@ namespace glimac {
 			const void updateMatrix(TrackballCamera camera, glm::vec3 position, Cube cube);
 			const void updateMatrix(TrackballCamera camera);
 			void displayCubes(TrackballCamera camera);
-			void setLight(glm::vec3 Kd, glm::vec3 Ks, float Shininess, glm::vec3 LightDir,glm::vec3 LightPos, glm::vec3 LightIntensity);
+			void setDirectionalLight(glm::vec3 Kd, glm::vec3 Ks, float Shininess, glm::vec3 LightDir,glm::vec3 LightIntensity);
+			void setPointLight(glm::vec3 Kd, glm::vec3 Ks, float Shininess,glm::vec3 LightPos, glm::vec3 LightIntensity);
 			void applyLight(TrackballCamera camera);
 			const uint getCubeAtThisPos(glm::vec3 position);
 			void clean();
