@@ -37,5 +37,5 @@ vec3 blinnPhongPointLight (vec3 uKd,vec3 uKs, float uShininess, vec3 uLightPos_v
 void main() {
 	//vec3 texture_color = texture(uTexture, vTexCoords).xyz;
 	//fFragColor = texture_color * blinnPhong();
-	fFragColor = uColor + vec4((blinnPhongDirectionalLight(uKd, uKs, uShininess, uLightDir_vs, uLightIntensity)+blinnPhongPointLight(uKd, uKs, uShininess, uLightPos_vs, uLightIntensity)).xyz,0);
+	fFragColor = uColor + vec4(((blinnPhongDirectionalLight(uKd, uKs, uShininess, uLightDir_vs, uLightIntensity)+blinnPhongPointLight(uKd, uKs, uShininess, uLightPos_vs, uLightIntensity)).xyz)*0.7,0);
 }

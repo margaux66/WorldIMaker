@@ -130,8 +130,6 @@ namespace glimac {
 			
 	        glBindVertexArray(0);
 		}
-
-		
 	}
 
 /*	void Cube::display(){

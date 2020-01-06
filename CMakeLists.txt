@@ -73,7 +73,11 @@ add_subdirectory(lib/glimac)
 add_subdirectory(lib/imgui)
 
 # Add doxygen
-add_subdirectory(doc)
+add_subdirectory(doc/doxygen)
+set( DOXYGEN_CLASS_GRAPH YES )
+set( DOXYGEN_CLASS_DIAGRAMS YES )
+set(DOXYGEN_HAVE_DOT YES)
+set(DOXYGEN_CALL_GRAPH YES)
 file(GLOB_RECURSE HEADER_FILES src/include/*) # get all headers
 file(GLOB_RECURSE SRC_FILES src/*.cpp) # get all sources files
 
@@ -81,4 +85,5 @@ add_executable(worldIMaker ${SRC_FILES}) # add the executable
 
 target_link_libraries(worldIMaker ${ALL_LIBRARIES})
 #file(COPY shaders DESTINATION ${CMAKE_CURRENT_BINARY_DIR})
+file(COPY assets DESTINATION ${CMAKE_CURRENT_BINARY_DIR})
 file(COPY assets DESTINATION ${CMAKE_CURRENT_BINARY_DIR})

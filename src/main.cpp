@@ -48,7 +48,7 @@ int main(int argc, char const *argv[]){
     //scene.generateScene(applicationPath.dirPath()+"../assets/controlPoints/controlpoints.txt");
     //gen.readControlPoints(applicationPath.dirPath()+"../assets/controlPoints/controlpoints.txt");
     
-    glimac::Cursor cursor(glm::vec3(10,4,10));
+    glimac::Cursor cursor(glm::vec3(10,3,10));
 
     scene.createAllCubes();
     //std::vector<glimac::Cube> allCube = scene.getAllCubes();
@@ -93,6 +93,14 @@ int main(int argc, char const *argv[]){
                 camera.rotateUp(e.motion.yrel);
                 camera.rotateLeft(e.motion.xrel);
                 //std::cout<< e.motion.yrel <<std::endl;                  
+            }
+            if ( e.type == SDL_MOUSEWHEEL ) {
+                if (e.wheel.y > 0) {
+                    camera.moveFront(0.1f);
+                }
+                else if (e.wheel.y < 0)  {
+                    camera.moveFront(-0.1f);
+                }
             }
 
             if(e.type == SDL_KEYDOWN){
@@ -142,10 +150,7 @@ int main(int argc, char const *argv[]){
                          scult.dig(cursor,scene.m_allCubes);
                         break;
                     case SDLK_l :
-                        scult.changeColor(cursor,glm::vec4(0,0,1,1),scene.m_allCubes);
-                        break;
-                    case SDLK_h :
-                        scult.changeColor(cursor,glm::vec4(0,1,1,1),scene.m_allCubes);
+                        scult.changeColor(cursor,scene.m_allCubes);
                         break;
                     case SDLK_k :
                         scult.getColor(cursor,scene.m_allCubes);
@@ -157,14 +162,16 @@ int main(int argc, char const *argv[]){
                         scene.setUp();
                         break; 
                     case SDLK_f :
-                        save.saveScene(applicationPath.dirPath()+"../assets/save/save1.txt", scene.m_allCubes);
+                        save.saveScene(applicationPath.dirPath()+"../assets/save/", scene.m_allCubes);
                         break;
                     case SDLK_v :
-                        save.loadScene(applicationPath.dirPath()+"../assets/save/save1.txt", scene.m_allCubes);
+                        save.loadScene(applicationPath.dirPath()+"../assets/save/", scene.m_allCubes);
                         break;
                     case SDLK_p :
                         gen.readControlPoints(applicationPath.dirPath()+"../assets/controlPoints/controlpoints.txt");
-                        gen.applyRBF(scene.m_allCubes, 2);    
+                        gen.applyRBF(scene.m_allCubes, 2);
+
+
                         break;
                     case SDLK_j :
                         scene.setDirectionalLight(glm::vec3(glm::linearRand (0.0,1.0),glm::linearRand (0.0,1.0),glm::linearRand (0.0,1.0)),
@@ -179,6 +186,10 @@ int main(int argc, char const *argv[]){
                                         0.5,
                                         glm::vec3(1.0,1.0,1.0),
                                         glm::vec3(0.,0.,0.));
+
+                        break;
+                    case SDLK_g:
+                        camera.resetCameraSetUp();
                         break;
 
 

@@ -2,6 +2,13 @@
 
 namespace glimac {
 	void Save::saveScene(std::string filepath, std::vector<Cube> allCube){
+		std::cout << "Entrez le nom du fichier où vous voulez sauvegarder votre scène" << std::endl;
+        std::string name;
+        std::cin>>name;
+
+        name = "/" +name;
+		filepath +=name;
+
 		std::ofstream file (filepath);
 
 		if (!file.is_open())
@@ -33,6 +40,11 @@ namespace glimac {
 	}
 
 	void Save::loadScene(std::string filepath, std::vector<Cube> &allCube){
+		std::cout << "Entrez le nom du fichier où votre scène est sauvegarder" << std::endl;
+        std::string name;
+        std::cin>>name;
+        name = "/" +name;
+        filepath +=name;
 		std::ifstream file(filepath);
 		if (!file.is_open())
 		   std::cout << "Save scene : Can't read the file" << std::endl;

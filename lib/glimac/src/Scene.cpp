@@ -114,10 +114,6 @@ namespace glimac {
 					m_allCubes[getCubeAtThisPos(glm::vec3(x,y,z))].setIsVisible(true);
 					m_allCubes[getCubeAtThisPos(glm::vec3(x,y,z))].setColor(glm::vec4 (253, 238, 0,1));
 				}
-
-				
-				/*m_allCubes[getCubeAtThisPos(glm::vec3(x,1,k))].setIsVisible(true);
-				m_allCubes[getCubeAtThisPos(glm::vec3(x,2,k))].setIsVisible(true);*/
 			}
 		}
 

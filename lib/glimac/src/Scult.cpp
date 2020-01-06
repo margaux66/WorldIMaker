@@ -54,7 +54,24 @@ namespace glimac {
         } 
 
 	}
-	void Scult::changeColor(Cursor cursor, glm::vec4 color,std::vector<Cube> &allCubes){
+	void Scult::changeColor(Cursor cursor,std::vector<Cube> &allCubes){
+        glm::vec4 color;
+        std::cout << "Entrez la composante R de la couleur de votre choix" << std::endl;
+        int colorInput;
+        std::cin>>colorInput;
+        color.x = colorInput;
+        std::cout << "Entrez la composante G de la couleur de votre choix" << std::endl;
+        std::cin>>colorInput;
+        color.y = colorInput;
+        std::cout << "Entrez la composante B de la couleur de votre choix" << std::endl;
+        std::cin>>colorInput;
+        color.z = colorInput;
+        std::cout << "Entrez la composante A de la couleur de votre choix" << std::endl;
+        std::cin>>colorInput;
+        color.w = colorInput;
+
+        std::cout << color.x << " "<< color.y << " " << color.z << std::endl ; 
+
 		for (int i = 0; i < allCubes.size(); ++i){
             if(cursor.getPosition() == allCubes[i].getPosition()){
             	if(allCubes[i].getIsVisible()==true){

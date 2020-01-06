@@ -1,0 +1,6 @@
+find_package (Doxygen)
+message("DOXYGEN_EXECUTABLE     " ${DOXYGEN_EXECUTABLE})
+if(DOXYGEN_FOUND)
+  configure_file (${WorldIMaker_SOURCE_DIR}/doc/doxygen/Doxyfile-html.cmake ${WorldIMaker_BINARY_DIR}/doc/doxygen/Doxyfile-html)
+  add_custom_target (html ${DOXYGEN_EXECUTABLE} ${WorldIMaker_BINARY_DIR}/doc/doxygen/Doxyfile-html)
+endif (DOXYGEN_FOUND)

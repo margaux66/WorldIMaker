@@ -77,6 +77,13 @@ namespace glimac {
 				case 2: 
 					result.push_back(Omega[i]* sqrt(1 + pow(1+d,2)));
 					break;
+				case 3:
+					result.push_back(Omega[i]*(1/(1+pow(1+d,2))));
+					break;
+				case 4:
+					result.push_back(Omega[i]* (1/sqrt(1 + pow(1+d,2))));
+					break;
+
 			}
 		}
 

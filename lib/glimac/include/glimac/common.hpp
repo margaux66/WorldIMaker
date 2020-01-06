@@ -3,6 +3,8 @@
 #include <GL/glew.h>
 #include "glm.hpp"
 
+
+
 namespace glimac {
 
 	struct ShapeVertex {
