@@ -24,11 +24,11 @@ cmake ../WorldIMaker
 make
 ./bin/worldIMaker
 ```
-##Pour utiliser le programme
+## Pour utiliser le programme
 
 Voici les outils nécessaires à l'utilisation de l'éditeur.
 
-###Environnement 
+### Environnement 
 
 Pour déplacer le curseur : utilisez les flêches de votre clavier
 Pour déplacer la caméra : utilisez les touches q et d pour vous déplacer horizontalement et z et s pour vous déplacer verticalement
@@ -49,7 +49,7 @@ Pour supprimer la scène : appuyez sur c
 Pour revenir à la scène de base : appuyez sur b
 Pour passer du mode jour au mode nuit : appuyez sur n et inversement
 
-###Éditer la scène
+### Éditer la scène
 
 Pour ajouter un cube à la scène appuyer sur la touche r : le cube se placera à la position de votre curseur
 Pour supprimer un cube de la scène appuyer sur la touche t : le cube à la position de votre curseur sera supprimer
