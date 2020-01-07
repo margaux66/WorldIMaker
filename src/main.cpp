@@ -44,14 +44,10 @@ int main(int argc, char const *argv[]){
                                         applicationPath.dirPath() + "../assets/shaders/coloredCube.fs.glsl");
     program.use();
 
-    //std::string cp = "controlpoints.txt";
-    //scene.generateScene(applicationPath.dirPath()+"../assets/controlPoints/controlpoints.txt");
-    //gen.readControlPoints(applicationPath.dirPath()+"../assets/controlPoints/controlpoints.txt");
     
     glimac::Cursor cursor(glm::vec3(10,3,10));
 
     scene.createAllCubes();
-    //std::vector<glimac::Cube> allCube = scene.getAllCubes();
     scene.uniformMatrix(program);
 
     std::vector<glm::vec3> m_vertices;
@@ -91,8 +87,7 @@ int main(int argc, char const *argv[]){
             }
             if(e.type == SDL_MOUSEMOTION && (e.motion.state & SDL_BUTTON_LEFT)){
                 camera.rotateUp(e.motion.yrel);
-                camera.rotateLeft(e.motion.xrel);
-                //std::cout<< e.motion.yrel <<std::endl;                  
+                camera.rotateLeft(e.motion.xrel);                
             }
             if ( e.type == SDL_MOUSEWHEEL ) {
                 if (e.wheel.y > 0) {
@@ -170,8 +165,6 @@ int main(int argc, char const *argv[]){
                     case SDLK_p :
                         gen.readControlPoints(applicationPath.dirPath()+"../assets/controlPoints/controlpoints.txt");
                         gen.applyRBF(scene.m_allCubes, 2);
-
-
                         break;
                     case SDLK_j :
                         scene.setDirectionalLight(glm::vec3(glm::linearRand (0.0,1.0),glm::linearRand (0.0,1.0),glm::linearRand (0.0,1.0)),
@@ -238,9 +231,6 @@ int main(int argc, char const *argv[]){
 		scene.applyLight(camera);
 		scene.updateMatrix(camera);
         obj.displayOBJ(4);
-
-
-        //obj.setUpOBJ(applicationPath.dirPath() + "../assets/models/cube.obj");
 
         windowManager.swapBuffers();
 
