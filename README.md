@@ -1,6 +1,6 @@
 # WorldIMaker
 
-WorldIMaker est un éditeur de cube en 3D, réalisé en C++, en utilisant OpenGL 3 et la SDL 2. 
+WorldIMaker est un éditeur de cube en 3D, réalisé en C++, en utilisant OpenGL 3 et la SDL 2. Réalisé dans le cadre des cours de programmation objet, math-info et synthèse d'image de seconde année IMAC.
 
 ## Pour lancer le programme
 
@@ -67,3 +67,6 @@ Entrez la composante A de la couleur de votre choix
 [tapez la valeur de A souhaitée]
 ```
 - Pour générer un cactus : appuyez sur p
+
+## Auteurs 
+Maurel Victorine & Seguy Margaux
