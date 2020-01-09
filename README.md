@@ -24,7 +24,7 @@ cmake ../WorldIMaker
 make
 ./bin/worldIMaker
 ```
-L’entièreté du code a été documenté à l’aide de la librairie doxygen pour la générer il suffit de faire : 
+L’entièreté du code a été documenté à l’aide de la librairie doxygen pour générer la documentation il suffit de faire : 
 
 ```bash
 make html
