@@ -104,6 +104,7 @@ namespace glimac {
 	}
 
 	void Scene::setUp(){
+		clean();
 		for (int x = 0; x < m_width ; ++x){	
 			for (int z = 0; z < m_length; ++z){
 				for (int y = 0; y < 3; ++y)
