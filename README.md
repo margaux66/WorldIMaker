@@ -67,6 +67,7 @@ Entrez la composante A de la couleur de votre choix
 [tapez la valeur de A souhaitée]
 ```
 - Pour générer un cactus : appuyez sur p
+- Pour générer un iglou : appuyez sur m
 
 ## Auteurs 
 Maurel Victorine & Seguy Margaux

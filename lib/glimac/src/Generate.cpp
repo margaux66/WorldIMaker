@@ -67,7 +67,7 @@ namespace glimac {
 		std::vector <double> result;
 		
 
-		for (int i = 0; i < m_controlPoints.size(); ++i)
+		for (uint i = 0; i < m_controlPoints.size(); ++i)
 		{
 			double d = glm::distance(vec,m_controlPoints[i].position);
 			switch (type){
@@ -75,14 +75,20 @@ namespace glimac {
 					result.push_back(Omega[i]*d);
 					break;
 				case 2: 
-					result.push_back(Omega[i]* sqrt(1 + pow(1+d,2)));
+					result.push_back(Omega[i]* sqrt(1 + pow(1*d,2)));
 					break;
 				case 3:
-					result.push_back(Omega[i]*(1/(1+pow(1+d,2))));
+					result.push_back(Omega[i]*(1/(1+pow(1*d,2))));
 					break;
 				case 4:
-					result.push_back(Omega[i]* (1/sqrt(1 + pow(1+d,2))));
+					result.push_back(Omega[i]* (1/sqrt(1 + pow(1*d,2))));
 					break;
+				case 5:
+					result.push_back(Omega[i]* (exp(-1*pow(1*d,2))));
+					break;
+				case 6:
+					result.push_back(Omega[i]* (cos(0.4*d)));
+					break;	
 
 			}
 		}
@@ -96,7 +102,7 @@ namespace glimac {
 		for( uint c = 0; c < allCube.size(); ++c){
 			RBF(allCube[c].getPosition(),type);
 			double value = 0 ;
-			for (int i = 0; i < m_rbf.size(); ++i)
+			for (uint i = 0; i < m_rbf.size(); ++i)
 			{	
 				value += m_rbf[i];
 			}

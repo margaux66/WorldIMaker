@@ -16,7 +16,9 @@
 
 int main(int argc, char const *argv[]){
      // Initialize SDL and open a window
-    glimac::SDLWindowManager windowManager(800, 600, "WorldIMaker");
+    constexpr int windowWidth = 800;
+    constexpr int windowHeight = 600;
+    glimac::SDLWindowManager windowManager(windowWidth, windowHeight, "WorldIMaker");
 
     // Initialize glew for OpenGL3+ support
     GLenum glewInitError = glewInit();
@@ -29,6 +31,7 @@ int main(int argc, char const *argv[]){
     glimac::Scene scene;
     glimac::TrackballCamera camera;
     glimac::Generate gen;
+    glimac::Generate gen2;
     glimac::Scult scult;
     glimac::Save save;
     glimac::Object obj;
@@ -69,11 +72,12 @@ int main(int argc, char const *argv[]){
                         0.5,
                         glm::vec3(3.0,3.0,3.0),
                         glm::vec3(1.,1.,1.));
-    scene.setDirectionalLight(glm::vec3(glm::linearRand (0.0,1.0),glm::linearRand (0.0,1.0),glm::linearRand (0.0,1.0)),
-                                            glm::vec3(glm::linearRand (0.0,1.0),glm::linearRand (0.0,1.0),glm::linearRand (0.0,1.0)),
-                                            0.5,
-                                            glm::vec3(1.0,1.0,1.0),
-                                            glm::vec3(1.,1.,1.));
+
+    scene.setDirectionalLight(glm::vec3(0.5,0.5,0.5),
+                                   glm::vec3(0.2,0.2,0.2),
+                                    0.5,
+                                    glm::vec3(1.0,1.0,1.0),
+                                    glm::vec3(1.,1.,1.));
 
     scene.setUp();
 
@@ -166,9 +170,20 @@ int main(int argc, char const *argv[]){
                         gen.readControlPoints(applicationPath.dirPath()+"../assets/controlPoints/controlpoints.txt");
                         gen.applyRBF(scene.m_allCubes, 2);
                         break;
+                    case SDLK_m :
+                        gen2.readControlPoints(applicationPath.dirPath()+"../assets/controlPoints/controlpoints2.txt");
+                        gen2.applyRBF(scene.m_allCubes, 2);
+                        for (uint i = 0; i < scene.m_allCubes.size(); ++i)
+                        {
+                            if (scene.m_allCubes[i].getIsVisible()==true)
+                            {
+                               scene.m_allCubes[i].setColor(glm::vec4(0,0,1,1));
+                            }
+                        }
+                        break;
                     case SDLK_j :
-                        scene.setDirectionalLight(glm::vec3(glm::linearRand (0.0,1.0),glm::linearRand (0.0,1.0),glm::linearRand (0.0,1.0)),
-                                            glm::vec3(glm::linearRand (0.0,1.0),glm::linearRand (0.0,1.0),glm::linearRand (0.0,1.0)),
+                        scene.setDirectionalLight(glm::vec3(0.5,0.5,0.5),
+                                            glm::vec3(0.2,0.2,0.2),
                                             0.5,
                                             glm::vec3(1.0,1.0,1.0),
                                             glm::vec3(1.,1.,1.));
@@ -184,22 +199,6 @@ int main(int argc, char const *argv[]){
                     case SDLK_g:
                         camera.resetCameraSetUp();
                         break;
-
-
-
-
-
-                }
-            }
-
-            //allCube[1].setIsVisible(true);
-            if ( e.type == SDL_MOUSEWHEEL ) {
-                if (e.wheel.y > 0) {
-                    camera.moveFront(0.1f);
-
-                }
-                else if (e.wheel.y < 0)  {
-                    camera.moveFront(-0.1f);
                 }
             }
         }
@@ -220,6 +219,8 @@ int main(int argc, char const *argv[]){
         //Clear the window
         glClearColor(0,0,0,1);
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+
+        program.use();
 
         scene.applyLight(camera);
         scene.displayCubes(camera);

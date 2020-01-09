@@ -40,6 +40,7 @@
 /// \li Pour dig appuyez sur i
 /// \li Pour changer la couleur du cube : appuyez sur l et entrez dans le terminal les valeurs de la couleur que vous voulez
 /// \li Pour générer un cactus : appuyez sur p
+/// \li Pour générer un iglou : appuyez sur m
 /// \section info_sec Info
 /// \version 1.0
 /// \date Janvier 2020
