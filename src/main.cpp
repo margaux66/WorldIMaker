@@ -27,7 +27,7 @@ int main(int argc, char const *argv[]){
         return EXIT_FAILURE;
     }
 
-    //Creation TrackballCamera
+    //Creation des nos objets
     glimac::Scene scene;
     glimac::TrackballCamera camera;
     glimac::Generate gen;
@@ -35,6 +35,7 @@ int main(int argc, char const *argv[]){
     glimac::Scult scult;
     glimac::Save save;
     glimac::Object obj;
+    glimac::Cursor cursor(glm::vec3(10,3,10));
 
     std::cout << "OpenGL Version : " << glGetString(GL_VERSION) << std::endl;
     std::cout << "GLEW Version : " << glewGetString(GLEW_VERSION) << std::endl;
@@ -48,25 +49,23 @@ int main(int argc, char const *argv[]){
     program.use();
 
     
-    glimac::Cursor cursor(glm::vec3(10,3,10));
-
+   
+    //initialise la scène
     scene.createAllCubes();
     scene.uniformMatrix(program);
 
-    std::vector<glm::vec3> m_vertices;
-    std::vector<glm::vec2> m_uvs;
-    std::vector < glm::vec3 > m_normals;
-
+    //import d'un objet
     obj.loadOBJ(applicationPath.dirPath() + "../assets/models/cube.obj", 4);
     obj.setUpOBJ();
 
     
 
-    // GPU checks depth
+    // pour que l'application gère la profondeur et la transparence
     glEnable(GL_DEPTH_TEST);
     glEnable(GL_BLEND);
     glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
 
+    //initialisation 
     scene.setPointLight(glm::vec3(glm::linearRand (0.0,1.0),glm::linearRand (0.0,1.0),glm::linearRand (0.0,1.0)),
                         glm::vec3(glm::linearRand (0.0,1.0),glm::linearRand (0.0,1.0),glm::linearRand (0.0,1.0)),
                         0.5,
@@ -207,6 +206,7 @@ int main(int argc, char const *argv[]){
          * HERE SHOULD COME THE RENDERING CODE
          *********************************/
 
+        //change la couleur du cursor quand il dépasse la limite de la scène
         if(cursor.getPosition().x < 0 || cursor.getPosition().x >scene.getWidth() || cursor.getPosition().y < 0 || cursor.getPosition().y >scene.getHeight()||cursor.getPosition().z < 0 || cursor.getPosition().z >scene.getLenght() ){
             cursor.setColor(glm::vec4(1,0,0,1));
         }
