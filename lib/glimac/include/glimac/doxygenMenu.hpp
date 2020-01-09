@@ -23,7 +23,7 @@
 /// \li The documentation is located in [path to build]/doc/doc-doxygen/html/index.html
 /// \section howuseit Comment ça marche ?
 /// \subsection env_sec Environnement
-/// \li Pour déplacer le curseur : utilisez les flêches de votre clavier
+/// \li Pour déplacer le curseur : utilisez les flêches de votre clavier et w et x pour l'axe Z
 /// \li Pour déplacer la caméra : utilisez les touches q et d pour vous déplacer horizontalement et z et s pour vous déplacer verticalement
 /// \li Pour dézoomer ou zoomer : utilisez la roulette de votre souris
 /// \li Pour changer l'angle de la caméra : appuyez et bougez votre souris

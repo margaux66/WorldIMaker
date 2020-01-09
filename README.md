@@ -24,13 +24,19 @@ cmake ../WorldIMaker
 make
 ./bin/worldIMaker
 ```
+L’entièreté du code a été documenté à l’aide de la librairie doxygen pour la générer il suffit de faire : 
+
+```bash
+make html
+```
+
 ## Pour utiliser le programme
 
 Voici les outils nécessaires à l'utilisation de l'éditeur.
 
 ### Environnement 
 
-- Pour déplacer le curseur : utilisez les flêches de votre clavier. 
+- Pour déplacer le curseur : utilisez les flêches de votre clavier et w et x pour l'axe Z. 
 - Pour déplacer la caméra : utilisez les touches q et d pour vous déplacer horizontalement et z et s pour vous déplacer verticalement.  
 - Pour dézoomer ou zoomer : utilisez la roulette de votre souris. 
 - Pour changer l'angle de la caméra : appuyez et bougez votre souris. 
@@ -47,7 +53,7 @@ Entrez le nom du fichier où votre scène est sauvegardée
 ``` 
 - Pour supprimer la scène : appuyez sur c. 
 - Pour revenir à la scène de base : appuyez sur b. 
-- Pour passer du mode jour au mode nuit : appuyez sur n et inversement
+- Pour passer du mode jour au mode nuit (et inversement) : appuyez sur n et j
 
 ### Éditer la scène
 
