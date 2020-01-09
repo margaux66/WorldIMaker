@@ -81,7 +81,6 @@ namespace glimac {
 				i++;
 			}
 		}
-		//allCube = temp_allCube;
 		file.close();
 	}
 }

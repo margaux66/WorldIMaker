@@ -2,18 +2,15 @@
 
 namespace glimac {
 	void Scene::createAllCubes(){
-		//glm::vec4 color = glm::vec4(0,1,0,1);
 
 		for(uint i = 0; i<m_length; i++){
 	        for (int j = 0; j < m_height; ++j){
 	            for (int k = 0; k < m_width; ++k){
 	            	Cube cube(glm::vec3(k,j,i));
-	            	//cube.setColor(glm::vec4(0,1,0,1));
 	                m_allCubes.push_back(cube);
 	            }
 	        }
 	    }
-	    //std::cout << m_allCubes[1].getColor() << std::endl;
 	}
 
 	const void Scene::uniformMatrix(Program program){

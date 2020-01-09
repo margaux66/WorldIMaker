@@ -70,8 +70,6 @@ namespace glimac {
         std::cin>>colorInput;
         color.w = colorInput;
 
-        std::cout << color.x << " "<< color.y << " " << color.z << std::endl ; 
-
 		for (int i = 0; i < allCubes.size(); ++i){
             if(cursor.getPosition() == allCubes[i].getPosition()){
             	if(allCubes[i].getIsVisible()==true){

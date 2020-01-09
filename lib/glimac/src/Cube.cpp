@@ -132,14 +132,6 @@ namespace glimac {
 		}
 	}
 
-/*	void Cube::display(){
-		//setColor(glm::vec4(0,1,0,1));
-		glBindVertexArray(m_vao);
-		glDrawElements(GL_TRIANGLES,36,GL_UNSIGNED_INT,0);
-	    glBindVertexArray(0);
-	}*/
-
-
 	void Cube::setColor(glm::vec4 color){
 		m_color = color;
 		for (uint i = 0; i < m_vertices.size(); ++i)

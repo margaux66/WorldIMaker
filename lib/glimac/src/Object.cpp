@@ -3,13 +3,9 @@
 namespace glimac {
 
 	void Object::loadOBJ(const std::string path,int face){
-		//std::vector< unsigned int > vertexIndices, uvIndices, normalIndices;
-		
-
 		std::ifstream file(path);
-
 		if (!file.is_open())
-			std::cout << "Import OBJ : Can't read the file" << std::endl;
+			std::cerr << "Import OBJ : Can't read the file" << std::endl;
 		else{
 			std::cout << "Import OBJ : OK" << std::endl;
 
@@ -34,7 +30,6 @@ namespace glimac {
 					{
 						file >> index;
 					 	m_indices.push_back(index);
-					 	//std::cout << i << "   " << indices << std::endl;
 					}
 				}
 			}
